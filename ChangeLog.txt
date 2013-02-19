@@ -1,0 +1,9 @@
+*** ChangeLog ***
+
+2013-02-18  Naeem Pinto  <naeempinto@visual-lighting.com>
+	* index.html: newly added "portal" page
+	* ell.html: New GUI layout for linear essentials, replacing the old vlt_essentials.html file
+	* js/linear_essentials.js: renamed javascript file. replaces vlt_essentials.js file
+	* elp.html: New GUI layout for panel essentials, replacing the old vlt_essentials_light_panel.html file
+	* js/panel_essentials.js: renamed javascript file. replaces vlt_essentials_light_panel.js file
+	* essentials.css: renamed CSS file. replaces vlt_essentials.js file
