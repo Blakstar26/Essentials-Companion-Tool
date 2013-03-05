@@ -1,68 +1,41 @@
 //set, disable and/or enable buttons for 1S enviornment
 function set_1S_Env()
 {
-	resetLedBoardButtons();
-	resetColorTempButtons();
-	resetFinishButtons();
-	resetLensButtons();
-	resetFactoryOptionsButtons();
-	resetCustomLength();	
-	resetDescription();
-	resetPriceModifierButtons();	
-	resetCommentsBox();
-	document.getElementById("tail-one-dropbox").options.length = 1;
-	document.getElementById("tail-two-dropbox").options.length = 1;
-	document.getElementById("length-dropbox").options.length = 1;
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
 	document.getElementById("2590").disabled=true;
 	document.getElementById("nl").disabled=false;
 	document.getElementById("op").disabled=true;
 	document.getElementById("pg").disabled=false;
 	document.getElementById("ro").disabled=false;
-	//document.getElementById("distributor_price").disabled=false;
-	//document.getElementById("distributor_price").checked=true;
-	var squareExits = new Array('WE1', 'WE3', 'C');
-	setTailExits(squareExits);
+	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'C');
+	setAllTailExits(squareExits);
 	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
 }
 
 //set, disable and/or enable buttons for 2Sl enviornment
 function set_2SL_Env()
 {
-	resetLedBoardButtons();
-	resetColorTempButtons();
-	resetFinishButtons();
-	resetLensButtons();
-	resetFactoryOptionsButtons();
-	resetCustomLength();
-	resetDescription();
-	resetCommentsBox();
-	document.getElementById("tail-one-dropbox").options.length = 1;
-	document.getElementById("tail-two-dropbox").options.length = 1;
-	document.getElementById("length-dropbox").options.length = 1;
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
 	document.getElementById("2590").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("ro").disabled=false;
-	//document.getElementById("distributor_price").disabled=false;
-	//document.getElementById("distributor_price").checked=true;
-	var squareExits = new Array('WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
-	setTailExits(squareExits);
+	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
+	setAllTailExits(squareExits);
 	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
 }
 
 //set, disable and/or enable buttons for 1R enviornment
 function set_1R_Env()
 {
-	resetLedBoardButtons();
-	resetColorTempButtons();
-	resetFinishButtons();
-	resetLensButtons();
-	resetFactoryOptionsButtons();
-	resetCustomLength();
-	resetDescription();
-	resetCommentsBox();
-	document.getElementById("tail-one-dropbox").options.length = 1;
-	document.getElementById("tail-two-dropbox").options.length = 1;
-	document.getElementById("length-dropbox").options.length = 1;
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
 	document.getElementById("2590").disabled=true;
 	document.getElementById("pg").disabled=true;
 	document.getElementById("op").disabled=true;
@@ -70,27 +43,18 @@ function set_1R_Env()
 	document.getElementById("im").disabled=false;
 	document.getElementById("bu").disabled=false;
 	document.getElementById("ro").disabled=false;
-	//document.getElementById("distributor_price").disabled=false;
-	//document.getElementById("distributor_price").checked=true;
-	var roundExits = new Array('WE1', 'WE3', 'WB1', 'WB3', 'C');
-	setTailExits(roundExits);
+	var roundExits = new Array('Select Tail', 'WE1', 'WE3', 'WB1', 'WB3', 'C');
+	setAllTailExits(roundExits);
 	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
 }
 
 //set, disable and/or enable buttons for 2R enviornment
 function set_2RL_Env()
 {
-	resetLedBoardButtons();
-	resetColorTempButtons();
-	resetFinishButtons();
-	resetLensButtons();
-	resetFactoryOptionsButtons();
-	resetCustomLength();
-	resetDescription();
-	resetCommentsBox();
-	document.getElementById("tail-one-dropbox").options.length = 1;
-	document.getElementById("tail-two-dropbox").options.length = 1;
-	document.getElementById("length-dropbox").options.length = 1;
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
 	document.getElementById("2590").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("n").disabled=false;
@@ -98,58 +62,39 @@ function set_2RL_Env()
 	document.getElementById("bu").disabled=false;
 	document.getElementById("fs").disabled=false;
 	document.getElementById("ro").disabled=false;
-	//document.getElementById("distributor_price").disabled=false;
-	//document.getElementById("distributor_price").checked=true;
-	var roundExits = new Array('WE1', 'WE3', 'WB1', 'WB3', 'C');
-	setTailExits(roundExits);
+	var roundExits = new Array('Select Tail', 'WE1', 'WE3', 'WB1', 'WB3', 'C');
+	setAllTailExits(roundExits);
 	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
 }
 
 //set, disable and/or enable buttons for 3SL enviornment
 function set_3SL_Env()
 {
-	resetLedBoardButtons();
-	resetColorTempButtons();
-	resetFinishButtons();
-	resetLensButtons();
-	resetFactoryOptionsButtons();
-	resetCustomLength();
-	resetDescription();
-	resetCommentsBox();
-	document.getElementById("tail-one-dropbox").options.length = 1;
-	document.getElementById("tail-two-dropbox").options.length = 1;
-	document.getElementById("length-dropbox").options.length = 1;
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
 	document.getElementById("nl").disabled=true;
 	document.getElementById("ro").disabled=false;
-	//document.getElementById("distributor_price").disabled=false;
-	//document.getElementById("distributor_price").checked=true;
-	var squareExits = new Array('WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
-	setTailExits(squareExits);
+	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
+	setAllTailExits(squareExits);
 	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
 }
 
 //set, disable and/or enable buttons for 1QL enviornment
 function set_1QL_Env()
 {
-	resetLedBoardButtons();
-	resetColorTempButtons();
-	resetFinishButtons();
-	resetLensButtons();
-	resetFactoryOptionsButtons();
-	resetCustomLength();
-	resetDescription();
-	resetCommentsBox();
-	document.getElementById("tail-one-dropbox").options.length = 1;
-	document.getElementById("tail-two-dropbox").options.length = 1;
-	document.getElementById("length-dropbox").options.length = 1;
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
 	document.getElementById("2590").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("ro").disabled=false;
-	//document.getElementById("distributor_price").disabled=false;
-	//document.getElementById("distributor_price").checked=true;
-	var quarterRoundExits = new Array('WE1', 'WE3', 'WR1', 'WR3', 'WB1', 'TB3', 'C');
-	setTailExits(quarterRoundExits);
+	var quarterRoundExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR3', 'WB1', 'TB3', 'C');
+	setAllTailExits(quarterRoundExits);
 	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
 }
 
 //set, disable and/or enable buttons for 10th watt LED enviornment
@@ -174,7 +119,30 @@ function set_2590_Env()
 }
 
 //******************************************************************
+function resetAllForm()
+{
+	resetLedBoardButtons();
+	resetColorTempButtons();
+	resetFinishButtons();
+	resetLensButtons();
+	resetFactoryOptionsButtons();
+	resetCustomLength();	
+	resetDescription();
+	resetPriceModifierButtons();	
+	resetCommentsBox();
+}
 
+function resetTailsBox()
+{
+	document.getElementById("tail-one-dropbox").options.length = 1;
+	document.getElementById("tail-two-dropbox").options.length = 1;
+}
+
+function resetLengthBox()
+{
+	document.getElementById("length-dropbox").options.length = 1;
+}
+	
 function resetLedBoardButtons()
 {
 	document.getElementById("1018").disabled=false;
@@ -238,20 +206,20 @@ function resetFactoryOptionsButtons()
 function resetCustomLength()
 {
 	document.getElementById("custom-length-input").value="";
-	//document.getElementById("custom-length-label").disabled=true;
 	document.getElementById("custom-length-input").disabled=true;
 }
 
 function resetDescription() {
-	document.getElementById('description').innerHTML=' ';
-	//document.getElementById('description').reset();
-	//document.getElementById('watts-description').innerHTML=' ';
+	document.getElementById('description').innerHTML='';
+	document.getElementById('watts').innerHTML='';
+	document.getElementById('inches').innerHTML='--';
+	document.getElementById('mm').innerHTML='--';
+	document.getElementById('dnPrice').innerHTML='0.00';
 	
 }
 
 function resetPriceModifierButtons()
 {
-	//document.getElementById('price_modifier_buttons').reset();
 	document.getElementById("distributor_price").disabled=false;
 	document.getElementById("d10_price").disabled=false;
 	document.getElementById("d19_price").disabled=false;	
@@ -259,12 +227,12 @@ function resetPriceModifierButtons()
 	document.getElementById("distributor_price").checked=true;
 	document.getElementById("d10_price").checked=false;
 	document.getElementById("d19_price").checked=false;
+	document.getElementById("roblon_price").checked=false;
 }
 
 function resetCommentsBox()
 {
-	document.getElementById('comment').innerHTML=' ';
-	//document.getElementById('comment-box').reset();
+	document.getElementById('comment').innerHTML='';
 }
 
 function resetXXButtons()
@@ -277,59 +245,63 @@ function resetXXButtons()
 
 //******************************************************************
 
-function setTailExits(tailExits)
-{	
-	//set tail one dropbox, exits
-	for (i=0;i<tailExits.length;i++){
-		var x = document.getElementById("tail-one-dropbox");
-		var option = document.createElement("option");
-		option.text = tailExits[i];
-		try
-		{
-			// for IE earlier than version 8
-			x.add(option,x.options[null]);
-		}
-		catch (e)
-		{
-			x.add(option, null);
-		}
+function setAllTailExits(tailExits)
+{
+	setTailExitOne(tailExits);
+	setTailExitTwo(tailExits);
+}
+
+function setTailExitOne(tailExits)
+{
+	var selectedOption = 0;
+	var select = $("#tail-one-dropbox");
+	if(select.prop) {
+		var options = select.prop('options');
+	} else {
+		var options = select.attr('options');
 	}
+	$('option', select).remove();
 	
-	//set tail two dropbox, exits
-	for (i=0;i<tailExits.length;i++){
-		var x = document.getElementById("tail-two-dropbox");
-		var option = document.createElement("option");
-		option.text = tailExits[i];
-		try
-		{
-			// for IE earlier than version 8
-			x.add(option,x.options[null]);
-		}
-		catch (e)
-		{
-			x.add(option, null);
-		}
+	$.each(tailExits, function(val, text) {
+		options[options.length] = new Option(text, val);
+	});
+	select.val(selectedOption);
+}
+
+function setTailExitTwo(tailExits)
+{
+	var selectedOption = 0;
+	
+	var select = $('#tail-two-dropbox');
+	if(select.prop) {
+		var options = select.prop('options');
+	} else {
+		var options = select.attr('options');
 	}
+	$('option', select).remove();
+
+	$.each(tailExits, function(val, text) {
+		options[options.length] = new Option(text, val);
+	});
+	select.val(selectedOption);
 }
 
 function setFixtureLengths()
 {
 	var fixtureLengths = new Array(4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 'C');
+	
 	//set length dropbox
-	for (i=0;i<fixtureLengths.length;i++){
-		var x = document.getElementById("length-dropbox");
-		var option = document.createElement("option");
-		option.text = fixtureLengths[i];
-		try
-		{
-			// for IE earlier than version 8
-			x.add(option,x.options[null]);
-		}
-		catch (e)
-		{
-			x.add(option, null);
-		}
+	var select = $('#length-dropbox');
+	
+	if(select.prop) {
+		var options = select.prop('options');
+	} else {
+		var options = select.attr('options');
 	}
+	
+	$.each(fixtureLengths, function(val, text) {
+		options[options.length] = new Option(text, val);
+	});
 }
 
 function setPriceDisplay()
@@ -339,17 +311,17 @@ function setPriceDisplay()
   
 	if (document.getElementById("d10_price").checked==true)
 	{
-		NEW_LABEL = "!!!!D10 PRICING: ";
+		NEW_LABEL = "D10 PRICING: ";
 		NEW_LABEL = NEW_LABEL.fontcolor("#FF0000"); // sets color of the text to red
 		document.getElementById('price_label').innerHTML=NEW_LABEL;
 	} else if (document.getElementById("d19_price").checked==true)
 	{
-		NEW_LABEL = "!!!!D19 PRICING: ";
+		NEW_LABEL = "D19 PRICING: ";
 		NEW_LABEL = NEW_LABEL.fontcolor("#FF0000"); // sets color of the text to red
 		document.getElementById('price_label').innerHTML=NEW_LABEL;
 	} else if (document.getElementById("roblon_price").checked==true)
 	{
-		var NEW_LABEL = "!!!!ROBLON PRICING: ";
+		var NEW_LABEL = "ROBLON PRICING: ";
 		NEW_LABEL = NEW_LABEL.fontcolor("#FF0000"); // sets color of the text to red
 		document.getElementById('price_label').innerHTML=NEW_LABEL;
 	} else
@@ -519,20 +491,9 @@ function setFactoryOptionsCode(extrusionCode)
 	return factoryOptionsCode;
 }
 
-function setPartNumber()
+function setPartNumber(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, wireCode, lengthCode, factoryOptionsCode)
 {
-	var partNumber;
-	var extrusionCode = setExtrusionCode();
-	var ledCode = setLedCode();
-	var colorCode = setColorTempCode();
-	var finishCode = setFinishCode();
-	var lensCode = setLensCode();
-	var wireCode = setWireCode();
-	var lengthCode = setLengthCode();
-	var factoryOptionsCode = setFactoryOptionsCode(extrusionCode);
-	
-	partNumber = "ELL" + "-" + extrusionCode + "-" + ledCode + "-" + colorCode + "-" + finishCode + "-" + lensCode + "-" + wireCode + "-" + lengthCode+factoryOptionsCode;
-	
+	var partNumber = "ELL" + "-" + extrusionCode + "-" + ledCode + "-" + colorTempCode + "-" + finishCode + "-" + lensCode + "-" + wireCode + "-" + lengthCode+factoryOptionsCode;	
 	return partNumber;
 }
 
@@ -551,27 +512,27 @@ function setIpRating(extrusionCode)
 	return ipRating;
 }
 
-function setTrueLength()
+
+function setTrueLength(lengthCode)
 {
+	
 	var index = document.getElementById("length-dropbox").selectedIndex;
-	var lengthCode = document.getElementById("length-dropbox").options[index].text;
 	var length_list = new Array(4.72, 8.66, 12.6, 16.54, 20.47, 24.41, 28.35, 32.28, 36.22, 40.16, 44.09, 48.03, 51.97, 55.91, 59.84, 63.78, 67.72, 71.65, 75.59, 79.53, 83.46, 87.4, 91.34, 95.28);
 	var trueLength;
 	if (lengthCode == 'C')
 	{
 		var lengthInput = document.getElementById("custom-length-input").value;
-		var MAX_LENGTH = length_list[23]
+		var MAX_LENGTH = length_list[23];
 		trueLength = parseFloat(lengthInput); 
-		if (trueLength > MAX_LENGTH)
+		if (trueLength >= MAX_LENGTH)
 		{
-			alert('CUSTOM LENGTH CANNOT EQUAL OR EXCEED MAX POSSIBLE (96 in.)!!');
+			alert('CUSTOM LENGTH CANNOT EQUAL OR EXCEED MAX POSSIBLE (95.28 in.)!!');
 			exit();
 		} else {
             return trueLength;
         }
 	} else 
 	{
-		
 		trueLength = length_list[index-1];
 		return trueLength.toFixed(2);
 	}
@@ -579,15 +540,14 @@ function setTrueLength()
 
 function setLengthConversion(inches)
 {
-		var mm;
-		var temp = (inches * 25.4);
-		mm = Math.round(temp);
-		return mm;
+	var MM_IN_INCHES = 25.4;
+	var mm = (inches * MM_IN_INCHES);
+	return Math.round(mm);
 }
 
 function setCommentBox()
 {
-	var comment = ' ';
+	var comment = '';
 	if(document.getElementById("fs").checked==true)
 	{
 		comment = comment+'+ Don\'t forget - Include \'Free Standing Mount\' price in Quotewerks!<br/>+ Don\'t forget - $15 adder for \'Free Standing\' mounts at non-standard heights';
@@ -601,6 +561,7 @@ function setCommentBox()
 	if(document.getElementById("3SL").checked==true)
 	{
 		comment = comment+'+ Don\'t forget - If using 3SL Wall/Ceiling Rough-in Kit, be sure to quote 12 ft lengths when system has continuous runs, longer than 8\' (96")!<br/>';
+		comment = comment+'+ Don\'t forget - Be sure to set 3SL tail exits as \'WB1, WB2 or WB3\', if using 3SL Wall/Ceiling Rough-in Kit!<br/>';
 	}
 	
 	comment = comment.fontcolor("#FF0000"); // sets color of the text to red
@@ -640,10 +601,9 @@ function setExtrusionDescription(extrusionCode, ipRating)
 
 function setLengthDescription(trueLength, trueLengthMM)
 {
-	var lengthDescription;
 	var inches = trueLength;
 	var mm = trueLengthMM;
-	lengthDescription = inches+ "\" (" + mm + "mm) extrusion length;";
+	var lengthDescription = inches+ "\" (" + mm + "mm) extrusion length;";
 	return lengthDescription;
 }
 
@@ -731,7 +691,7 @@ function setFinishDescription(finishCode)
 		finishDescription = 'black anodized finish;';
 	} else
 	{
-		finishDescription = 'custom finish;';
+		finishDescription = 'custom XXX finish;';
 	}
 	return finishDescription;
 }
@@ -845,19 +805,19 @@ function setTotalWatts(ledCode, trueLength, lengthCode)
 function setFullDescription()
 {
 	var fullDescription;
-	var partNumber = setPartNumber();
+	var partNumber;
 	
 	var extrusionCode = setExtrusionCode();
 	var lengthCode = setLengthCode();
 	var ledCode = setLedCode();
 	var colorTempCode = setColorTempCode();
+	
 	var lensCode = setLensCode();
 	var wireCode = setWireCode();
 	var finishCode = setFinishCode();
-	var factoryOptionsCode = setFactoryOptionsCode();
-	var trueLength = setTrueLength();
+	var factoryOptionsCode = setFactoryOptionsCode(extrusionCode);
+	var trueLength = setTrueLength(lengthCode);
 	var trueLengthMM = setLengthConversion(trueLength);
-    //var totalWatts = setTotalWatts(ledCode, trueLength, lengthCode);
 	
 	var ipRating = setIpRating(extrusionCode);
 	var generalDescription = "VLT Essential Linear LED;";
@@ -870,9 +830,8 @@ function setFullDescription()
 	var factoryOptionsDescription = setFactoryOptionsDescription(factoryOptionsCode);
 	var finishDescription = setFinishDescription(finishCode);
 	var customLengthDescription = setCustomLengthDescription(lengthCode, trueLength);
-	//var wattsDescription = setWattsDescription(totalWatts);
-	//var otherDescription = setOtherDescription();
 	
+	partNumber = setPartNumber(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, wireCode, lengthCode, factoryOptionsCode);
 	fullDescription = partNumber+"   -   "+generalDescription+" "+extrusionDescription+" "+lengthDescription+" "+customLengthDescription+" "+ledDescription+" "+colorDescription+" "+lensDescription+" "+wireDescription+" "+factoryOptionsDescription+" "+finishDescription;
 	return fullDescription;
 }
@@ -934,7 +893,6 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
 			dnPrice = dnPrice + lens_cost;
 		} else if(document.getElementById("pg").checked==true)
 		{
-			//var ROBLON_PG_1S_PER_FOOT = PG_1S_PER_FOOT * ROBLON_ACC_DISCOUNT;
 			var pg_length = (trueLength/12); //convert lens length from inches to foot
 			pg_length = Math.ceil(pg_length); //round lens length up to nearest foot
 			var lens_cost = pg_length * PG_1S_PER_FOOT;
@@ -1029,9 +987,7 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
 
 function printFullDescription(fullDescription, wattsDescription)
 {
-	
 	document.getElementById('description').innerHTML=fullDescription.fontcolor("#000000");
-	//document.getElementById('watts-description').innerHTML=wattsDescription;	
 }
 
 function printLengthConversion(inches, mm)
@@ -1043,7 +999,6 @@ function printLengthConversion(inches, mm)
 function printTotalWattage(totalWatts)
 {
 	document.getElementById('watts').innerHTML=totalWatts.fontcolor("#000000");
-	//document.getElementById('watts').innerHTML=totalWatts;
 }
 
 function printDnPrice(dnPrice)
@@ -1054,58 +1009,12 @@ function printDnPrice(dnPrice)
 function printCommentBox(commentBox)
 {
 	document.getElementById('comment').innerHTML=commentBox;
-	//document.getElementById('comment').value=commentBox;
 }
 
 // ******************************* TESTING SEND TO CLIPBOARD FEATURE - START *******************************
 
-/* function setToClipboard(copy_Description) {
-  window.prompt ("Copy to clipboard: Ctrl+C, Enter", copy_Description);
-} */
-
-function selectDescription()
-{
-	document.getElementById('description').select();
-	
-	
-}
-
-function selectElementContents() 
-{
-	var el = 'description';
-    var range;
-    if (window.getSelection && document.createRange) {
-        range = document.createRange();
-        var sel = window.getSelection();
-        range.selectNodeContents(el);
-        sel.removeAllRanges();
-        sel.addRange(range);
-    } else if (document.body && document.body.createTextRange) {
-        range = document.body.createTextRange();
-        range.moveToElementText(el);
-        range.select();
-    }
-}
-
-window.onload = function() {
-    var el = document.getElementById("tester");
-    selectElementContents(el);
-};
 
 
-/* function copyToClipboard()
-{
-	var ledCode = setLedCode();
-	var trueLength = setTrueLength();
-	var lengthCode = setLengthCode();
-	var totalWatts = setTotalWatts(ledCode, trueLength, lengthCode);
-	
-	var fullDescription = setFullDescription();
-	var wattsDescription = setWattsDescription(totalWatts);
-	
-	var copy_Description = fullDescription + "\n " + wattsDescription;
-	setToClipboard(copy_Description);
-} */
 
 // ******************************* TESTING SEND TO CLIPBOARD FEATURE - END *******************************
 
@@ -1113,20 +1022,19 @@ function main()
 {
 	
 	var ledCode = setLedCode();
-	var trueLength = setTrueLength();
 	var lengthCode = setLengthCode();
+	var trueLength = setTrueLength(lengthCode);
 	var totalWatts = setTotalWatts(ledCode, trueLength, lengthCode);
-	//printTotalWattage(totalWatts);
-
+	
 	var fullDescription = setFullDescription();
+	
 	var wattsDescription = setWattsDescription(totalWatts);
-	//printFullDescription(fullDescription, wattsDescription);
+	
 	printFullDescription(fullDescription);
 	printTotalWattage(wattsDescription);
 	
-	var inches = setTrueLength();
-	var mm = setLengthConversion(inches);
-	printLengthConversion(inches, mm);	
+	var mm = setLengthConversion(trueLength);
+	printLengthConversion(trueLength, mm);	
 	
 	var extrusionCode = setExtrusionCode();
 	var dnPrice = setDnPrice(extrusionCode, trueLength, lengthCode);

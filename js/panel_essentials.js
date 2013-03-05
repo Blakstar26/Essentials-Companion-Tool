@@ -154,7 +154,12 @@ function resetFactoryOptionsButtons()
 
 function resetDescription() 
 {
-	document.getElementById('description').innerHTML=' ';
+	document.getElementById('description').innerHTML='';
+	document.getElementById('description').innerHTML='';
+	document.getElementById('watts').innerHTML='';
+	document.getElementById('total-panel-area').innerHTML='--';
+	document.getElementById('number-of-leds').innerHTML='--';
+	document.getElementById('dnPrice').innerHTML='0.00';
 	//document.getElementById('watts-description').innerHTML=' ';
 }
 

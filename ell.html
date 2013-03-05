@@ -4,12 +4,9 @@
     <title>VLT ESSENTIALS</title>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/linear_essentials.js"></script>
-	<script type="text/javascript" src="js/form_init.js" id="form_init_script" data-name=""></script>
-    <link rel="stylesheet" type="text/css" href="essentials.css"id="theme" />
-	
-    <style type="text/css">
-    </style>
+    <link rel="stylesheet" type="text/css" href="essentials.css" id="theme" />
 </head>
 <body>
 
@@ -39,15 +36,6 @@
   
   <div id="section1" class="section">
     <div id="column1" class="column ui-sortable">
-	
-	
-      <!-- <div style="FILTER: " id="item1" class="fb-item fb-100-item-column">
-        <div class="fb-header fb-item-alignment-center">
-          <h2 style="DISPLAY: inline; FONT-FAMILY: arial black; COLOR: #4f4f4f; FONT-SIZE: 40px; FONT-WEIGHT: bold">
-            ESSENTIALS LINEAR
-          </h2>
-        </div>
-      </div> -->
 	  
 	  <div id="product-label-top">
         <div>
@@ -81,14 +69,7 @@
           <label id="1QL-label"><input id="1QL" name="extrusion-group" type="radio" value="1QL" onclick="set_1QL_Env()"/><span id="1QL-button-label" class="fb-fieldlabel">1QL</span></label>
         </div>
       </div>
-	  
-      <!-- <div style="FILTER: ; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; HEIGHT: 50px; PADDING-TOP: 1px"
-      id="item47" class="fb-item fb-20-item-column">
-        <div class="fb-spacer">
-          <div id="item47_div_0">
-          </div>
-        </div>
-      </div> -->
+
 	  
 	  <div class="clear-spacer">
         <div>
@@ -110,14 +91,7 @@
           <label id="2590-label"><input id="2590" name="led-board-group" type="radio" value="0.25 watt (dual)" onclick="set_2590_Env()"/><span id="item23_2_span" class="fb-fieldlabel">0.25 watt (dual)</span></label>
         </div>
       </div>
-	  
-      <!-- <div style="FILTER: ; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; HEIGHT: 50px; PADDING-TOP: 1px"
-      id="item48" class="fb-item fb-20-item-column">
-        <div class="fb-spacer">
-          <div id="item48_div_0">
-          </div>
-        </div>
-      </div> -->
+
 
 	<div class="clear-spacer">
         <div>
@@ -164,15 +138,7 @@
           <label id="custom-label"><input id="custom" name="ext-finish-group" type="radio" value="C - Custom" /><span id="item25_2_span" class="fb-fieldlabel">C - Custom</span></label>
         </div>
       </div>
-      
-	  
-<!-- 	  <div style="FILTER: ; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; HEIGHT: 50px; PADDING-TOP: 1px"
-      id="item49" class="fb-item fb-20-item-column">
-        <div class="fb-spacer">
-          <div id="item49_div_0">
-          </div>
-        </div>
-      </div> -->
+     
 	  
 	  <div class="clear-spacer">
         <div>
@@ -194,15 +160,7 @@
           <label id="nl-label"><input id="nl" name="lens-group" type="radio" value="NL - No Lens" /><span id="item26_2_span" class="fb-fieldlabel">NL - No Lens</span></label>
         </div>
       </div>
-	  
-	  
-      <!-- <div style="FILTER: ; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; HEIGHT: 50px; PADDING-TOP: 1px"
-      id="item50" class="fb-item fb-20-item-column">
-        <div class="fb-spacer">
-          <div id="item50_div_0">
-          </div>
-        </div>
-      </div> -->
+	 
 	  
 	  <div class="clear-spacer">
         <div>
@@ -247,7 +205,7 @@
         <div class="fb-dropdown">
           <select id="tail-one-dropbox" name="wire-exit-one">
             <option>
-              Tail 1
+              Select Tail
             </option>
           </select>
         </div>
@@ -259,20 +217,12 @@
         <div class="fb-dropdown">
           <select id="tail-two-dropbox" name="wire-exit-two">
             <option>
-              Tail 2
+              Select Tail
             </option>
           </select>
         </div>
       </div>
-	  
-	  
-      <!-- <div style="FILTER: ; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; HEIGHT: 50px; PADDING-TOP: 1px"
-      id="item53" class="fb-item fb-20-item-column">
-        <div class="fb-spacer">
-          <div id="item53_div_0">
-          </div>
-        </div>
-      </div> -->
+	 
 	  
 	  <div class="clear-spacer">
         <div>
@@ -366,7 +316,7 @@
             Length Conversion:
           </p>
 		  </br>
-		  <p id="length-convert-para" style="COLOR: #000000"><span id="inches">--</span> inches equals <span id="mm">--</span>mm</p>
+		  <p id="length-convert-para" style="COLOR: #000000"><span id="inches">--</span> inches is equal to <span id="mm">--</span>mm</p>
 		</span>  
         </div>
       </div>
@@ -377,7 +327,7 @@
           </p>
 		  </br>
 		  <p id="dn-para" style="COLOR: #000000; FONT-SIZE: X-LARGE">
-		  <span id="dnPrice">0.00</span> each</h4>
+		  $<span id="dnPrice">0.00</span> each</h4>
 		  </p>
         </div>
       </div>

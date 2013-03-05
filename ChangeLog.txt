@@ -1,5 +1,42 @@
 *** ChangeLog ***
 
+2013-03-05 Naeem Pinto  <naeempinto@visual-lighting.com>
+	* ell.html:	updated jquery version from 1.8.2 to 1.9.1
+			removed js file 'form_init.js' from being loaded				
+			Removed blocks of previously "commented-out" code
+			Chainged 'tail-one-dropbox' and 'tail-two-dropbox', default select option name from "Tail 1" & "tail 2", to "Select Tail"
+			changed "length-convert-para" paragraph tag, under 'Length Conversion: ' area, to say "-- inches is equal to --mm"
+			Changed "dn-price" span tag, under 'Distributor Net Price: ' area, to include '$' directly before span
+	* elp.html: 	updated jquery version from 1.8.2 to 1.9.1
+			removed js file 'form_init.js' from being loaded				
+	* essentials.css: changed 'color' property under '#docContainer .fb-input-box input' (for custom length input box), from green to black
+	* index.html:	updated jquery version from 1.8.2 to 1.9.1
+			removed js file 'form_init.js' from being loaded
+	* js\form_init.js: Completely removed from commit
+	* js\linear_essentials: created 'resetAllform()', 'resetTailsBox()', 'resetLengthBox()', 'setTailExitOne()', 'setTailExitTwo()' and 'setAllTailExits()' functions
+				-removed 'resetLedBoardButtons()', 'resetColorTempButtons()', 'resetFinishButtons()', 'resetLensButtons()', 
+				'resetFactoryOptionsButtons()', 'resetCustomLength()', 'resetDescription()', 'resetPriceModifierButtons()', 
+				'resetCommentsBox()', setTailExits() methods, and 'document.getElementById("tail-one-dropbox").options.length = 1', 
+				'document.getElementById("tail-two-dropbox").options.length = 1', 
+				'document.getElementById("length-dropbox").options.length = 1' 
+				calls from 'set_1S_Env()', 'set_2SL_Env()', 'set_1R_Env()', 'set_1R_Env()', 'set_2RL_Env()', 'set_3SL_Env()',
+				and 'set_3SL_Env()' functions
+				-included 'resetAllform()', 'resetTailsBox()', 'resetLengthBox()', and 'setAllTailExits()' methods to 
+				'set_1S_Env()', 'set_2SL_Env()', 'set_1R_Env()', 'set_1R_Env()', 'set_2RL_Env()', 'set_3SL_Env()',
+				and 'set_3SL_Env()' functions
+				-turned "distributor_price" checkbox on and checked, for all 'set_XX_Env()' functions
+				-small change 'resetDescritpion()' function
+				-small change 'resetPriceModifierButtons()' function
+				-small change 'resetCommentsBox()' function
+				-deleted 'setTailExits()' function and replaced with 'setAllTailExits()' function
+				-changed algorythm for setting length dropbox, under 'setFixtureLengths()' function
+				-changed 'setPartNumber()' function to now be given [extrusionCode, ledCode, colorTempCode, finishCode, lensCode, 
+				wireCode, lengthCode, factoryOptionsCode] parameters
+				-changed 'setTrueLength()' function to now be give [lengthCode] parameter
+				-changed 'setCommentBox()' function to include "Be sure to set 3SL tail exits as 'WB1'..." note
+				-removed all code for "Clipboard Feature"
+
+
 2013-02-18  Naeem Pinto  <naeempinto@visual-lighting.com>
 	* index.html: newly added "portal" page
 	* ell.html: New GUI layout for linear essentials, replacing the old vlt_essentials.html file

@@ -170,7 +170,7 @@
 				phone_number.match( /^\(0\d{4}\)\d{5,6}$/ ) ||
 				phone_number.match( /^\(0\d{5}\)\d{4,5}$/ ) ||
 				phone_number.match( /^0\d{9,10}$/ );
-		}, 'Please specify a valid phone number');
+		}, 'Please specify a valid phone number'); 
 
 		jQuery.validator.addMethod('mobileUK', function(phone_number, element) {
 			phone_number = phone_number.replace(/[ext]{1,3}\.?\s*[\d]+$/, "");
