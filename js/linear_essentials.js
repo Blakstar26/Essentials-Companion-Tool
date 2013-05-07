@@ -7,7 +7,8 @@ function set_1S_Env()
 	document.getElementById("2590").disabled=true;
 	document.getElementById("nl").disabled=false;
 	document.getElementById("op").disabled=true;
-	document.getElementById("pg").disabled=false;
+	document.getElementById("pg").disabled=true;
+	document.getElementById("sl").disabled=false;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'C');
 	setAllTailExits(squareExits);
@@ -23,6 +24,7 @@ function set_2SL_Env()
 	resetLengthBox();
 	document.getElementById("2590").disabled=true;
 	document.getElementById("nl").disabled=true;
+	document.getElementById("sl").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
 	setAllTailExits(squareExits);
@@ -39,6 +41,7 @@ function set_1R_Env()
 	document.getElementById("2590").disabled=true;
 	document.getElementById("pg").disabled=true;
 	document.getElementById("op").disabled=true;
+	document.getElementById("sl").disabled=true;
 	document.getElementById("n").disabled=false;
 	document.getElementById("im").disabled=false;
 	document.getElementById("bu").disabled=false;
@@ -57,6 +60,7 @@ function set_2RL_Env()
 	resetLengthBox();
 	document.getElementById("2590").disabled=true;
 	document.getElementById("nl").disabled=true;
+	document.getElementById("sl").disabled=true;
 	document.getElementById("n").disabled=false;
 	document.getElementById("im").disabled=false;
 	document.getElementById("bu").disabled=false;
@@ -75,6 +79,7 @@ function set_3SL_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("nl").disabled=true;
+	document.getElementById("sl").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
 	setAllTailExits(squareExits);
@@ -90,6 +95,7 @@ function set_1QL_Env()
 	resetLengthBox();
 	document.getElementById("2590").disabled=true;
 	document.getElementById("nl").disabled=true;
+	document.getElementById("sl").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var quarterRoundExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR3', 'WB1', 'TB3', 'C');
 	setAllTailExits(quarterRoundExits);
@@ -182,9 +188,11 @@ function resetFinishButtons()
 function resetLensButtons()
 {
 	document.getElementById("pg").disabled=false;
+	document.getElementById("sl").disabled=false;
 	document.getElementById("op").disabled=false;
 	document.getElementById("nl").disabled=false;
 	document.getElementById("pg").checked=false;
+	document.getElementById("sl").checked=false;
 	document.getElementById("op").checked=false;
 	document.getElementById("nl").checked=false;
 }
@@ -422,6 +430,9 @@ function setLensCode()
 	if(document.getElementById("pg").checked==true)
 	{
 		lensCode = "PG";
+	} else if(document.getElementById("sl").checked==true)
+	{
+		lensCode = "SL";
 	} else if(document.getElementById("op").checked==true)
 	{
 		lensCode = "OP";
@@ -654,6 +665,10 @@ function setLensDescription(lensCode)
 	if (lensCode == 'PG')
 	{
 		lensDescription = 'clear, acrylic lens;';
+	} 
+	else if (lensCode == 'SL')
+	{
+		lensDescription = 'clear, sliding lens;';
 	} else if (lensCode == 'OP')
 	{
 		lensDescription = 'opal, acrylic lens;';
@@ -847,7 +862,7 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
     var LED_COUPON_LENGTH = 3.93;
     var CUSTOM_LENGTH_FEE = 10; //$10 custom cut fee
 	
-	var PG_1S_PER_FOOT = 2.46; //per foot price of 1S PG lens
+	var SL_1S_PER_FOOT = 7.5; //per foot price of 1S SL lens
 	var ROBLON_ACC_DISCOUNT = 0.70; //roblon accessory discount
     
 	// IF CHECKED, LOAD ROBLON PRICING
@@ -858,7 +873,7 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
 		var _2RL_DnPrice = new Array(28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20);
 		var _2SL_DnPrice = new Array(28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20);
 		var _3SL_DnPrice = new Array(36.06,	41.22,	51.52,	68.52,	86.04,	103.04,	120.04,	137.56,	154.56,	171.56,	189.08,	206.08,	223.08,	240.60,	257.60,	274.60,	292.12,	309.12,	326.12,	343.64,	360.64,	377.64,	395.16,	412.16);
-		var _3SL_Dual_DnPrice = new Array(54.10,	61.82,	77.28,	102.78,	129.06,	154.56,	180.06,	206.34,	231.84,	257.34,	283.62,	309.12,	334.62,	360.90,	386.40,	411.90,	438.18,	463.68,	489.18,	515.46,	540.96,	566.46,	592.74,	618.24);
+		var _3SL_Dual_DnPrice = new Array(54.10, 61.82,	77.28,	102.78,	129.06,	154.56,	180.06,	206.34,	231.84,	257.34,	283.62,	309.12,	334.62,	360.90,	386.40,	411.90,	438.18,	463.68,	489.18,	515.46,	540.96,	566.46,	592.74,	618.24);
 		var _1QL_DnPrice = new Array(28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20);
 	} else //SET DISTRIBUTOR PRICING
 	{
@@ -867,7 +882,7 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
 		var _2RL_DnPrice = new Array(48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36);
 		var _2SL_DnPrice = new Array(48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36);
 		var _3SL_DnPrice = new Array(61.18,	69.92,	87.40,	116.24,	145.96,	174.80,	203.64,	233.36,	262.20,	291.04,	320.76,	349.60,	378.44,	408.16,	437.00,	465.84,	495.56,	524.40,	553.24,	582.96,	611.80,	640.64,	670.36,	699.20);
-		var _3SL_Dual_DnPrice = new Array(90.16, 103.04, 128.80, 171.30, 215.10,	257.60,	300.10,	343.90,	386.40,	428.90,	380.70,	515.20,	557.70,	601.50,	644.00,	686.50,	730.30,	772.80,	815.30,	859.10,	901.60,	944.10,	987.90,	1030.40);
+		var _3SL_Dual_DnPrice = new Array(90.16, 103.04, 128.80, 171.30, 215.10, 257.60, 300.10, 343.90, 386.40, 428.90, 380.70, 515.20, 557.70, 601.50, 644.00, 686.50, 730.30, 772.80, 815.30, 859.10, 901.60, 944.10, 987.90, 1030.40);
 		var _1QL_DnPrice = new Array(48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36);
 	}
     
@@ -883,19 +898,31 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
             dnPrice = _1S_DnPrice[index-1];	
         }
 		
-		//Adding "PG" clear lens price to 1S price
-		if((document.getElementById("roblon_price").checked==true) && (document.getElementById("pg").checked==true))
+		//Adding "SL" clear lens price to 1S price
+		if((document.getElementById("roblon_price").checked==true) && (document.getElementById("sl").checked==true))
 		{
-			var ROBLON_PG_1S_PER_FOOT = PG_1S_PER_FOOT * ROBLON_ACC_DISCOUNT;
-			var pg_length = (trueLength/12); //convert lens length from inches to foot
-			pg_length = Math.ceil(pg_length); //round lens length up to nearest foot
-			var lens_cost = pg_length * ROBLON_PG_1S_PER_FOOT;
+			var ROBLON_SL_1S_PER_FOOT = SL_1S_PER_FOOT * ROBLON_ACC_DISCOUNT;
+			var sl_length = (trueLength/12); //convert lens length from inches to foot
+			if(((sl_length*12)%12) <= 1)
+			{				
+				sl_length = Math.floor(sl_length); //round lens length down to nearest foot
+			} else
+			{
+				sl_length = Math.ceil(sl_length); //round lens length up to nearest foot
+			}
+			var lens_cost = sl_length * ROBLON_SL_1S_PER_FOOT;
 			dnPrice = dnPrice + lens_cost;
-		} else if(document.getElementById("pg").checked==true)
+		} else if(document.getElementById("sl").checked==true)
 		{
-			var pg_length = (trueLength/12); //convert lens length from inches to foot
-			pg_length = Math.ceil(pg_length); //round lens length up to nearest foot
-			var lens_cost = pg_length * PG_1S_PER_FOOT;
+			var sl_length = (trueLength/12); //convert lens length from inches to foot
+			if(((sl_length*12)%12) <= 1)
+			{				
+				sl_length = Math.floor(sl_length); //round lens length down to nearest foot
+			} else
+			{
+				sl_length = Math.ceil(sl_length); //round lens length up to nearest foot
+			}
+			var lens_cost = sl_length * SL_1S_PER_FOOT;
 			dnPrice = dnPrice + lens_cost;
 		}
 	} else if (extrusionCode == "1R")
