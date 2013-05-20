@@ -5,10 +5,18 @@ function set_1S_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("2590").disabled=true;
+	document.getElementById("2598").disabled=true;
 	document.getElementById("nl").disabled=false;
-	document.getElementById("op").disabled=true;
 	document.getElementById("pg").disabled=true;
-	document.getElementById("sl").disabled=false;
+	document.getElementById("slc").disabled=false;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=true;
+	document.getElementById("60c").disabled=true;
+	document.getElementById("op1").disabled=true;
+	document.getElementById("op2").disabled=true;
+	document.getElementById("op3").disabled=true;
+	document.getElementById("df").disabled=true;
+	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'C');
 	setAllTailExits(squareExits);
@@ -23,8 +31,17 @@ function set_2SL_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("2590").disabled=true;
+	document.getElementById("2598").disabled=true;
 	document.getElementById("nl").disabled=true;
-	document.getElementById("sl").disabled=true;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=false;
+	document.getElementById("60c").disabled=false;
+	document.getElementById("op1").disabled=false;
+	document.getElementById("op2").disabled=false;
+	document.getElementById("op3").disabled=false;
+	document.getElementById("df").disabled=true;
+	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
 	setAllTailExits(squareExits);
@@ -39,12 +56,21 @@ function set_1R_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("2590").disabled=true;
+	document.getElementById("2598").disabled=true;
 	document.getElementById("pg").disabled=true;
-	document.getElementById("op").disabled=true;
-	document.getElementById("sl").disabled=true;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=true;
+	document.getElementById("60c").disabled=true;
+	document.getElementById("op1").disabled=true;
+	document.getElementById("op2").disabled=true;
+	document.getElementById("op3").disabled=true;
+	document.getElementById("df").disabled=true;
 	document.getElementById("n").disabled=false;
 	document.getElementById("im").disabled=false;
 	document.getElementById("bu").disabled=false;
+	document.getElementById("fs").disabled=false;
+	document.getElementById("cm").disabled=false;
 	document.getElementById("ro").disabled=false;
 	var roundExits = new Array('Select Tail', 'WE1', 'WE3', 'WB1', 'WB3', 'C');
 	setAllTailExits(roundExits);
@@ -59,12 +85,21 @@ function set_2RL_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("2590").disabled=true;
+	document.getElementById("2598").disabled=true;
 	document.getElementById("nl").disabled=true;
-	document.getElementById("sl").disabled=true;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=false;
+	document.getElementById("60c").disabled=false;
+	document.getElementById("op1").disabled=false;
+	document.getElementById("op2").disabled=false;
+	document.getElementById("op3").disabled=false;
+	document.getElementById("df").disabled=true;
 	document.getElementById("n").disabled=false;
 	document.getElementById("im").disabled=false;
 	document.getElementById("bu").disabled=false;
 	document.getElementById("fs").disabled=false;
+	document.getElementById("cm").disabled=false;
 	document.getElementById("ro").disabled=false;
 	var roundExits = new Array('Select Tail', 'WE1', 'WE3', 'WB1', 'WB3', 'C');
 	setAllTailExits(roundExits);
@@ -79,7 +114,15 @@ function set_3SL_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("nl").disabled=true;
-	document.getElementById("sl").disabled=true;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=false;
+	document.getElementById("60c").disabled=false;
+	document.getElementById("op1").disabled=false;
+	document.getElementById("op2").disabled=false;
+	document.getElementById("op3").disabled=false;
+	document.getElementById("df").disabled=true;
+	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
 	setAllTailExits(squareExits);
@@ -94,8 +137,16 @@ function set_1QL_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("2590").disabled=true;
+	document.getElementById("2598").disabled=true;
 	document.getElementById("nl").disabled=true;
-	document.getElementById("sl").disabled=true;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=false;
+	document.getElementById("60c").disabled=false;
+	document.getElementById("op1").disabled=false;
+	document.getElementById("op2").disabled=false;
+	document.getElementById("op3").disabled=false;
+	document.getElementById("df").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var quarterRoundExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR3', 'WB1', 'TB3', 'C');
 	setAllTailExits(quarterRoundExits);
@@ -103,25 +154,144 @@ function set_1QL_Env()
 	document.getElementById("distributor_price").checked=true;
 }
 
-//set, disable and/or enable buttons for 10th watt LED enviornment
+//set, disable and/or enable buttons for 4SL enviornment
+function set_4SL_Env()
+{
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
+	document.getElementById("2590").disabled=true;
+	document.getElementById("2598").disabled=true;
+	document.getElementById("pg").disabled=true;
+	document.getElementById("nl").disabled=true;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=true;
+	document.getElementById("60c").disabled=true;
+	document.getElementById("op1").disabled=false;
+	document.getElementById("op2").disabled=false;
+	document.getElementById("op3").disabled=false;
+	document.getElementById("df").disabled=true;
+	document.getElementById("ro").disabled=false;
+	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
+	setAllTailExits(squareExits);
+	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
+}
+
+//set, disable and/or enable buttons for 5SL enviornment
+function set_5SL_Env()
+{
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
+	document.getElementById("2590").disabled=true;
+	document.getElementById("2598").disabled=true;
+	document.getElementById("nl").disabled=true;
+	document.getElementById("pg").disabled=false;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=true;
+	document.getElementById("60c").disabled=true;
+	document.getElementById("op1").disabled=true;
+	document.getElementById("op2").disabled=true;
+	document.getElementById("op3").disabled=true;
+	document.getElementById("df").disabled=true;
+	document.getElementById("ro").disabled=false;
+	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
+	setAllTailExits(squareExits);
+	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
+}
+
+//set, disable and/or enable buttons for 6SL enviornment
+function set_6SL_Env()
+{
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
+	document.getElementById("nl").disabled=true;
+	document.getElementById("pg").disabled=false;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=true;
+	document.getElementById("60c").disabled=true;
+	document.getElementById("op1").disabled=false;
+	document.getElementById("op2").disabled=false;
+	document.getElementById("op3").disabled=false;
+	document.getElementById("df").disabled=true;
+	document.getElementById("cm").disabled=true;
+	document.getElementById("ro").disabled=false;
+	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
+	setAllTailExits(squareExits);
+	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
+}
+
+//set, disable and/or enable buttons for 1EL enviornment
+function set_1EL_Env()
+{
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
+	document.getElementById("2590").disabled=true;
+	document.getElementById("2598").disabled=true;
+	document.getElementById("nl").disabled=true;
+	document.getElementById("pg").disabled=true;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=true;
+	document.getElementById("60c").disabled=true;
+	document.getElementById("op1").disabled=true;
+	document.getElementById("op2").disabled=true;
+	document.getElementById("op3").disabled=true;
+	document.getElementById("df").disabled=false;
+	document.getElementById("cm").disabled=true;
+	document.getElementById("ro").disabled=false;
+	var EL_Exits = new Array('Select Tail', 'WE1', 'WE3', 'C');
+	setAllTailExits(EL_Exits);
+	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
+}
+
+//set, disable and/or enable buttons for LR enviornment
+function set_LR_Env()
+{
+}
+
+//set, disable and/or enable buttons for 10th watt (157) LED enviornment
 function set_1018_Env()
 {
 	document.getElementById("2400").checked=false;
 	document.getElementById("2400").disabled=true;
 }
 
-//set, disable and/or enable buttons for 1/4 watt LED enviornment
+//set, disable and/or enable buttons for 1/4 watt (157) LED enviornment
 function set_2545_Env()
 {
 	document.getElementById("2400").checked=false;
 	document.getElementById("2400").disabled=false;
 }
 
-//set, disable and/or enable buttons for dual 1/4 watt LED enviornment
+//set, disable and/or enable buttons for 1/4 watt (757) LED enviornment
+function set_2549_Env()
+{
+	document.getElementById("2400").checked=false;
+	document.getElementById("2400").disabled=true;
+}
+
+//set, disable and/or enable buttons for dual 1/4 watt (157) LED enviornment
 function set_2590_Env()
 {
 	document.getElementById("2400").checked=false;
 	document.getElementById("2400").disabled=false;
+}
+
+//set, disable and/or enable buttons for dual 1/4 watt (757) LED enviornment
+function set_2598_Env()
+{
+	document.getElementById("2400").checked=false;
+	document.getElementById("2400").disabled=true;
 }
 
 //******************************************************************
@@ -153,10 +323,14 @@ function resetLedBoardButtons()
 {
 	document.getElementById("1018").disabled=false;
 	document.getElementById("2545").disabled=false;
+	document.getElementById("2549").disabled=false;
 	document.getElementById("2590").disabled=false;
+	document.getElementById("2598").disabled=false;
 	document.getElementById("1018").checked=false;
 	document.getElementById("2545").checked=false;
+	document.getElementById("2549").checked=false;
 	document.getElementById("2590").checked=false;
+	document.getElementById("2598").checked=false;
 }
 
 function resetColorTempButtons()
@@ -187,14 +361,28 @@ function resetFinishButtons()
 
 function resetLensButtons()
 {
-	document.getElementById("pg").disabled=false;
-	document.getElementById("sl").disabled=false;
-	document.getElementById("op").disabled=false;
 	document.getElementById("nl").disabled=false;
-	document.getElementById("pg").checked=false;
-	document.getElementById("sl").checked=false;
-	document.getElementById("op").checked=false;
+	document.getElementById("pg").disabled=false;
+	document.getElementById("slc").disabled=false;
+	document.getElementById("10c").disabled=false;
+	document.getElementById("30c").disabled=false;
+	document.getElementById("60c").disabled=false;
+	document.getElementById("op1").disabled=false;
+	document.getElementById("op2").disabled=false;
+	document.getElementById("op3").disabled=false;
+	document.getElementById("df").disabled=false;
+	
 	document.getElementById("nl").checked=false;
+	document.getElementById("pg").checked=false;
+	document.getElementById("slc").checked=false;
+	document.getElementById("10c").checked=false;
+	document.getElementById("30c").checked=false;
+	document.getElementById("60c").checked=false;
+	document.getElementById("op1").checked=false;
+	document.getElementById("op2").checked=false;
+	document.getElementById("op3").checked=false;
+	document.getElementById("df").checked=false;
+	
 }
 
 function resetFactoryOptionsButtons()
@@ -204,10 +392,13 @@ function resetFactoryOptionsButtons()
 	document.getElementById("im").disabled=true;
 	document.getElementById("bu").disabled=true;	
 	document.getElementById("fs").disabled=true;
+	document.getElementById("cm").disabled=true;
+	
 	document.getElementById("n").checked=false;
 	document.getElementById("im").checked=false;
 	document.getElementById("bu").checked=false;
 	document.getElementById("fs").checked=false;
+	document.getElementById("cm").checked=false;
 	document.getElementById("ro").checked=false;
 }
 
@@ -360,10 +551,25 @@ function setExtrusionCode()
 	} else if(document.getElementById("3SL").checked==true)
 	{
 		extrusionCode = "3SL";
+	} else if(document.getElementById("4SL").checked==true)
+	{
+		extrusionCode = "4SL";
+	} else if(document.getElementById("5SL").checked==true)
+	{
+		extrusionCode = "5SL";
+	} else if(document.getElementById("6SL").checked==true)
+	{
+		extrusionCode = "6SL";
 	} else if(document.getElementById("1QL").checked==true)
 	{
 		extrusionCode = "1QL";
-	}
+	} else if(document.getElementById("1EL").checked==true)
+	{
+		extrusionCode = "1EL";
+	} else if(document.getElementById("LR").checked==true)
+	{
+		extrusionCode = "LR";
+	} 
 	return extrusionCode;
 }
 
@@ -376,10 +582,17 @@ function setLedCode()
 	} else if(document.getElementById("2545").checked==true)
 	{
 		ledCode = "2545";
+	} else if(document.getElementById("2549").checked==true)
+	{
+		ledCode = "2549";
 	} else if(document.getElementById("2590").checked==true)
 	{
 		ledCode = "2590";
+	} else if(document.getElementById("2598").checked==true)
+	{
+		ledCode = "2598";
 	}
+	
 	return ledCode;
 }
 
@@ -430,15 +643,33 @@ function setLensCode()
 	if(document.getElementById("pg").checked==true)
 	{
 		lensCode = "PG";
-	} else if(document.getElementById("sl").checked==true)
+	} else if(document.getElementById("slc").checked==true)
 	{
-		lensCode = "SL";
-	} else if(document.getElementById("op").checked==true)
+		lensCode = "SLC";
+	} else if(document.getElementById("10c").checked==true)
 	{
-		lensCode = "OP";
+		lensCode = "10C";
+	} else if(document.getElementById("30c").checked==true)
+	{
+		lensCode = "30C";
+	} else if(document.getElementById("60c").checked==true)
+	{
+		lensCode = "60C";
+	} else if(document.getElementById("op1").checked==true)
+	{
+		lensCode = "OP1";
+	} else if(document.getElementById("op2").checked==true)
+	{
+		lensCode = "OP2";
+	} else if(document.getElementById("op3").checked==true)
+	{
+		lensCode = "OP3";
 	} else if(document.getElementById("nl").checked==true)
 	{
 		lensCode = "NL";
+	} else if(document.getElementById("df").checked==true)
+	{
+		lensCode = "DF";
 	}
 	return lensCode;
 }
@@ -489,6 +720,9 @@ function setFactoryOptionsCode(extrusionCode)
 		} else if(document.getElementById("fs").checked==true)
 		{
 			factoryOptionsCode = "-FS";
+		} else if(document.getElementById("cm").checked==true)
+		{
+			factoryOptionsCode = "-CM";
 		} else {
 			alert("Please select factory option");
 			exit();
@@ -513,9 +747,12 @@ function setPartNumber(extrusionCode, ledCode, colorTempCode, finishCode, lensCo
 function setIpRating(extrusionCode)
 {
 	var ipRating;
-	if ((extrusionCode == "2SL") || (extrusionCode == "2RL") || (extrusionCode == "3SL") || (extrusionCode == "1QL"))
+	if ((extrusionCode == "2SL") || (extrusionCode == "2RL") || (extrusionCode == "3SL") || (extrusionCode == "4SL") || (extrusionCode == "1QL") || (extrusionCode == "1EL"))
 	{
 		ipRating = "IP64";
+	} else if ((extrusionCode == "5SL") || (extrusionCode == "6SL"))
+	{
+		ipRating = "IP67";
 	} else 
 	{
 		ipRating = "IP20";
@@ -590,19 +827,31 @@ function setExtrusionDescription(extrusionCode, ipRating)
   		extrusionDescription = "Small-Square ("+ipRating+") extrusion;";
   		break;
 		case "2SL":
-  		extrusionDescription = "Medium-Square ("+ipRating+") extrusion;";
+  		extrusionDescription = "Medium-Square/Lensed ("+ipRating+") extrusion;";
   		break;
   		case "1R":
   		extrusionDescription = "Small-Round ("+ipRating+") extrusion;";
   		break;
   		case "2RL":
-  		extrusionDescription = "Large-Round ("+ipRating+") extrusion;";
+  		extrusionDescription = "Large-Round/Lensed ("+ipRating+") extrusion;";
   		break;
   		case "3SL":
-  		extrusionDescription = "Large-Square ("+ipRating+") extrusion;";
+  		extrusionDescription = "Large-Square/Lensed ("+ipRating+") extrusion;";
+  		break;
+		case "4SL":
+  		extrusionDescription = "Medium-Square/Deep ("+ipRating+") extrusion;";
+  		break;
+		case "5SL":
+  		extrusionDescription = "Medium-Square/Exterior ("+ipRating+") extrusion;";
+  		break;
+		case "6SL":
+  		extrusionDescription = "Large-Square/Exterior ("+ipRating+") extrusion;";
   		break;
   		case "1QL":
   		extrusionDescription = "Quarter-Round ("+ipRating+") extrusion;";
+  		break;
+		case "1EL":
+  		extrusionDescription = "Ellipse/Lensed ("+ipRating+") extrusion;";
   		break;
 		default:
   		//code to be executed if n is different from case 1 and 2
@@ -623,13 +872,19 @@ function setLedDescription(ledCode)
 	var ledDescription;
 	if (ledCode == '1018')
 	{
-		ledDescription = "0.1 watt Nichia LEDs;";
+		ledDescription = "0.10 watt (157 - 63 lm/w) Nichia LEDs;";
 	} else if (ledCode == '2545')
 	{
-		ledDescription = "0.25 watt Nichia LEDs;";
+		ledDescription = "0.25 watt (157 - 69 lm/w) Nichia LEDs;";
+	} else if (ledCode == '2549')
+	{
+		ledDescription = "0.25 watt (757 - 91 lm/w) Nichia LEDs;";
 	} else if (ledCode == '2590')
 	{
-		ledDescription = "2 rows of 0.25 watt Nichia LEDs;";
+		ledDescription = "2 rows of 0.25 watt (157 - 133 lm/w) Nichia LEDs;";
+	} else if (ledCode == '2598')
+	{
+		ledDescription = "2 rows of 0.25 watt (757 - 182 lm/w) Nichia LEDs;";
 	}
 	return ledDescription;
 }
@@ -665,13 +920,30 @@ function setLensDescription(lensCode)
 	if (lensCode == 'PG')
 	{
 		lensDescription = 'clear, acrylic lens;';
-	} 
-	else if (lensCode == 'SL')
+	} else if (lensCode == 'SLC')
 	{
 		lensDescription = 'clear, sliding lens;';
-	} else if (lensCode == 'OP')
+	} else if (lensCode == '10c')
 	{
-		lensDescription = 'opal, acrylic lens;';
+		lensDescription = '10° beam lens;';
+	} else if (lensCode == '30c')
+	{
+		lensDescription = '30° beam lens;';
+	} else if (lensCode == '60c')
+	{
+		lensDescription = '60° beam lens;';
+	} else if (lensCode == 'OP1')
+	{
+		lensDescription = 'opal, light-diffused lens;';
+	} else if (lensCode == 'OP2')
+	{
+		lensDescription = 'opal, medium-diffused lens;';
+	} else if (lensCode == 'OP3')
+	{
+		lensDescription = 'opal, heavily-diffused lens;';
+	} else if (lensCode == 'DF')
+	{
+		lensDescription = 'diffuser film;';
 	} else if (lensCode == 'NL')
 	{
 		lensDescription = 'no lens;';
@@ -723,6 +995,9 @@ function setFactoryOptionsDescription(factoryOptionsCode)
 	} else if (document.getElementById("fs").checked==true)
 	{
 		factoryOptionsDescription = 'factory installed, XX" high free standing mount , with 8mm leg and end joint; '
+	} else if (document.getElementById("cm").checked==true)
+	{
+		factoryOptionsDescription = 'factory installed, XX" high center mount, with centered 8mm leg; '
 	} else 
 	{
 		factoryOptionsDescription = 'fixture mounts using surface mounting clip, 1 per 18" (min. 2 per fixture); '
@@ -789,7 +1064,14 @@ function setTotalWatts(ledCode, trueLength, lengthCode)
         } else if (ledCode == "2545")
         {
             totalWatts = quarterWattages[index-1];
+        } else if (ledCode == "2549")
+        {
+            totalWatts = quarterWattages[index-1];
         } else if (ledCode == "2590")
+        {
+            totalWatts = quarterWattages[index-1];
+            totalWatts = (totalWatts * 2);
+        } else if (ledCode == "2598")
         {
             totalWatts = quarterWattages[index-1];
             totalWatts = (totalWatts * 2);
@@ -806,7 +1088,14 @@ function setTotalWatts(ledCode, trueLength, lengthCode)
         } else if (ledCode == "2545")
         {
             totalWatts = quarterWattages[index-1];
+        } else if (ledCode == "2549")
+        {
+            totalWatts = quarterWattages[index-1];
         } else if (ledCode == "2590")
+        {
+            totalWatts = quarterWattages[index-1];
+            totalWatts = (totalWatts * 2);
+        } else if (ledCode == "2598")
         {
             totalWatts = quarterWattages[index-1];
             totalWatts = (totalWatts * 2);
@@ -862,7 +1151,7 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
     var LED_COUPON_LENGTH = 3.93;
     var CUSTOM_LENGTH_FEE = 10; //$10 custom cut fee
 	
-	var SL_1S_PER_FOOT = 7.5; //per foot price of 1S SL lens
+	var SLC_1S_PER_FOOT = 7.5; //per foot price of 1S SLC lens
 	var ROBLON_ACC_DISCOUNT = 0.70; //roblon accessory discount
     
 	// IF CHECKED, LOAD ROBLON PRICING
@@ -898,31 +1187,31 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
             dnPrice = _1S_DnPrice[index-1];	
         }
 		
-		//Adding "SL" clear lens price to 1S price
-		if((document.getElementById("roblon_price").checked==true) && (document.getElementById("sl").checked==true))
+		//Adding "SLC" clear lens price to 1S price
+		if((document.getElementById("roblon_price").checked==true) && (document.getElementById("slc").checked==true))
 		{
-			var ROBLON_SL_1S_PER_FOOT = SL_1S_PER_FOOT * ROBLON_ACC_DISCOUNT;
-			var sl_length = (trueLength/12); //convert lens length from inches to foot
-			if(((sl_length*12)%12) <= 1)
+			var ROBLON_SLC_1S_PER_FOOT = SLC_1S_PER_FOOT * ROBLON_ACC_DISCOUNT;
+			var slc_length = (trueLength/12); //convert lens length from inches to foot
+			if(((slc_length*12)%12) <= 1)
 			{				
-				sl_length = Math.floor(sl_length); //round lens length down to nearest foot
+				slc_length = Math.floor(slc_length); //round lens length down to nearest foot
 			} else
 			{
-				sl_length = Math.ceil(sl_length); //round lens length up to nearest foot
+				slc_length = Math.ceil(slc_length); //round lens length up to nearest foot
 			}
-			var lens_cost = sl_length * ROBLON_SL_1S_PER_FOOT;
+			var lens_cost = slc_length * ROBLON_SLC_1S_PER_FOOT;
 			dnPrice = dnPrice + lens_cost;
-		} else if(document.getElementById("sl").checked==true)
+		} else if(document.getElementById("slc").checked==true)
 		{
-			var sl_length = (trueLength/12); //convert lens length from inches to foot
-			if(((sl_length*12)%12) <= 1)
+			var slc_length = (trueLength/12); //convert lens length from inches to foot
+			if(((slc_length*12)%12) <= 1)
 			{				
-				sl_length = Math.floor(sl_length); //round lens length down to nearest foot
+				slc_length = Math.floor(slc_length); //round lens length down to nearest foot
 			} else
 			{
-				sl_length = Math.ceil(sl_length); //round lens length up to nearest foot
+				slc_length = Math.ceil(slc_length); //round lens length up to nearest foot
 			}
-			var lens_cost = sl_length * SL_1S_PER_FOOT;
+			var lens_cost = slc_length * SLC_1S_PER_FOOT;
 			dnPrice = dnPrice + lens_cost;
 		}
 	} else if (extrusionCode == "1R")

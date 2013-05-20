@@ -4,6 +4,8 @@
     <title>VLT ESSENTIALS</title>
 	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="shortcut icon" href="img/favicon/VLT_favicon_16x16.ico" />
+	
 	<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
     <script type="text/javascript" src="js/linear_essentials.js"></script>
     <link rel="stylesheet" type="text/css" href="essentials.css" id="theme" />
@@ -67,6 +69,12 @@
           <label id="2SL-label"><input id="2SL" name="extrusion-group" type="radio" value="2SL" onclick="set_2SL_Env()"/><span id="2SL-button-label" class="fb-fieldlabel">2SL</span></label>
           <label id="2RL-label"><input id="2RL" name="extrusion-group" type="radio" value="2RL" onclick="set_2RL_Env()"/><span id="2RL-button-label" class="fb-fieldlabel">2RL</span></label>
           <label id="1QL-label"><input id="1QL" name="extrusion-group" type="radio" value="1QL" onclick="set_1QL_Env()"/><span id="1QL-button-label" class="fb-fieldlabel">1QL</span></label>
+		  
+		  <label id="4S-label"><input id="4SL" name="extrusion-group" type="radio" value="4S" onclick="set_4SL_Env()"/><span id="4S-button-label" class="fb-fieldlabel">4S</span></label>
+		  <label id="5S-label"><input id="5SL" name="extrusion-group" type="radio" value="5S" onclick="set_5SL_Env()"/><span id="5S-button-label" class="fb-fieldlabel">5S</span></label>
+		  <label id="6S-label"><input id="6SL" name="extrusion-group" type="radio" value="6S" onclick="set_6SL_Env()" disabled /><span id="6S-button-label" class="fb-fieldlabel">6S</span></label>
+		  <label id="1EL-label"><input id="1EL" name="extrusion-group" type="radio" value="1EL" onclick="set_1EL_Env()" disabled /><span id="1EL-button-label" class="fb-fieldlabel">1EL</span></label>
+		  <label id="LR-label"><input id="LR" name="extrusion-group" type="radio" value="LR" onclick="set_LR_Env()" disabled /><span id="LR-button-label" class="fb-fieldlabel">LR</span></label>
         </div>
       </div>
 
@@ -86,9 +94,11 @@
         </div>
         <div style="FONT-FAMILY: trebuchet ms; COLOR: rgb(0,0,0); FONT-WEIGHT: normal"
         class="fb-radio">
-          <label id="1018-label"><input id="1018" name="led-board-group" type="radio" value="0.10 watt" onclick="set_1018_Env()"/><span id="item23_0_span" class="fb-fieldlabel">0.10 watt</span></label>
-          <label id="2545-label"><input id="2545" name="led-board-group" type="radio" value="0.25 watt" onclick="set_2545_Env()"/><span id="item23_1_span" class="fb-fieldlabel">0.25 watt</span></label>
-          <label id="2590-label"><input id="2590" name="led-board-group" type="radio" value="0.25 watt (dual)" onclick="set_2590_Env()"/><span id="item23_2_span" class="fb-fieldlabel">0.25 watt (dual)</span></label>
+          <label id="1018-label"><input id="1018" name="led-board-group" type="radio" value="157" onclick="set_1018_Env()"/><span id="item23_0_span" class="fb-fieldlabel">0.10w [157]</span></label>
+          <label id="2545-label"><input id="2545" name="led-board-group" type="radio" value="157" onclick="set_2545_Env()"/><span id="item23_1_span" class="fb-fieldlabel">0.25w [157]</span></label>
+		  <label id="2549-label"><input id="2549" name="led-board-group" type="radio" value="757" onclick="set_2549_Env()"/><span id="item23_3_span" class="fb-fieldlabel">0.25w [757]</span></label>
+          <label id="2590-label"><input id="2590" name="led-board-group" type="radio" value="157" onclick="set_2590_Env()"/><span id="item23_2_span" class="fb-fieldlabel">0.25w (x2) [157]</span></label>  
+		  <label id="2598-label"><input id="2598" name="led-board-group" type="radio" value="757" onclick="set_2598_Env()"/><span id="item23_4_span" class="fb-fieldlabel">0.25w (x2) [757]</span></label>
         </div>
       </div>
 
@@ -155,10 +165,17 @@
         </div>
         <div style="FONT-FAMILY: trebuchet ms; COLOR: rgb(0,0,0); FONT-WEIGHT: normal"
         class="fb-radio">
-          <label id="pg-label"><input id="pg" name="lens-group" type="radio" value="PG - Clear Acrylic" /><span id="item26_0_span" class="fb-fieldlabel">PG - Clear Acrylic</span></label>
-		  <label id="sl-label"><input id="sl" name="lens-group" type="radio" value="SL - Sliding Lens" /><span id="item26_3_span" class="fb-fieldlabel">SL - Sliding Lens</span></label>
-          <label id="op-label"><input id="op" name="lens-group" type="radio" value="OP - Opal Acrylic" /><span id="item26_1_span" class="fb-fieldlabel">OP - Opal Acrylic</span></label>
-          <label id="nl-label"><input id="nl" name="lens-group" type="radio" value="NL - No Lens" /><span id="item26_2_span" class="fb-fieldlabel">NL - No Lens</span></label>
+		  <label id="nl-label"><input id="nl" name="lens-group" type="radio" value="NL - No Lens" /><span id="item26_2_span" class="fb-fieldlabel">NL - No Lens</span></label>
+  		  <label id="pg-label"><input id="pg" name="lens-group" type="radio" value="PG - Clear Acrylic" /><span id="item26_0_span" class="fb-fieldlabel">PG - Clear Acrylic</span></label>
+		  <label id="slc-label"><input id="slc" name="lens-group" type="radio" value="SLC - Sliding Lens" /><span id="item26_3_span" class="fb-fieldlabel">SLC - Sliding Lens</span></label>
+          <!-- <label id="op-label"><input id="op" name="lens-group" type="radio" value="OP - Opal Acrylic" /><span id="item26_1_span" class="fb-fieldlabel">OP - Opal Acrylic</span></label> -->
+		  <label id="10c-label"><input id="10c" name="lens-group" type="radio" value="10c" /><span id="item26_4_span" class="fb-fieldlabel">10C - 10° Clear</span></label>
+		  <label id="30c-label"><input id="30c" name="lens-group" type="radio" value="30c" /><span id="item26_5_span" class="fb-fieldlabel">30C - 30° Clear</span></label>
+		  <label id="60c-label"><input id="60c" name="lens-group" type="radio" value="60c" /><span id="item26_6_span" class="fb-fieldlabel">60C - 60° Clear</span></label>
+          <label id="op1-label"><input id="op1" name="lens-group" type="radio" value="OP1" /><span id="item26_7_span" class="fb-fieldlabel">OP1 - Opal Acrylic 1</span></label>
+		  <label id="op2-label"><input id="op2" name="lens-group" type="radio" value="OP2" /><span id="item26_8_span" class="fb-fieldlabel">OP2 - Opal Acrylic 2</span></label>
+		  <label id="op3-label"><input id="op3" name="lens-group" type="radio" value="OP3" /><span id="item26_9_span" class="fb-fieldlabel">OP3 - Opal Acrylic 3</span></label>  
+		  <label id="df-label"><input id="df" name="lens-group" type="radio" value="DF" /><span id="item26_10_span" class="fb-fieldlabel">DF - Diffuser Film</span></label>  
         </div>
       </div>
 	 
@@ -183,6 +200,7 @@
           <label id="im-label"><input id="im" name="factory-installed-group" type="radio" value="IM - Inside Mount End Caps" /><span id="item27_1_span" class="fb-fieldlabel">IM - Inside Mount End Caps</span></label>
           <label id="bu-label"><input id="bu" name="factory-installed-group" type="radio" value="BU - Bushing" /><span id="item27_2_span" class="fb-fieldlabel">BU - Bushing</span></label>
           <label id="fs-label"><input id="fs" name="factory-installed-group" type="radio" value="FS - Free Standing Mount" /><span id="item27_3_span" class="fb-fieldlabel">FS - Free Standing Mount</span></label>
+		  <label id="cm-label"><input id="cm" name="factory-installed-group" type="radio" value="CM - Center Mount" /><span id="item27_5_span" class="fb-fieldlabel">CM - Center Mount</span></label>
           <label id="ro-label"><input id="ro" name="factory-installed-group" type="checkbox" value="RO - RoHS Compliant" /><span id="item27_4_span" class="fb-fieldlabel">RO - RoHS Compliant</span></label>
         </div>
       </div>
