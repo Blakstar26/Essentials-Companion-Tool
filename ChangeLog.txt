@@ -1,4 +1,13 @@
 *** ChangeLog ***
+2013-05-24 Naeem Pinto  <naeempinto@visual-lighting.com>
+	* ell.html: Complete overhaul and revision to linear UI
+	* elp.html: changed css link to new panel css file, 'ell_panel.css'
+	* essentials.css: renamed to 'ell_panel.css', and moved to 'my_css' folder
+	* js\linear_essentials.js: -updated 'set_1EL_Env()', 'resetDescription()', 'resetCommentBox()' to accomidate new fixture types
+				-included new method 'enableCustomInput()' and 'fnSelect()'
+	* my_css\ell_linear.css: new css file for linear
+	* my_css\ell_panel.css: renamed and moved from 'essentials.css'
+	* index.html: 
 
 2013-03-05 Naeem Pinto  <naeempinto@visual-lighting.com>
 	* ell.html:	updated jquery version from 1.8.2 to 1.9.1

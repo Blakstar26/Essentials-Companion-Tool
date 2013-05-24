@@ -246,6 +246,7 @@ function set_1EL_Env()
 	document.getElementById("op2").disabled=true;
 	document.getElementById("op3").disabled=true;
 	document.getElementById("df").disabled=false;
+	document.getElementById("df").checked=true;
 	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var EL_Exits = new Array('Select Tail', 'WE1', 'WE3', 'C');
@@ -393,6 +394,7 @@ function resetFactoryOptionsButtons()
 	document.getElementById("bu").disabled=true;	
 	document.getElementById("fs").disabled=true;
 	document.getElementById("cm").disabled=true;
+	document.getElementById("ro").disabled=true;
 	
 	document.getElementById("n").checked=false;
 	document.getElementById("im").checked=false;
@@ -409,8 +411,8 @@ function resetCustomLength()
 }
 
 function resetDescription() {
-	document.getElementById('description').innerHTML='';
-	document.getElementById('watts').innerHTML='';
+	document.getElementById('description').innerHTML='--';
+	document.getElementById('watts').innerHTML='--';
 	document.getElementById('inches').innerHTML='--';
 	document.getElementById('mm').innerHTML='--';
 	document.getElementById('dnPrice').innerHTML='0.00';
@@ -431,7 +433,7 @@ function resetPriceModifierButtons()
 
 function resetCommentsBox()
 {
-	document.getElementById('comment').innerHTML='';
+	document.getElementById('comment').innerHTML='--';
 }
 
 function resetXXButtons()
@@ -501,6 +503,20 @@ function setFixtureLengths()
 	$.each(fixtureLengths, function(val, text) {
 		options[options.length] = new Option(text, val);
 	});
+}
+ // ENABLE CUSTOM LENGTH INPUT, IF 'C' SELECTED FROM DROPDOWN//
+function enableCustomInput()
+{
+	var index = document.getElementById("length-dropbox").selectedIndex;
+	var wireCode = document.getElementById("length-dropbox").options[index].text;
+	if (wireCode == "C"){
+		document.getElementById("custom-length-input").value="";
+		document.getElementById("custom-length-input").disabled=false;
+	} else 
+	{
+		document.getElementById("custom-length-input").value="";
+		document.getElementById("custom-length-input").disabled=true;
+	}
 }
 
 function setPriceDisplay()
@@ -796,9 +812,9 @@ function setLengthConversion(inches)
 function setCommentBox()
 {
 	var comment = '';
-	if(document.getElementById("fs").checked==true)
+	if((document.getElementById("fs").checked==true) || (document.getElementById("cm").checked==true))
 	{
-		comment = comment+'+ Don\'t forget - Include \'Free Standing Mount\' price in Quotewerks!<br/>+ Don\'t forget - $15 adder for \'Free Standing\' mounts at non-standard heights';
+		comment = comment+'+ Don\'t forget - Include \'Free Standing/Center Mount\' price in Quotewerks!<br/>+ Don\'t forget - $15 adder for \'Free Standing/Center\' mounts at non-standard heights';
 	}
 	
 	if(document.getElementById("roblon_price").checked==true)
@@ -1164,6 +1180,11 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
 		var _3SL_DnPrice = new Array(36.06,	41.22,	51.52,	68.52,	86.04,	103.04,	120.04,	137.56,	154.56,	171.56,	189.08,	206.08,	223.08,	240.60,	257.60,	274.60,	292.12,	309.12,	326.12,	343.64,	360.64,	377.64,	395.16,	412.16);
 		var _3SL_Dual_DnPrice = new Array(54.10, 61.82,	77.28,	102.78,	129.06,	154.56,	180.06,	206.34,	231.84,	257.34,	283.62,	309.12,	334.62,	360.90,	386.40,	411.90,	438.18,	463.68,	489.18,	515.46,	540.96,	566.46,	592.74,	618.24);
 		var _1QL_DnPrice = new Array(28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20);
+		var _4SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		var _5SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		var _6SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		var _1EL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		var _LR_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 	} else //SET DISTRIBUTOR PRICING
 	{
 		var _1S_DnPrice = new Array(34.13,	39.01,	48.76,	64.85,	81.43,	97.52,	113.61,	130.19,	146.28,	162.37,	178.95,	195.04,	211.13,	227.71,	243.80,	259.89,	276.47,	292.56,	308.65,	325.23,	341.32,	357.41,	373.99,	390.08);
@@ -1173,6 +1194,11 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
 		var _3SL_DnPrice = new Array(61.18,	69.92,	87.40,	116.24,	145.96,	174.80,	203.64,	233.36,	262.20,	291.04,	320.76,	349.60,	378.44,	408.16,	437.00,	465.84,	495.56,	524.40,	553.24,	582.96,	611.80,	640.64,	670.36,	699.20);
 		var _3SL_Dual_DnPrice = new Array(90.16, 103.04, 128.80, 171.30, 215.10, 257.60, 300.10, 343.90, 386.40, 428.90, 380.70, 515.20, 557.70, 601.50, 644.00, 686.50, 730.30, 772.80, 815.30, 859.10, 901.60, 944.10, 987.90, 1030.40);
 		var _1QL_DnPrice = new Array(48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36);
+		var _4SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		var _5SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		var _6SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		var _1EL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
+		var _LR_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
 	}
     
     if (extrusionCode == "1S")
@@ -1303,7 +1329,7 @@ function setDnPrice(extrusionCode, trueLength, lengthCode)
 
 function printFullDescription(fullDescription, wattsDescription)
 {
-	document.getElementById('description').innerHTML=fullDescription.fontcolor("#000000");
+	document.getElementById('description').innerHTML=fullDescription.fontsize(2);
 }
 
 function printLengthConversion(inches, mm)
@@ -1314,24 +1340,45 @@ function printLengthConversion(inches, mm)
 
 function printTotalWattage(totalWatts)
 {
-	document.getElementById('watts').innerHTML=totalWatts.fontcolor("#000000");
+	document.getElementById('watts').innerHTML=totalWatts;
 }
 
 function printDnPrice(dnPrice)
 {
-	document.getElementById('dnPrice').innerHTML=dnPrice.fontcolor("#000000");
+	document.getElementById('dnPrice').innerHTML=dnPrice;
 }
 
 function printCommentBox(commentBox)
 {
+	/* document.getElementById('comment').innerHTML=commentBox.fontsize(2); */
 	document.getElementById('comment').innerHTML=commentBox;
 }
 
 // ******************************* TESTING SEND TO CLIPBOARD FEATURE - START *******************************
 
-
-
-
+function fnSelect(objId)
+{
+   fnDeSelect();
+   if (document.selection) 
+   {
+      var range = document.body.createTextRange();
+      range.moveToElementText(document.getElementById(objId));
+      range.select();
+   }
+   else if (window.getSelection) 
+   {
+      var range = document.createRange();
+      range.selectNode(document.getElementById(objId));
+      window.getSelection().addRange(range);
+   }
+}
+function fnDeSelect() 
+{
+   if (document.selection)
+             document.selection.empty();
+   else if (window.getSelection)
+              window.getSelection().removeAllRanges();
+} 
 // ******************************* TESTING SEND TO CLIPBOARD FEATURE - END *******************************
 
 function main()
