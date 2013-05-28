@@ -192,24 +192,23 @@ footer {
 }
 
 .select-text-button {
-	display: block;
-	float: right;
-	margin: auto;
-	
+	float: left;
 	height: 15px;
-    width: 15px;
-    border: none;
+	width: 15px;
+	border: none;
 	color: black;
 	background-color: rgba(255, 0, 0, 0.5);
-	/* rounded corners */
-	/* -moz-border-radius: 18px; */
-	/* -webkit-border-radius: 18px; */
-	/* border-radius: 18px; */
 	/* box-shadow corners */
 	-webkit-box-shadow: 0 0 20px 0 rgba(255,255,255,0.28);
 	-moz-box-shadow: 0 0 20px 0 rgba(255,255,255,0.28);
 	box-shadow: 0 0 20px 0 rgba(255,255,255,0.28);
 }
+
+.button-gbox {
+	padding-left: 0px;
+	margin-left: 0px;
+}
+
 
 /* #price-modifers label {
 	
