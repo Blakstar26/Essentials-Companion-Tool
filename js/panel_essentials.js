@@ -62,6 +62,7 @@ function set_tenthWatt_Env()
 	document.getElementById("af").disabled=true;
 	document.getElementById("so").disabled=true;
 	document.getElementById("sg").disabled=true;
+	document.getElementById("d").checked=true;
 	document.getElementById("distributor_price").disabled=false;
 	document.getElementById("distributor_price").checked=true;
 	var panelExits = new Array('WE1', 'WE2', 'WE3', 'C');
@@ -154,9 +155,9 @@ function resetFactoryOptionsButtons()
 
 function resetDescription() 
 {
-	document.getElementById('description').innerHTML='';
-	document.getElementById('description').innerHTML='';
-	document.getElementById('watts').innerHTML='';
+	document.getElementById('description').innerHTML="--";
+	/* document.getElementById('description').innerHTML=''; */
+	document.getElementById('watts').innerHTML='--';
 	document.getElementById('total-panel-area').innerHTML='--';
 	document.getElementById('number-of-leds').innerHTML='--';
 	document.getElementById('dnPrice').innerHTML='0.00';
@@ -998,17 +999,17 @@ function setPrice(squareFoot, ledCode, wireLeadCount, wireLengthCode, ledSpacing
 
 function printFullDescription(fullDescription, wattsDescription)
 {
-	document.getElementById('description').innerHTML=fullDescription.fontcolor("#000000");
+	document.getElementById('description').innerHTML=fullDescription;
 }
 
 function printWatts(wattsDescription)
 {
-	document.getElementById('watts').innerHTML=wattsDescription.fontcolor("#000000");
+	document.getElementById('watts').innerHTML=wattsDescription;
 }
 
 function printSquareArea(squareFoot)
 {
-	document.getElementById('total-panel-area').innerHTML=squareFoot.fontcolor("#000000");
+	document.getElementById('total-panel-area').innerHTML=squareFoot;
 }
 
 function printLedCount(ledCount)
@@ -1026,7 +1027,33 @@ function printCommentBox(commentBox)
 	document.getElementById('comment').innerHTML=commentBox;
 }
 
-//******************************************************************
+// ******************************* TESTING SEND TO CLIPBOARD FEATURE - START *******************************
+
+function fnSelect(objId)
+{
+   fnDeSelect();
+   if (document.selection) 
+   {
+      var range = document.body.createTextRange();
+      range.moveToElementText(document.getElementById(objId));
+      range.select();
+   }
+   else if (window.getSelection) 
+   {
+      var range = document.createRange();
+      range.selectNode(document.getElementById(objId));
+      window.getSelection().addRange(range);
+   }
+}
+function fnDeSelect() 
+{
+   if (document.selection)
+             document.selection.empty();
+   else if (window.getSelection)
+              window.getSelection().removeAllRanges();
+} 
+// ******************************* TESTING SEND TO CLIPBOARD FEATURE - END *******************************
+
 
 function main()
 {

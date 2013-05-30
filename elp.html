@@ -1,337 +1,530 @@
-<!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>VLT ESSENTIALS</title>
+	<meta content="text/html" charset="utf-8"/>
+	<title>VLT Essentials Pricing Companion Tool</title>
 	
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <script type="text/javascript" src="js/panel_essentials.js"></script>
+	<!-- Mobile viewport optimisation -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<!-- (en) Add your meta data here -->
 	<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="my_css/ell_panel.css" id="theme" />
+    <script type="text/javascript" src="js/panel_essentials.js"></script>
+    
+	<!-- MY CSS STUFF -->
+	<link rel="stylesheet" type="text/css" href="my_css/ell_linear.css" id="theme" />
+	<!-- YAML CSS STUFF -->
+	<link href="../yaml/core/base.css" rel="stylesheet" type="text/css"/>
+	<link href="../yaml/forms/gray-theme.css" rel="stylesheet" type="text/css"/>
+	<link href="../yaml/navigation/hlist.css" rel="stylesheet" type="text/css"/>
+	<!-- <link href="../yaml/screen/grid-960-12.css" rel="stylesheet" type="text/css"/>
+	<link href="../yaml/screen/grid-960-16.css" rel="stylesheet" type="text/css"/> -->
+	<!--[if lte IE 7]>
+	<link href="../yaml/core/iehacks.css" rel="stylesheet" type="text/css" />
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
 </head>
 <body>
-
-<div id="header">
-	<img src="img\ESS_BANNER_ALT.jpg"/>
-</div>
-
-<div id="talltabs-orange">
-	<ul>
-		<li class="first"><a href="index.html">Home</a></li>
-		<li><a href="ell.html">NEW! ELL Calc</a></li>
-		<li><a href="ell_old.html">OLD! ELL Calc</a></li>
-		<li class="active"><a href="elp.html">ELP Calc</a></li>
-		<li><a>Misc Stuff</a></li>
-		<li class="last"><a href="http://www.visual-lighting.com">Website</a></li>
-	</ul>
-</div>
-
-<br/>
-<!-- ***************************************************** -->
-
-  <form id="docContainer" class="fb-toplabel fb-100-item-column selected-object" enctype="multipart/form-data" method="post" action="" novalidate="novalidate" data-margin="custom" data-percentage="100" data-boxshadow="true" data-form="preview">
-  <div style="MIN-HEIGHT: 20px" id="fb-form-header1" class="fb-form-header">
-    <a style="MAX-WIDTH: 104px" id="fb-link-logo1" class="fb-link-logo" href=""
-    target="_self"><img style="WIDTH: 100%; DISPLAY: none" id="fb-logo1" class="fb-logo" title="Alternative text" alt="Alternative text" src="common/images/image_default.png"/></a>
-  </div>
-  
-  
-  <div id="section1" class="section">
-    <div id="column1" class="column ui-sortable">
+	<header>
+		<div class="ym-wrapper">
+			<div id="header" class="ym-wbox">
+				<img src="img\ESS_BANNER_ALT.jpg"/>
+			</div>
+		</div>
+	</header>
 	
-	  
-	  <div id="product-label-top">
-        <div>
-          <h2>
-            ESSENTIALS LIGHT PANEL
-          </h2>
-        </div>
-      </div>
-	  
-      <div style="FILTER: ; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px"
-      id="item45" class="fb-item fb-100-item-column">
-        <div class="fb-html">
-          <div id="item45_div_0">
-          </div>
-        </div>
-      </div>
-	  
-	  <div style="PADDING-BOTTOM: 1px; PADDING-LEFT: 5px; PADDING-RIGHT: 1px; PADDING-TOP: 5px"
-      id="item23" class="fb-item fb-one-column fb-20-item-column">
-        <div class="fb-grouplabel">
-          <label style="FONT-STYLE: normal; DISPLAY: inline; COLOR: rgb(0,0,0); FONT-WEIGHT: bold" id="item23_label_0">BOARD TYPE</label>
-        </div>
-        <div style="FONT-FAMILY: trebuchet ms; COLOR: rgb(0,0,0); FONT-WEIGHT: normal"
-        class="fb-radio">
-          <label id="10-label"><input id="10" name="led-board-group" type="radio" value="10" onclick="set_tenthWatt_Env()"/><span id="item23_0_span" class="fb-fieldlabel">0.10 watt</span></label>
-          <label id="25-label"><input id="25" name="led-board-group" type="radio" value="25" onclick="set_quarterWatt_Env()"/><span id="item23_1_span" class="fb-fieldlabel">0.25 watt</span></label>          
-        </div>
-      </div>
-	  
-	  <div class="clear-spacer">
-        <div>
-          <div>
-          </div>
-        </div>
-      </div>
-	  
-	  <div style="FILTER: ; PADDING-BOTTOM: 5px; PADDING-RIGHT: 4px; PADDING-TOP: 5px"
-      id="item24" class="fb-item fb-three-column fb-25-item-column">
-        <div class="fb-grouplabel">
-          <label style="FONT-STYLE: normal; DISPLAY: inline; COLOR: rgb(0,0,0); FONT-WEIGHT: bold"
-          id="item24_label_0">COLOR TEMP</label>
-        </div>
-        <div style="FONT-FAMILY: trebuchet ms; COLOR: rgb(0,0,0); FONT-WEIGHT: normal"
-        class="fb-radio">
-          <label id="2400-label"><input id="24" name="color-temp-group" type="radio" value="2400" /><span id="item24_0_span" class="fb-fieldlabel">2400&deg;K</span></label>
-          <label id="2700-label"><input id="27" name="color-temp-group" type="radio" value="2700" /><span id="item24_1_span" class="fb-fieldlabel">2700&deg;K</span></label>
-          <label id="3000-label"><input id="30" name="color-temp-group" type="radio" value="3000" /><span id="item24_2_span" class="fb-fieldlabel">3000&deg;K</span></label>
-          <label id="3500-label"><input id="35" name="color-temp-group" type="radio" value="3500" /><span id="item24_3_span" class="fb-fieldlabel">3500&deg;K</span></label>
-          <label id="4000-label"><input id="40" name="color-temp-group" type="radio" value="4000" /><span id="item24_4_span" class="fb-fieldlabel">4000&deg;K</span></label>
-          <label id="4500-label"><input id="45" name="color-temp-group" type="radio" value="4500" /><span id="item24_5_span" class="fb-fieldlabel">4500&deg;K</span></label>
-        </div>
-      </div>
-	  
-	  <div class="clear-spacer">
-        <div>
-          <div>
-          </div>
-        </div>
-      </div>
-	  
-	   <div style="PADDING-BOTTOM: 5px; PADDING-RIGHT: 4px; PADDING-TOP: 5px"
-      id="item25" class="fb-item fb-one-column fb-20-item-column">
-        <div class="fb-grouplabel">
-          <label style="FONT-STYLE: normal; DISPLAY: inline; COLOR: rgb(0,0,0); FONT-WEIGHT: bold"
-          id="item25_label_0">LED SPACING</label>
-        </div>
-        <div style="FONT-FAMILY: trebuchet ms; COLOR: rgb(0,0,0); FONT-WEIGHT: normal" class="fb-radio">
-          <label id="a-label"><input id="a" name="led-spacing-group" type="radio" value="A" /><span id="item25_0_span" class="fb-fieldlabel">2" x 2"</span></label>
-          <label id="b-label"><input id="b" name="led-spacing-group" type="radio" value="B" /><span id="item25_1_span" class="fb-fieldlabel">2" x 3"</span></label>
-          <label id="c-label"><input id="c" name="led-spacing-group" type="radio" value="C" /><span id="item25_2_span" class="fb-fieldlabel">2" x 4"</span></label>
-	  <label id="d-label"><input id="d" name="led-spacing-group" type="radio" value="D" /><span id="item25_3_span" class="fb-fieldlabel">1" x 1"</span></label>	
-        </div>
-      </div>
-	  
-	  
-	  <div class="clear-spacer">
-        <div>
-          <div>
-          </div>
-        </div>
-      </div>
-	  
-	    <div style="FILTER: ; PADDING-BOTTOM: 5px; PADDING-RIGHT: 1px; PADDING-TOP: 5px"
-      id="item20" class="fb-item fb-one-column fb-25-item-column">
-        <div class="fb-grouplabel">
-          <label style="FONT-STYLE: normal; DISPLAY: inline; COLOR: rgb(0,0,0); FONT-WEIGHT: bold"
-          id="item20_label_0">PANEL DIMENSION</label>
-        </div>
-        <div style="FONT-FAMILY: trebuchet ms; COLOR: rgb(0,0,0); FONT-WEIGHT: normal"
-        class="fb-radio">
-          <label id="standard-dim-label"><input id="standard-dim" name="panel-dim-group" type="radio" value="standard" /><span id="item20_0_span" class="fb-fieldlabel">Standard Shape:</span></label>
-          <label id="height-input-label"><input id="height-input" name="height" type="text" value="" /><span id="item20_1_span" class="fb-fieldlabel">Enter Height (Up to 120")</span></label>
-          <label id="width-input-label"><input id="width-input" name="width" type="text" value="" /><span id="item20_2_span" class="fb-fieldlabel">Enter Width (Up to 60")</span></label>
-          <label id="custom-dim-label"><input id="custom-dim" name="panel-dim-group" type="radio" value="custom" /><span id="item20_3_span" class="fb-fieldlabel">Custom Shape:</span></label>
-          <label id="sqft-input-label"><input id="sqft-input" name="sqft" type="text" value="" /><span id="item20_4_span" class="fb-fieldlabel">Enter Square FT. (Up to 50 sqft)</span></label>
-        </div>
-      </div>
-	  
-	  <div class="clear-spacer">
-        <div>
-          <div>
-          </div>
-        </div>
-      </div>
-	  	  
-      <div style="FILTER: ; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px"
-      id="item46" class="fb-item fb-100-item-column">
-        <div class="fb-sectionbreak">
-          <hr style="MAX-WIDTH: 845px; BORDER-TOP-STYLE: none">
-        </div>
-      </div>
-	  
-	  
-	  <div style="FILTER: ; PADDING-BOTTOM: 5px; PADDING-RIGHT: 4px; PADDING-TOP: 5px"
-      id="item26" class="fb-item fb-one-column fb-25-item-column">
-        <div class="fb-grouplabel">
-          <label style="FONT-STYLE: normal; DISPLAY: inline; COLOR: rgb(0,0,0); FONT-WEIGHT: bold"
-          id="item26_label_0">WIRE EXIT LENGTH</label>
-        </div>
-        <div style="FONT-FAMILY: trebuchet ms; COLOR: rgb(0,0,0); FONT-WEIGHT: normal"
-        class="fb-radio">
-          <label id="standard-wire-label"><input id="standard-wire-length" name="wire-length-group" type="radio" value="standard" /><span id="item26_0_span" class="fb-fieldlabel">8' Standard Length</span></label>
-          <label id="custom-wire-label"><input id="custom-wire-length" name="wire-length-group" type="radio" value="custom" /><span id="item26_1_span" class="fb-fieldlabel">Custom Length:</span></label>
-          <label id="wire-input-label"><input id="wire-length-input" name="wire-exit-length" type="text" value="" /><span id="item27_1_span" class="fb-fieldlabel">(Up to 30')</span></label>
-        </div>
-      </div>
-	 
-	  
-	  <div id="item11" class="fb-item fb-20-item-column">
-        <div class="fb-grouplabel">
-          <label style="DISPLAY: inline" id="item11_label_0">WIRE EXIT TYPE:</label>
-        </div>
-        <div class="fb-dropdown">
-          <select id="tail-type-dropbox">
-            <option>
-              SELECT TYPE
-            </option>
-          </select>
-        </div>
-      </div>
-	
-	  <div class="clear-spacer">
-        <div>
-          <div>
-          </div>
-        </div>
-      </div>
-	  
-	  
-      <div style="FILTER: ; PADDING-BOTTOM: 5px; PADDING-RIGHT: 1px; PADDING-TOP: 5px"
-      id="item27" class="fb-item fb-one-column fb-25-item-column">
-        <div class="fb-grouplabel">
-          <label style="FONT-STYLE: normal; DISPLAY: inline; COLOR: rgb(0,0,0); FONT-WEIGHT: bold"
-          id="item27_label_0">FACTORY INSTALLED OPTIONS</label>
-        </div>
-        <div style="FONT-FAMILY: trebuchet ms; COLOR: rgb(0,0,0); FONT-WEIGHT: normal"
-        class="fb-radio">
-          <label id="fr-label"><input id="fr" name="factory-installed-group" type="radio" value="FR" /><span id="item27_0_span" class="fb-fieldlabel">Default - (Frosted Lens)</span></label>
-		  <label id="nl-label"><input id="nl" name="factory-installed-group" type="radio" value="NL" /><span id="item27_1_span" class="fb-fieldlabel">NL - No Front Lens</span></label>
-		  <label id="cl-label"><input id="cl" name="factory-installed-group" type="radio" value="CL" /><span id="item27_2_span" class="fb-fieldlabel">CL - Clear Front Lens</span></label>
-		  
-		  <label id="df-label"><input id="df" name="diffuser" type="checkbox" value="DF" /><span id="item27_3_span" class="fb-fieldlabel">DF - Diffuser Panel</span></label>
-		  <label id="cp-label"><input id="cp" name="compact" type="checkbox" value="CP" /><span id="item27_4_span" class="fb-fieldlabel">CP - Compact Substrate</span></label>
-		  <label id="sc-label"><input id="sc" name="color" type="checkbox" value="SC" /><span id="item27_5_span" class="fb-fieldlabel">SC - Substrate Color</span></label>
-		  <label id="af-label"><input id="af" name="aluminum-frame" type="checkbox" value="AF" /><span id="item27_6_span" class="fb-fieldlabel">AF - Aluminum Framing</span></label>
-		  
-		  <label id="so-label"><input id="so" name="stand-off" type="checkbox" value="SO" /><span id="item27_7_span" class="fb-fieldlabel">SO - Stand-offs</span></label>
-		  <label id="sg-label"><input id="sg" name="suspension-grips" type="checkbox" value="SG" /><span id="item27_8_span" class="fb-fieldlabel">SG - Suspension Grips</span></label>
-		  
-		  <label id="ro-label"><input id="ro" name="rohs" type="checkbox" value="RoHS" /><span id="item27_9_span" class="fb-fieldlabel">RO - RoHS Compliant</span></label>
-          
-        </div>
-      </div>
-	  
-	  
-
-      <div style="opacity: 1" id="item28" class="fb-item">
-        <div class="fb-sectionbreak">
-          <hr style="MAX-WIDTH: 960px; BORDER-TOP-STYLE: dashed">
-        </div>
-      </div>
-    
-	  
-	  
-      <!-- <div style="FILTER: ; PADDING-BOTTOM: 1px; PADDING-LEFT: 1px; PADDING-RIGHT: 1px; HEIGHT: 50px; PADDING-TOP: 1px"
-      id="item53" class="fb-item fb-20-item-column">
-        <div class="fb-spacer">
-          <div id="item53_div_0">
-          </div>
-        </div>
-      </div> -->
-	  
-	  
-	  
-	  
-      <div style="FILTER: ; PADDING-BOTTOM: 0px; PADDING-LEFT: 0px; PADDING-RIGHT: 0px; PADDING-TOP: 0px"
-      id="item51" class="fb-item fb-100-item-column">
-        <div class="fb-html">
-          <div id="item51_div_0">
-
-          </div>
-        </div>
-      </div>
-      <div style="FILTER: ; opacity: 1" id="item37" class="fb-item fb-100-item-column">
-        <div class="fb-static-text">
-          <p style="COLOR: #000000; FONT-WEIGHT: bold">
-            Part Number &amp; Description:
-          </p>
-		</br>  
-		<span id="description">
-		<p></p>
-		</span>  
-        </div>
-      </div>
-      <div style="FILTER: ; opacity: 1" id="item35" class="fb-item fb-20-item-column">
-        <div class="fb-static-text">
-          <p style="COLOR: #000000; FONT-WEIGHT: bold">
-			Watts:
-          </p>
-		</br>
-		<p><span id="watts"></span></p>
-		    
-        </div>
-      </div>
-
-      <div style="opacity: 1" id="item36" class="fb-item fb-33-item-column">
-        <div class="fb-static-text fb-item-alignment-left">
-		<span id="length-conversion-title">
-          <p style="COLOR: #000000; FONT-WEIGHT: bold">
-            PANEL AREA:
-          </p>
-		  </br>
-		  <p id="total-panel-para" style="COLOR: #000000"><span id="total-panel-area">--</span> sqft</p>
-		</span>  
-        </div>
-      </div>
-	  
-	  <div style="opacity: 1" id="item38" class="fb-item fb-33-item-column">
-        <div class="fb-static-text fb-item-alignment-left">
-		<span id="length-conversion-title">
-          <p style="COLOR: #000000; FONT-WEIGHT: bold">
-            APPROX. LED COUNT:
-          </p>
-		  </br>
-		  <p id="number-of-leds-para" style="COLOR: #000000"><span id="number-of-leds">--</span> LEDs</p>
-		</span>  
-        </div>
-      </div>
-	  
-      <div style="FILTER: ; opacity: 1" id="item39" class="fb-item fb-33-item-column">
-        <div class="fb-static-text">
-          <p style="COLOR: #000000; FONT-WEIGHT: bold">
-            <span id='price_label'>Distributor Net Price:</span>
-          </p>
-		  </br>
-		  <p id="dn-para" style="COLOR: #000000; FONT-SIZE: X-LARGE">
-		  $<span id="dnPrice">0.00</span> each</h4>
-		  </p>
-        </div>
-      </div>
-      <div style="PADDING-BOTTOM: 0px; PADDING-LEFT: 10px; PADDING-RIGHT: 0px; PADDING-TOP: 5px"
-      id="item42" class="fb-item fb-side-by-side fb-66-item-column">
-        <div class="fb-grouplabel">
-          <label style="DISPLAY: inline; FONT-WEIGHT: bold" id="item42_label_0">Pricing Modifers:</label>
-        </div>
-        <div style="FONT-STYLE: normal; FONT-WEIGHT: normal" class="fb-radio">
-          <label id="dn-price-label"><input id="distributor_price" name="pricing-modifier-group" type="radio" value="" /><span id="item42_0_span" class="fb-fieldlabel">Distributor Net Pricing (default)</span></label>
-          <label id="d10_price-label"><input id="d10_price" name="pricing-modifier-group" type="radio" value="" /><span id="item42_1_span" class="fb-fieldlabel">D10</span></label>
-          <label id="d19_price-label"><input id="d19_price" name="pricing-modifier-group" type="radio" value="" /><span id="item42_2_span" class="fb-fieldlabel">D19</span></label>
-          <label id="roblon_price-label"><input id="roblon_price" name="pricing-modifier-group" type="radio" value="" /><span id="item42_3_span" class="fb-fieldlabel">Roblon Pricing</span></label>
-        </div>
-      </div>
-      <div id="item41" class="fb-item fb-100-item-column">
-        <div class="fb-grouplabel">
-          <label style="DISPLAY: inline; FONT-WEIGHT: bold" id="item41_label_0">Comments:</label>
-        </div>
-        <div class="fb-input-box">
-		  <p id="comment"></p>
-          <!-- <input id="comment" disabled name="comment-box" placeholder="COMMENTS" type="text" /> -->
-		  
-        </div>
-      </div>
-    </div>
-  </div>
-  <div style="DISPLAY: none; CURSOR: default" id="fb-captcha_control" class="fb-captcha fb-item-alignment-center">
-    <img src="file:///C:/Users/NaeemPinto.VISUAL-LIGHTING/AppData/Local/Temp/FormBuilder/editordata/images/recaptchawhite.png"
-    />
-  </div>
-  <div style="MIN-HEIGHT: 1px" id="fb-submit-button-div" class="fb-item-alignment-left fb-footer">
-    <input style="BACKGROUND-IMAGE: url(img/btn_submit.png)" id="fb-submit-button" class="fb-button-special" type="button" value="Run!" onclick="main()"/>
-  </div>
-</form>
-
-<!-- ***************************************************** -->
-
+	<div class="ym-wrapper">
+		<div class="ym-wbox navigation">
+			<nav class="ym-hlist">
+				<ul>
+					<li class="first"><a href="index.html"><strong>Home</strong></a></li>
+					<li><a href="ell.html">NEW! ELL Calc</a></li>
+					<li><a href="ell_old.html">OLD! ELL Calc</a></li>
+					<li class="active"><a href="elp.html">ELP Calc</a></li>
+					<li><a>Misc Stuff</a></li>
+					<li class="last"><a href="http://www.visual-lighting.com">Website</a></li>
+				</ul>
+				<!-- optional search form -->
+				<form class="ym-searchform">
+					<input class="ym-searchfield" type="search" placeholder="Search..." />
+					<input class="ym-searchbutton" type="submit" value="Search" />
+				</form>
+			</nav>
+		</div>
+		<div class="ym-wbox">
+			<div class="ym-column">
+				<div class="ym-col1">
+					<div class="ym-cbox">
+					
+				</div>
+				</div>
+				<div class="ym-col2">
+					<div class="ym-cbox">
+					
+					</div>
+				</div>
+				<div class="ym-col3">
+					<div class="ym-cbox">
+						<div class="ym-grid">
+							<div class="ym-g33 ym-gl top-row">
+								<div class="ym-gbox">
+									<div class="control-box orange">
+										<h4 class="ym-fbox-heading controlbox-heading">Board Type</h4>
+										<div class="ym-grid">
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="led-buttons control-buttons">
+														<input type="radio" name="led-board-group" value="" id="10" onclick="set_tenthWatt_Env()"/>
+														<label for="10">0.10w</label>
+													</span>
+												</div>	
+											</div>
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="led-buttons control-buttons">
+														<input type="radio" name="led-board-group" value="" id="25" onclick="set_quarterWatt_Env()"/>
+														<label for="25">0.25w</label>
+													</span>
+												</div>	
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>				
+							<div class="ym-g33 ym-gl top-row">
+								<div class="ym-gbox">
+									<div class="control-box blue">
+										<h4 class="ym-fbox-heading controlbox-heading">Color Temp</h4>										
+										<div class="ym-grid">
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="color-temp-group" value="" id="24" />
+														<label for="24">2400&deg;K</label>
+													</span>
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="color-temp-group" value="" id="27" />
+														<label for="27">2700&deg;K</label>
+													</span>
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="color-temp-group" value="" id="30" />
+														<label for="30">3000&deg;K</label>
+													</span>
+												</div>		
+											</div>
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="color-temp-group" value="" id="35" />
+														<label for="35">3500&deg;K</label>
+													</span>
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="color-temp-group" value="" id="40" />
+														<label for="40">4000&deg;K</label>
+													</span>
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="color-temp-group" value="" id="45" />
+														<label for="45">4500&deg;K</label>
+													</span>
+												</div>		
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="ym-g33 ym-gl top-row">
+								<div class="ym-gbox">
+									<div class="control-box orange">
+										<h4 class="ym-fbox-heading controlbox-heading">LED Spacing</h4>
+										<div class="ym-grid">
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="spacing-buttons control-buttons">
+														<input type="radio" name="led-spacing-group" value="" id="a" />
+														<label for="a">2" x 2"</label>
+													</span>
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="led-spacing-group" value="" id="b" />
+														<label for="b">2" x 3"</label>
+													</span>
+												</div>		
+											</div>
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="led-spacing-group" value="" id="c" />
+														<label for="c">2" x 4"</label>
+													</span>
+													<span class="color-buttons control-buttons">
+														<input type="radio" name="led-spacing-group" value="" id="d" />
+														<label for="d">1" x 1"</label>
+													</span>
+												</div>		
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="ym-cbox">
+						<div class="ym-grid">
+							<div class="ym-g33 ym-gl mid-row">
+								<div class="ym-gbox">
+									<div class="control-box blue">
+										<h4 class="ym-fbox-heading controlbox-heading">Panel Dimension</h4>
+										<div class="ym-grid">
+											<div class="ym-g33 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="dim-buttons control-buttons">
+														<input type="radio" name="panel-dim-group" value="" id="standard-dim" />
+														<label for="standard-dim">Std Dim:</label>
+													</span>
+												</div>		
+											</div>
+											<div class="ym-g33 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<div class="ym-fbox-text">
+														<label for="height-input"><h6>Height:</h6></label>
+														<input type="text" name="height" id="height-input" size="6" maxlength="5" placeholder="120'' max" />
+													</div>
+												</div>		
+											</div>
+											<div class="ym-g33 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<div class="ym-fbox-text">
+														<label for="width-input"><h6>Width:</h6></label>
+														<input type="text" name="width" id="width-input" size="6" maxlength="5" placeholder="60'' max" />
+													</div>
+												</div>		
+											</div>
+											<div class="ym-grid">
+												<div class="ym-g33 ym-gl">
+													<div class="ym-gbox button-gbox">
+														<span class="dim-buttons control-buttons">
+															<input type="radio" name="panel-dim-group" value="" id="custom-dim" />
+														<label for="custom-dim">Custom: </label>
+														</span>
+													</div>
+												</div>
+												<div class="ym-g33 ym-gl">
+													<div class="ym-gbox button-gbox">
+														<div class="ym-fbox-text">
+															<label for="width-input"><h6>SqFt:</h6></label>
+															<input type="text" name="sqft" id="sqft-input" size="6" maxlength="5" placeholder="50sqft max" />
+														</div>
+													</div>
+												</div>
+												<div class="ym-g33 ym-gl">
+													<div class="ym-gbox button-gbox">
+											
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="ym-g33 ym-gl mid-row">
+								<div class="ym-gbox">
+									<div class="control-box orange">
+										<h4 class="ym-fbox-heading controlbox-heading">Wire Exit</h4>
+										<div class="ym-grid">
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="wire-exit-buttons control-buttons">
+														<input type="radio" name="wire-length-group" value="" id="standard-wire-length" />
+														<label for="standard-wire-length">8' Std Length</label>
+													</span>
+													
+												</div>	
+											</div>
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													
+												</div>	
+											</div>
+											<div class="ym-grid">
+												<div class="ym-g50 ym-gl">
+													<div class="ym-gbox button-gbox">
+														<span class="wire-exit-buttons control-buttons">
+															<input type="radio" name="wire-length-group" value="" id="custom-wire-length" />
+															<label for="custom-wire-length">Custom Length</label>
+														</span>
+													</div>
+													<br/>
+													<div>
+														<h6 id="wire-type-heading" class="ym-fbox-heading controlbox-sub-heading">Exit Type:</h6>
+														<select id="tail-type-dropbox">
+															<option>Select Type</option>
+														</select>
+													</div>	
+												</div>
+												<div class="ym-g50 ym-gl">
+													<div class="ym-gbox button-gbox">
+														<div class="ym-fbox-text">
+															<input type="text" name="wire-exit-length" id="wire-length-input" size="3" maxlength="3" placeholder="30' max" />
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="ym-g33 ym-gl mid-row">
+								<div class="ym-gbox">
+									<div class="control-box blue">
+										<!-- <h4 class="ym-fbox-heading controlbox-heading">Factory Installed Options</h4> -->
+										<div class="ym-grid">
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<!-- Something HERE -->
+												</div>	
+											</div>
+											<div class="ym-g50 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<!-- Something HERE -->
+												</div>	
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+					<div class="ym-cbox">
+						<div class="ym-grid">
+							<div class="ym-g33 ym-gl bottom-row">
+								<div class="ym-gbox">
+									<div class="control-box orange">
+										<h4 class="ym-fbox-heading controlbox-heading">Factory Installed Options</h4>
+										<div class="ym-grid">
+											<div class="ym-g100 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="factory-install-buttons control-buttons">
+														<input type="radio" name="factory-installed-group" value="" id="fr" />
+														<label for="fr">Default (Frosted Lens)</label>
+													</span>
+													<span class="factory-install-buttons control-buttons">
+														<input type="radio" name="factory-installed-group" value="" id="nl" />
+														<label for="nl">NL - No Front Lens</label>
+													</span>
+													<span class="factory-install-buttons control-buttons">
+														<input type="radio" name="factory-installed-group" value="" id="cl" />
+														<label for="cl">CL - Clear Front Lens</label>
+													</span>
+												</div>	
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+							<div class="ym-g33 ym-gl bottom-row">
+								<div class="ym-gbox">
+									<div class="control-box blue">
+										<h4 class="ym-fbox-heading controlbox-heading">Factory Installed Options</h4>
+										<div class="ym-grid">
+											<div class="ym-g100 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="factory-install-buttons control-buttons">
+														<input type="checkbox" name="diffuser" value="" id="df" />
+														<label for="df">DF - Diffuser Panel</label>
+													</span>
+													<span class="factory-install-buttons control-buttons">
+														<input type="checkbox" name="compact" value="" id="cp" />
+														<label for="cp">CP - Compact Substrate</label>
+													</span>
+													<span class="factory-install-buttons control-buttons">
+														<input type="checkbox" name="color" value="" id="sc" />
+														<label for="sc">SC - Substrate Color</label>
+													</span>
+												</div>	
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>				
+							<div class="ym-g33 ym-gl bottom-row">
+								<div class="ym-gbox">
+									<div class="control-box orange">
+										<h4 class="ym-fbox-heading controlbox-heading">Factory Installed Options</h4>
+										<div class="ym-grid">
+											<div class="ym-g100 ym-gl">
+												<div class="ym-gbox button-gbox">
+													<span class="factory-install-buttons control-buttons">
+														<input type="checkbox" name="aluminum-frame" value="" id="af" />
+														<label for="af">AF - Aluminum Framing</label>
+													</span>
+													<span class="factory-install-buttons control-buttons">
+														<input type="checkbox" name="stand-off" value="" id="so" />
+														<label for="so">SO - Stand-offs</label>
+													</span>
+													<span class="factory-install-buttons control-buttons">
+														<input type="checkbox" name="suspension-grips" value="" id="sg" />
+														<label for="sg">SG - Suspension Grips</label>
+													</span>
+													<span class="factory-install-buttons control-buttons">
+														<input type="checkbox" name="rohs" value="" id="ro" />
+														<label for="ro">RO - RoHS Compliant</label>
+													</span>
+												</div>	
+											</div>
+										</div>	
+									</div>
+								</div>
+							</div>
+						</div>	
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<footer>
+		<div class="ym-wrapper">
+			<div class="ym-wbox">
+				<div class="ym-column">
+					<div class="ym-col1">
+						<div class="ym-cbox">
+							...
+						</div>
+					</div>
+					<div id="comment-column" class="ym-col2">
+						<div id="comment-column-cbox" class="ym-cbox">
+						<h4 class="ym-fbox-heading controlbox-heading">Comments:</h4>
+						<strong><p id="comment">--</p></strong>
+						</div>
+					</div>
+					<div id="results-box" class="ym-col3">				
+						<div class="ym-grid">
+							<div class="ym-g80 ym-gl">
+								<div class="ym-gbox">
+									<div class="ym-gcust-95 ym-gl">
+										<div id="tag" class="ym-gbox ">
+											<!-- content: grid-column -->
+											<span id="top-box">	
+												<h6 class="ym-fbox-heading controlbox-heading">Part Number & Description:</h6>
+												<div class="ym-fbox-text">
+													<p id="description">--</p>
+												</div>
+											</span>
+										</div>
+									</div>
+									<div class="ym-gcust-5 ym-gl">
+										<div class="ym-gbox button-gbox">	
+											<button class="select-text-button" onclick="fnSelect('description')">S</button>
+										</div>
+									</div>	
+								</div>
+								<div class="ym-gbox">
+									<div class="ym-grid">
+										<div class="ym-g40 ym-gl blue result">
+											<div class="ym-gbox">
+												<!-- content: nested grid-column -->
+												<h6 class="ym-fbox-heading controlbox-heading">Watts:</h6>
+												<div class="ym-fbox-text">
+													<p id="watts">--</p>
+												</div>
+											</div>
+										</div>
+										<div class="ym-gcust-5 ym-gl">
+											<div class="ym-gbox button-gbox">	
+												<button class="select-text-button" onclick="fnSelect('watts')">S</button>
+											</div>
+										</div>
+										<div class="ym-g40 ym-gl orange result">
+											<div class="ym-gbox">
+												<!-- content: nested grid-column -->
+												<h6 class="ym-fbox-heading controlbox-heading">Panel Area:</h6>
+												<div class="ym-fbox-text">
+												<p id="total-panel-para"><span id="total-panel-area">--</span> sqft Area</p>
+												</div>
+											</div>
+										</div>
+										<div class="ym-gcust-5 ym-gl">
+											<div class="ym-gbox button-gbox">	
+												<button class="select-text-button" onclick="fnSelect('total-panel-para')">S</button>
+											</div>
+										</div>
+									</div>
+								<div class="ym-grid">
+									<div class="ym-g40 ym-gl orange result">
+										<div class="ym-gbox">
+											<!-- content: nested grid-column -->
+											<h6 class="ym-fbox-heading controlbox-heading"><span id='price_label'>Distributor Net Price:</span></h6>
+											<div class="ym-fbox-text">
+												<p>$<span id="dnPrice">0.00</span></p>
+											</div>
+										</div>
+									</div>
+									<div class="ym-gcust-5 ym-gl">
+										<div class="ym-gbox button-gbox">	
+											<button class="select-text-button" onclick="fnSelect('dnPrice')">S</button>
+										</div>
+									</div>
+									<div class="ym-g40 ym-gl blue result">
+										<div class="ym-gbox">
+											<!-- content: nested grid-column -->
+										<h6 class="ym-fbox-heading controlbox-heading">Approx. LED Count:</span></h6>
+											<div class="ym-fbox-text">
+												<p id="number-of-leds-para">~ <span id="number-of-leds">--</span> LEDs Total</p>
+											</div>
+										</div>
+									</div>
+									<div class="ym-gcust-5 ym-gl">
+										<div class="ym-gbox button-gbox">	
+											<button class="select-text-button" onclick="fnSelect('number-of-leds-para')">S</button>
+										</div>
+									</div>
+								</div>
+							</div>
+							</div>
+							<div id="" class="ym-g20 ym-gl">
+								<div class="ym-grid">
+									<div class="ym-g100 ym-gl">
+										<div class="ym-gbox">
+											<!-- run button -->
+											<button class="ym-button ym-play button" onclick="main()">Run</button>
+										</div>
+									</div>
+									<div class="ym-grid pm-container">
+										<h6 class="ym-fbox-heading controlbox-heading">Pricing Modifers:</h6>
+										<div class="ym-g50 ym-gl">
+											<div class="ym-gbox button-gbox pm-column1">
+												<span class="pm-buttons control-buttons">
+													<input type="radio" name="pm-group" value="" id="distributor_price"/>
+													<label for="distributor_price">D/N</label>
+												</span>
+												<span class="pm-buttons control-buttons">
+													<input type="radio" name="pm-group" value="" id="roblon_price"/>
+													<label for="roblon_price">Roblon</label>
+												</span>
+												
+											</div>
+										</div>	
+										<div class="ym-g50 ym-gr">
+											<div class="ym-gbox button-gbox pm-column1">
+												<span class="pm-buttons control-buttons">
+													<input type="radio" name="pm-group" value="" id="d19_price"/>
+													<label for="d19_price">D19</label>
+												</span>
+												<span class="pm-buttons control-buttons">
+													<input type="radio" name="pm-group" value="" id="d10_price"/>
+													<label for="d10_price">D10</label>
+												</span>
+												
+											</div>
+										</div>	
+									</div>	
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </body>
 </html>

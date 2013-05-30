@@ -76,14 +76,17 @@ html,body {
 /*********** CONTROL BOX STYLINGS ***********/
 
 .top-row {
+	min-width: 243px;
 	height: 121px;
 }
 
 .mid-row {
+	min-width: 243px;
 	height: 161px;
 }
 
 .bottom-row {
+	min-width: 243px;
 	height: 115px;	
 }
 
@@ -177,6 +180,7 @@ footer {
 
 #top-box {
 	color: white;
+	font-size: small;
 }
 
 /* #price-modifers { */
