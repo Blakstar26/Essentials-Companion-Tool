@@ -939,15 +939,15 @@ function setLensDescription(lensCode)
 	} else if (lensCode == 'SLC')
 	{
 		lensDescription = 'clear, sliding lens;';
-	} else if (lensCode == '10c')
+	} else if (lensCode == '10C')
 	{
-		lensDescription = '10° beam lens;';
-	} else if (lensCode == '30c')
+		lensDescription = '10° optical lens;';
+	} else if (lensCode == '30C')
 	{
-		lensDescription = '30° beam lens;';
-	} else if (lensCode == '60c')
+		lensDescription = '30° optical lens;';
+	} else if (lensCode == '60C')
 	{
-		lensDescription = '60° beam lens;';
+		lensDescription = '60° optical lens;';
 	} else if (lensCode == 'OP1')
 	{
 		lensDescription = 'opal, light-diffused lens;';
@@ -1158,171 +1158,261 @@ function setFullDescription()
 
 //******************************************************************
 
-function setDnPrice(extrusionCode, trueLength, lengthCode)
-{
-	var dnPrice;
-    var index = document.getElementById("length-dropbox").selectedIndex;
-    
-    var END_CAP_WIDTH = 0.79;
-    var LED_COUPON_LENGTH = 3.93;
-    var CUSTOM_LENGTH_FEE = 10; //$10 custom cut fee
+//Load all pricing
+function setBasePrice(extrusionCode, trueLength) {
+	var pricing = {
+		"distributorNet": [
+			{"_157_": [
+				{"_1S_": [34.13,	39.01,	48.76,	64.85,	81.43,	97.52,	113.61,	130.19,	146.28,	162.37,	178.95,	195.04,	211.13,	227.71,	243.80,	259.89,	276.47,	292.56,	308.65,	325.23,	341.32,	357.41,	373.99,	390.08]},				
+				{"_2SL_": [48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36]},
+				{"_3SL_": [61.18,	69.92,	87.40,	116.24,	145.96,	174.80,	203.64,	233.36,	262.20,	291.04,	320.76,	349.60,	378.44,	408.16,	437.00,	465.84,	495.56,	524.40,	553.24,	582.96,	611.80,	640.64,	670.36,	699.20]},
+				{"_3SL_dual": [90.16, 103.04, 128.80, 171.30, 215.10, 257.60, 300.10, 343.90, 386.40, 428.90, 380.70, 515.20, 557.70, 601.50, 644.00, 686.50, 730.30, 772.80, 815.30, 859.10, 901.60, 944.10, 987.90, 1030.40]},
+				{"_4SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_5SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_6SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_6SL_dual": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_1R_": [38.64,	44.16,	55.20,	73.42,	92.18,	110.40,	128.62,	147.38,	165.60,	183.82,	202.58,	220.80,	239.02,	257.78,	276.00,	294.22,	312.98,	331.20,	349.42,	368.18,	386.40,	404.62,	423.38,	441.60]},
+				{"_2RL_": [48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36]},
+				{"_1QL_": [48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36]},
+				{"_1EL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_LR_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+			]},
+			{"_757_": [
+				{"_1S_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_2SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_3SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_3SL_dual": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_4SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_5SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_6SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_6SL_dual": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_1R_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_2RL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_1QL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_1EL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_LR_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+			]}
+		],
+		"roblon": [
+			{"_157_": [
+				{"_1S_": [19.32,	22.08,	27.60,	36.71,	46.09,	55.20,	64.31,	73.69,	82.80,	91.91,	101.29,	110.40,	119.51,	128.89,	138.00,	147.11,	156.49,	165.60,	174.71,	184.09,	193.20,	202.31,	211.69,	220.80]},
+				{"_2SL_": [28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20]},
+				{"_3SL_": [36.06,	41.22,	51.52,	68.52,	86.04,	103.04,	120.04,	137.56,	154.56,	171.56,	189.08,	206.08,	223.08,	240.60,	257.60,	274.60,	292.12,	309.12,	326.12,	343.64,	360.64,	377.64,	395.16,	412.16]},
+				{"_3SL_dual": [54.10, 61.82,	77.28,	102.78,	129.06,	154.56,	180.06,	206.34,	231.84,	257.34,	283.62,	309.12,	334.62,	360.90,	386.40,	411.90,	438.18,	463.68,	489.18,	515.46,	540.96,	566.46,	592.74,	618.24]},
+				{"_4SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_5SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_6SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_6SL_dual": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_1R_": [21.90,	25.02,	31.28,	41.60,	52.24,	62.56,	72.88,	83.52,	93.84,	104.16,	114.80,	125.12,	135.44,	146.08,	156.40,	166.72,	177.36,	187.68,	198.00,	208.64,	218.96,	229.28,	239.92,	250.24]},
+				{"_2RL_": [28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20]},
+				{"_1QL_": [28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20]},
+				{"_1EL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_LR_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+			]},
+			{"_757_": [
+				{"_1S_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_2SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_3SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_3SL_dual": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_4SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_5SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_6SL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_6SL_dual": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_1R_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_2RL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_1QL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_1EL_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]},
+				{"_LR_": [0, 0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]}
+			]}
+		]
+	};
 	
-	var SLC_1S_PER_FOOT = 7.5; //per foot price of 1S SLC lens
-	var ROBLON_ACC_DISCOUNT = 0.70; //roblon accessory discount
-    
-	// IF CHECKED, LOAD ROBLON PRICING
-	if (document.getElementById("roblon_price").checked==true)
-	{
-		var _1S_DnPrice = new Array(19.32,	22.08,	27.60,	36.71,	46.09,	55.20,	64.31,	73.69,	82.80,	91.91,	101.29,	110.40,	119.51,	128.89,	138.00,	147.11,	156.49,	165.60,	174.71,	184.09,	193.20,	202.31,	211.69,	220.80);
-		var _1R_DnPrice = new Array(21.90,	25.02,	31.28,	41.60,	52.24,	62.56,	72.88,	83.52,	93.84,	104.16,	114.80,	125.12,	135.44,	146.08,	156.40,	166.72,	177.36,	187.68,	198.00,	208.64,	218.96,	229.28,	239.92,	250.24);
-		var _2RL_DnPrice = new Array(28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20);
-		var _2SL_DnPrice = new Array(28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20);
-		var _3SL_DnPrice = new Array(36.06,	41.22,	51.52,	68.52,	86.04,	103.04,	120.04,	137.56,	154.56,	171.56,	189.08,	206.08,	223.08,	240.60,	257.60,	274.60,	292.12,	309.12,	326.12,	343.64,	360.64,	377.64,	395.16,	412.16);
-		var _3SL_Dual_DnPrice = new Array(54.10, 61.82,	77.28,	102.78,	129.06,	154.56,	180.06,	206.34,	231.84,	257.34,	283.62,	309.12,	334.62,	360.90,	386.40,	411.90,	438.18,	463.68,	489.18,	515.46,	540.96,	566.46,	592.74,	618.24);
-		var _1QL_DnPrice = new Array(28.98,	33.12,	41.40,	55.06,	69.14,	82.80,	96.46,	110.54,	124.20,	137.86,	151.94,	165.60,	179.26,	193.34,	207.00,	220.66,	234.74,	248.40,	262.06,	276.14,	289.80,	303.46,	317.54,	331.20);
-		var _4SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		var _5SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		var _6SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		var _1EL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		var _LR_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-	} else //SET DISTRIBUTOR PRICING
-	{
-		var _1S_DnPrice = new Array(34.13,	39.01,	48.76,	64.85,	81.43,	97.52,	113.61,	130.19,	146.28,	162.37,	178.95,	195.04,	211.13,	227.71,	243.80,	259.89,	276.47,	292.56,	308.65,	325.23,	341.32,	357.41,	373.99,	390.08);
-		var _1R_DnPrice = new Array(38.64,	44.16,	55.20,	73.42,	92.18,	110.40,	128.62,	147.38,	165.60,	183.82,	202.58,	220.80,	239.02,	257.78,	276.00,	294.22,	312.98,	331.20,	349.42,	368.18,	386.40,	404.62,	423.38,	441.60);
-		var _2RL_DnPrice = new Array(48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36);
-		var _2SL_DnPrice = new Array(48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36);
-		var _3SL_DnPrice = new Array(61.18,	69.92,	87.40,	116.24,	145.96,	174.80,	203.64,	233.36,	262.20,	291.04,	320.76,	349.60,	378.44,	408.16,	437.00,	465.84,	495.56,	524.40,	553.24,	582.96,	611.80,	640.64,	670.36,	699.20);
-		var _3SL_Dual_DnPrice = new Array(90.16, 103.04, 128.80, 171.30, 215.10, 257.60, 300.10, 343.90, 386.40, 428.90, 380.70, 515.20, 557.70, 601.50, 644.00, 686.50, 730.30, 772.80, 815.30, 859.10, 901.60, 944.10, 987.90, 1030.40);
-		var _1QL_DnPrice = new Array(48.94,	55.94,	69.92,	92.99,	116.77,	139.84,	162.91,	186.69,	209.76,	232.83,	256.61,	279.68,	302.75,	326.53,	349.60,	372.67,	396.45,	419.52,	442.52,	466.37,	489.44,	512.51,	536.29,	559.36);
-		var _4SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		var _5SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		var _6SL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		var _1EL_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-		var _LR_DnPrice = new Array(0,	0, 0, 0, 0,	0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0);
-	}
-    
-    if (extrusionCode == "1S")
-	{
-        if (lengthCode == 'C')
-        {        
-            var temp = ((trueLength - END_CAP_WIDTH) / LED_COUPON_LENGTH); //find number of coupons in a custom length
-            index = Math.ceil(temp); //round up to integer to get index
-            dnPrice = _1S_DnPrice[index-1] + CUSTOM_LENGTH_FEE;
-        } else 
-        {
-            dnPrice = _1S_DnPrice[index-1];	
-        }
+	//set appropriate length index
+	var basePrice;
+	var index;
+	
+	if (extrusionCode == "C"){
+		var END_CAP_WIDTH = 0.37;
+		var LED_COUPON_LENGTH = 3.937;
+		var MIN_AIR_GAP = 0.4; //gap between board and end-cap is a minimum of 0.20" (x2) = 0.4
 		
-		//Adding "SLC" clear lens price to 1S price
-		if((document.getElementById("roblon_price").checked==true) && (document.getElementById("slc").checked==true))
+		var avail_length = (trueLength - END_CAP_WIDTH) - MIN_AIR_GAP;
+		var temp_count = (avail_length / LED_COUPON_LENGTH); //find rough number of coupons in a custom length
+		var coupon_count = Math.floor(temp_count); //round down to integer to get exact number
+		index = coupon_count;
+	} else {
+		index = document.getElementById("length-dropbox").selectedIndex;
+		index = (index-1);
+	}
+	
+	if((document.getElementById("distributor_price").checked==true) || (document.getElementById("d10_price").checked==true) || (document.getElementById("d19_price").checked==true)) {
+		if((document.getElementById("1018").checked==true) || (document.getElementById("2545").checked==true)){
+			if(document.getElementById("1S").checked==true) {basePrice = pricing.distributorNet[0]._157_[0]._1S_[index];} else
+			if(document.getElementById("2SL").checked==true) {basePrice = pricing.distributorNet[0]._157_[1]._2SL_[index];} else
+			if(document.getElementById("3SL").checked==true) {basePrice = pricing.distributorNet[0]._157_[2]._3SL_[index];} else
+			if(document.getElementById("4SL").checked==true) {basePrice = pricing.distributorNet[0]._157_[4]._4SL_[index];} else
+			if(document.getElementById("5SL").checked==true) {basePrice = pricing.distributorNet[0]._157_[5]._5SL_[index];} else
+			if(document.getElementById("6SL").checked==true) {basePrice = pricing.distributorNet[0]._157_[6]._6SL_[index];} else
+			if(document.getElementById("1R").checked==true) {basePrice = pricing.distributorNet[0]._157_[8]._1R_[index];} else
+			if(document.getElementById("2RL").checked==true) {basePrice = pricing.distributorNet[0]._157_[9]._2RL_[index];} else
+			if(document.getElementById("1QL").checked==true) {basePrice = pricing.distributorNet[0]._157_[10]._1QL_[index];} else
+			if(document.getElementById("1EL").checked==true) {basePrice = pricing.distributorNet[0]._157_[11]._1EL_[index];} else
+			if(document.getElementById("LR").checked==true) {basePrice = pricing.distributorNet[0]._157_[12]._LR_[index];} else 
+			{basePrice = 0;}
+		} else if(document.getElementById("2549").checked==true){
+			if(document.getElementById("1S").checked==true) {basePrice = pricing.distributorNet[1]._757_[0]._1S_[index];} else
+			if(document.getElementById("2SL").checked==true) {basePrice = pricing.distributorNet[1]._757_[1]._2SL_[index];} else
+			if(document.getElementById("3SL").checked==true) {basePrice = pricing.distributorNet[1]._757_[2]._3SL_[index];} else
+			if(document.getElementById("4SL").checked==true) {basePrice = pricing.distributorNet[1]._757_[4]._4SL_[index];} else
+			if(document.getElementById("5SL").checked==true) {basePrice = pricing.distributorNet[1]._757_[5]._5SL_[index];} else
+			if(document.getElementById("6SL").checked==true) {basePrice = pricing.distributorNet[1]._757_[6]._6SL_[index];} else
+			if(document.getElementById("1R").checked==true) {basePrice = pricing.distributorNet[1]._757_[8]._1R_[index];} else
+			if(document.getElementById("2RL").checked==true) {basePrice = pricing.distributorNet[1]._757_[9]._2RL_[index];} else
+			if(document.getElementById("1QL").checked==true) {basePrice = pricing.distributorNet[1]._757_[10]._1QL_[index];} else
+			if(document.getElementById("1EL").checked==true) {basePrice = pricing.distributorNet[1]._757_[11]._1EL_[index];} else
+			if(document.getElementById("LR").checked==true) {basePrice = pricing.distributorNet[1]._757_[12]._LR_[index];} else 
+			{basePrice = 0;}
+		} else if(document.getElementById("2590").checked==true){
+			if(document.getElementById("3SL").checked==true) {
+				basePrice = pricing.distributorNet[0]._157_[3]._3SL_dual[index];
+			} else if(document.getElementById("6SL").checked==true) {
+				basePrice = pricing.distributorNet[0]._157_[7]._6SL_dual[index];
+			} else {
+				basePrice = 0;
+			}
+		} else if(document.getElementById("2598").checked==true){
+			if(document.getElementById("3SL").checked==true) {
+				basePrice = pricing.distributorNet[1]._757_[3]._3SL_dual[index];
+			} else if(document.getElementById("6SL").checked==true) {
+				basePrice = pricing.distributorNet[1]._757_[7]._6SL_dual[index];
+			} else {
+				basePrice = 0;
+			}
+		} else {
+			//*** DEFAULT HERE ***//
+			basePrice = 0;
+		}
+	} else if(document.getElementById("roblon_price").checked==true) {
+		if((document.getElementById("1018").checked==true) || (document.getElementById("2545").checked==true)){
+			if(document.getElementById("1S").checked==true) {basePrice = pricing.roblon[0]._157_[0]._1S_[index];} else
+			if(document.getElementById("2SL").checked==true) {basePrice = pricing.roblon[0]._157_[1]._2SL_[index];} else
+			if(document.getElementById("3SL").checked==true) {basePrice = pricing.roblon[0]._157_[2]._3SL_[index];} else
+			if(document.getElementById("4SL").checked==true) {basePrice = pricing.roblon[0]._157_[4]._4SL_[index];} else
+			if(document.getElementById("5SL").checked==true) {basePrice = pricing.roblon[0]._157_[5]._5SL_[index];} else
+			if(document.getElementById("6SL").checked==true) {basePrice = pricing.roblon[0]._157_[6]._6SL_[index];} else
+			if(document.getElementById("1R").checked==true) {basePrice = pricing.roblon[0]._157_[8]._1R_[index];} else
+			if(document.getElementById("2RL").checked==true) {basePrice = pricing.roblon[0]._157_[9]._2RL_[index];} else
+			if(document.getElementById("1QL").checked==true) {basePrice = pricing.roblon[0]._157_[10]._1QL_[index];} else
+			if(document.getElementById("1EL").checked==true) {basePrice = pricing.roblon[0]._157_[11]._1EL_[index];} else
+			if(document.getElementById("LR").checked==true) {basePrice = pricing.roblon[0]._157_[12]._LR_[index];} else 
+			{basePrice = 0;}
+		} else if(document.getElementById("2549").checked==true){
+			if(document.getElementById("1S").checked==true) {basePrice = pricing.roblon[1]._757_[0]._1S_[index];} else
+			if(document.getElementById("2SL").checked==true) {basePrice = pricing.roblon[1]._757_[1]._2SL_[index];} else
+			if(document.getElementById("3SL").checked==true) {basePrice = pricing.roblon[1]._757_[2]._3SL_[index];} else
+			if(document.getElementById("4SL").checked==true) {basePrice = pricing.roblon[1]._757_[4]._4SL_[index];} else
+			if(document.getElementById("5SL").checked==true) {basePrice = pricing.roblon[1]._757_[5]._5SL_[index];} else
+			if(document.getElementById("6SL").checked==true) {basePrice = pricing.roblon[1]._757_[6]._6SL_[index];} else
+			if(document.getElementById("1R").checked==true) {basePrice = pricing.roblon[1]._757_[8]._1R_[index];} else
+			if(document.getElementById("2RL").checked==true) {basePrice = pricing.roblon[1]._757_[9]._2RL_[index];} else
+			if(document.getElementById("1QL").checked==true) {basePrice = pricing.roblon[1]._757_[10]._1QL_[index];} else
+			if(document.getElementById("1EL").checked==true) {basePrice = pricing.roblon[1]._757_[11]._1EL_[index];} else
+			if(document.getElementById("LR").checked==true) {basePrice = pricing.roblon[1]._757_[12]._LR_[index];} else 
+			{basePrice = 0;}
+		} else if(document.getElementById("2590").checked==true){
+			if(document.getElementById("3SL").checked==true) {
+				basePrice = pricing.roblon[0]._157_[3]._3SL_dual[index];
+			} else if(document.getElementById("6SL").checked==true) {
+				basePrice = pricing.roblon[0]._157_[7]._6SL_dual[index];
+			} else {
+				basePrice = 0;
+			}
+		} else if(document.getElementById("2598").checked==true){
+			if(document.getElementById("3SL").checked==true) {
+				basePrice = pricing.roblon[1]._757_[3]._3SL_dual[index];
+			} else if(document.getElementById("6SL").checked==true) {
+				basePrice = pricing.roblon[1]._757_[7]._6SL_dual[index];
+			} else {
+				basePrice = 0;
+			}
+		} else {
+			<!-- DEFAULT HERE -->
+			basePrice = 0;
+		} 
+	}
+	return basePrice;
+}
+
+function setCustomLengthAdder(tempTotal, extrusionCode) {
+	var CUSTOM_LENGTH_FEE = 10; //$10 custom cut fee
+	var ROBLON_ACC_DISCOUNT = 0.70; //roblon accessory discount
+	
+	if(extrusionCode == "C") {
+		if(document.getElementById("roblon_price").checked==true){
+			tempTotal = tempTotal+(CUSTOM_LENGTH_FEE*ROBLON_ACC_DISCOUNT);
+		} else {
+			tempTotal = tempTotal+CUSTOM_LENGTH_FEE;
+		}
+	}
+	return tempTotal;
+}
+
+function setLensAdder(tempTotal, lensCode, trueLength) {
+	var lensAdder=0;
+	
+	var ROBLON_ACC_DISCOUNT = 0.70; //roblon accessory discount
+	
+	//1S SLIDING LENS PRICING
+	if(lensCode == "SLC"){
+		var slcLensPrice;
+		var SLC_1S_PER_FOOT = 7.5; //per foot price of 1S SLC lens
+		if(document.getElementById("roblon_price").checked==true)
 		{
 			var ROBLON_SLC_1S_PER_FOOT = SLC_1S_PER_FOOT * ROBLON_ACC_DISCOUNT;
 			var slc_length = (trueLength/12); //convert lens length from inches to foot
-			if(((slc_length*12)%12) <= 1)
-			{				
-				slc_length = Math.floor(slc_length); //round lens length down to nearest foot
-			} else
-			{
-				slc_length = Math.ceil(slc_length); //round lens length up to nearest foot
-			}
-			var lens_cost = slc_length * ROBLON_SLC_1S_PER_FOOT;
-			dnPrice = dnPrice + lens_cost;
-		} else if(document.getElementById("slc").checked==true)
-		{
+			if(((slc_length*12)%12) <= 1){slc_length = Math.floor(slc_length);} //round lens length down to nearest foot 
+			else{slc_length = Math.ceil(slc_length);} //round lens length up to nearest foot
+			lensAdder = slc_length * ROBLON_SLC_1S_PER_FOOT;
+		} else {
 			var slc_length = (trueLength/12); //convert lens length from inches to foot
-			if(((slc_length*12)%12) <= 1)
-			{				
-				slc_length = Math.floor(slc_length); //round lens length down to nearest foot
-			} else
-			{
-				slc_length = Math.ceil(slc_length); //round lens length up to nearest foot
-			}
-			var lens_cost = slc_length * SLC_1S_PER_FOOT;
-			dnPrice = dnPrice + lens_cost;
+			if(((slc_length*12)%12) <= 1){slc_length = Math.floor(slc_length);} //round lens length down to nearest foot
+			else{slc_length = Math.ceil(slc_length);} //round lens length up to nearest foot
+			lensAdder = slc_length * SLC_1S_PER_FOOT;
 		}
-	} else if (extrusionCode == "1R")
-	{
-        if (lengthCode == 'C')
-        {        
-            var temp = ((trueLength - END_CAP_WIDTH) / LED_COUPON_LENGTH); //find number of coupons in a custom length
-            index = Math.ceil(temp); //round up to integer to get index
-            dnPrice = _1R_DnPrice[index-1] + CUSTOM_LENGTH_FEE;
-        } else 
-        {
-            dnPrice = _1R_DnPrice[index-1];
-        }            
-	} else if (extrusionCode == "2RL")
-	{
-        if (lengthCode == 'C')
-        {        
-            var temp = ((trueLength - END_CAP_WIDTH) / LED_COUPON_LENGTH); //find number of coupons in a custom length
-            index = Math.ceil(temp); //round up to integer to get index
-            dnPrice = _2RL_DnPrice[index-1] + CUSTOM_LENGTH_FEE;
-        } else 
-        {
-            dnPrice = _2RL_DnPrice[index-1];	
-        }
-	} else if (extrusionCode == "2SL")
-	{
-        if (lengthCode == 'C')
-        {        
-            var temp = ((trueLength - END_CAP_WIDTH) / LED_COUPON_LENGTH); //find number of coupons in a custom length
-            index = Math.ceil(temp); //round up to integer to get index
-            dnPrice = _2SL_DnPrice[index-1] + CUSTOM_LENGTH_FEE;
-        } else 
-        {
-            dnPrice = _2SL_DnPrice[index-1];	
-        }
-	} else if ((extrusionCode == "3SL") && (document.getElementById("2590").checked==true))
-	{
-        if (lengthCode == 'C')
-        {        
-            var temp = ((trueLength - END_CAP_WIDTH) / LED_COUPON_LENGTH); //find number of coupons in a custom length
-            index = Math.ceil(temp); //round up to integer to get index
-            dnPrice = _3SL_Dual_DnPrice[index-1] + CUSTOM_LENGTH_FEE;
-        } else 
-        {
-            dnPrice = _3SL_Dual_DnPrice[index-1];
-        }
-	} else if (extrusionCode == "3SL")
-	{
-        if (lengthCode == 'C')
-        {        
-            var temp = ((trueLength - END_CAP_WIDTH) / LED_COUPON_LENGTH); //find number of coupons in a custom length
-            index = Math.ceil(temp); //round up to integer to get index
-            dnPrice = _3SL_DnPrice[index-1] + CUSTOM_LENGTH_FEE;
-        } else 
-        {
-            dnPrice = _3SL_DnPrice[index-1];	
-        }
-	} else if (extrusionCode == "1QL")
-	{
-        if (lengthCode == 'C')
-        {        
-            var temp = ((trueLength - END_CAP_WIDTH) / LED_COUPON_LENGTH); //find number of coupons in a custom length
-            index = Math.ceil(temp); //round up to integer to get index
-            dnPrice = _1QL_DnPrice[index-1] + CUSTOM_LENGTH_FEE;
-        } else 
-        {
-            dnPrice = _1QL_DnPrice[index-1];	
-        }
-	} else 
-	{
-		dnPrice = 0;
 	}
-	
-	//Apply D10 discount
-	if (document.getElementById("d10_price").checked==true)
-	{
-	  var D10 = 0.9;
-	  dnPrice = dnPrice * D10;
-	} else if (document.getElementById("d19_price").checked==true) //Apply D19 discount
-	{
-	  var D19 = 0.81;
-	  dnPrice = dnPrice * D19;
-	} 
-	
-	return dnPrice.toFixed(2);
+	// 60°/30°/10° OPTICAL LENS PRICING
+	if((lensCode=="60C") || (lensCode=="30C") || (lensCode=="10C")){
+		var OPTIC_PER_FOOT = 8.5; //per foot price of optical lenses
+		if(document.getElementById("roblon_price").checked==true) {
+			//STUFF HERE
+			var ROBLON_OPTIC_PER_FOOT = OPTIC_PER_FOOT * ROBLON_ACC_DISCOUNT;
+			var optic_length = (trueLength/12); //convert lens length from inches to foot
+			if(((optic_length*12)%12) <= 1){optic_length = Math.floor(optic_length);} //round lens length down to nearest foot 
+			else{optic_length = Math.ceil(optic_length);} //round lens length up to nearest foot
+			lensAdder = optic_length * ROBLON_OPTIC_PER_FOOT;
+		} else {
+			//STUFF HERE
+			var optic_length = (trueLength/12); //convert lens length from inches to foot
+			if(((optic_length*12)%12) <= 1){optic_length = Math.floor(optic_length);} //round lens length down to nearest foot 
+			else{optic_length = Math.ceil(optic_length);} //round lens length up to nearest foot
+			lensAdder = optic_length * OPTIC_PER_FOOT;
+		}
+	}
+	return (tempTotal+lensAdder);
+}
+
+//Apply pre-defined discounts to fixture price
+function discountDeduct(tempTotal){
+	if (document.getElementById("d10_price").checked==true){
+		var D10 = 0.9;
+		tempTotal = tempTotal * D10;
+	} else if (document.getElementById("d19_price").checked==true){ //Apply D19 discount
+		var D19 = 0.81;
+		tempTotal = tempTotal * D19;
+	} else {
+		tempTotal=tempTotal;
+	}
+	return tempTotal.toFixed(2);
 }
 
 //******************************************************************
@@ -1343,14 +1433,13 @@ function printTotalWattage(totalWatts)
 	document.getElementById('watts').innerHTML=totalWatts;
 }
 
-function printDnPrice(dnPrice)
+function printPrice(price)
 {
-	document.getElementById('dnPrice').innerHTML=dnPrice;
+	document.getElementById('dnPrice').innerHTML=price;
 }
 
 function printCommentBox(commentBox)
 {
-	/* document.getElementById('comment').innerHTML=commentBox.fontsize(2); */
 	document.getElementById('comment').innerHTML=commentBox;
 }
 
@@ -1381,10 +1470,10 @@ function fnDeSelect()
 } 
 // ******************************* TESTING SEND TO CLIPBOARD FEATURE - END *******************************
 
-function main()
-{
+function main(){
 	
 	var ledCode = setLedCode();
+	var lensCode = setLensCode();
 	var lengthCode = setLengthCode();
 	var trueLength = setTrueLength(lengthCode);
 	var totalWatts = setTotalWatts(ledCode, trueLength, lengthCode);
@@ -1400,9 +1489,13 @@ function main()
 	printLengthConversion(trueLength, mm);	
 	
 	var extrusionCode = setExtrusionCode();
-	var dnPrice = setDnPrice(extrusionCode, trueLength, lengthCode);
 	var commentBox = setCommentBox();
 	printCommentBox(commentBox);
+	
+	var basePrice = setBasePrice(extrusionCode, trueLength);
+	tempTotal = setCustomLengthAdder(basePrice, extrusionCode);
+	tempTotal = setLensAdder(tempTotal, lensCode, trueLength);
+	tempTotal = discountDeduct(tempTotal);
 	setPriceDisplay();
-	printDnPrice(dnPrice);
+	printPrice(tempTotal);
 }
