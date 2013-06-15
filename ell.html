@@ -142,15 +142,19 @@
 												<div class="ym-gbox button-gbox">
 													<span class="led-buttons control-buttons">
 														<input type="radio" name="led-board-group" value="" id="1018" onclick="set_1018_Env()"/>
-														<label for="1018">0.10w [157]</label>
+														<label for="1018">1018 (0.10w)</label>
 													</span>
 													<span class="led-buttons control-buttons">
 														<input type="radio" name="led-board-group" value="" id="2545" onclick="set_2545_Env()"/>
-														<label for="2545">0.25w [157]</label>
+														<label for="2545">2545 (0.25w)</label>
 													</span>
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="2549" onclick="set_2549_Env()"/>
-														<label for="2549">0.25w [757]</label>
+														<input type="radio" name="led-board-group" value="" id="3545" onclick="set_3545_Env()"/>
+														<label for="3545">3545 (HI-CRI)</label>
+													</span>
+													<span class="led-buttons control-buttons">
+														<input type="radio" name="led-board-group" value="" id="4545" onclick="set_4545_Env()"/>
+														<label for="4545">4545 (HI-LM)</label>
 													</span>
 												</div>	
 											</div>
@@ -158,11 +162,19 @@
 												<div class="ym-gbox button-gbox">
 													<span class="led-buttons control-buttons">
 														<input type="radio" name="led-board-group" value="" id="2590" onclick="set_2590_Env()"/>
-														<label for="2590">0.25w (x2) [157]</label>
+														<label for="2590">2590</label>
 													</span>
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="2598" onclick="set_2598_Env()"/>
-														<label for="2598">0.25w (x2) [757]</label>
+														<input type="radio" name="led-board-group" value="" id="3590" onclick="set_3590_Env()"/>
+														<label for="3590">3590 (HI-CRI)</label>
+													</span>
+													<span class="led-buttons control-buttons">
+														<input type="radio" name="led-board-group" value="" id="4590" onclick="set_4590_Env()"/>
+														<label for="4590">4590 (HI-LM)</label>
+													</span>
+													<span class="led-buttons control-buttons">
+														<input type="radio" name="led-board-group" value="" id="1084" onclick="set_1084_Env()"/>
+														<label for="1084">1084</label>
 													</span>
 												</div>	
 											</div>	
@@ -229,6 +241,14 @@
 													<span class="finish-buttons control-buttons">
 														<input type="radio" name="ext-finish-group" value="" id="bl" />
 														<label for="bl">BL - Black Finish</label>
+													</span>
+													<span class="finish-buttons control-buttons">
+														<input type="radio" name="ext-finish-group" value="" id="wh" />
+														<label for="wh">WH - White Finish</label>
+													</span>
+													<span class="finish-buttons control-buttons">
+														<input type="radio" name="ext-finish-group" value="" id="br" />
+														<label for="br">BR - Bronze Finish</label>
 													</span>
 													<span class="finish-buttons control-buttons">
 														<input type="radio" name="ext-finish-group" value="" id="custom" />
@@ -470,13 +490,13 @@
 											<!-- content: nested grid-column -->
 											<h6 class="ym-fbox-heading controlbox-heading"><span id='price_label'>Distributor Net Price:</span></h6>
 											<div class="ym-fbox-text">
-												<p>$<span id="dnPrice">0.00</span></p>
+												<p>$<span id="price">0.00</span></p>
 											</div>
 										</div>
 									</div>
 									<div class="ym-gcust-5 ym-gl">
 										<div class="ym-gbox button-gbox">	
-											<button class="select-text-button" onclick="fnSelect('dnPrice')">S</button>
+											<button class="select-text-button" onclick="fnSelect('price')">S</button>
 										</div>
 									</div>
 									<div class="ym-g40 ym-gl blue result">

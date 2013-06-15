@@ -158,6 +158,7 @@ footer {
 
 #results-box {
 	background-color: #4f4f4f;
+	overflow:hidden;
 }
 
 .button {
