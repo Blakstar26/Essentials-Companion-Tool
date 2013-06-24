@@ -8,6 +8,9 @@ function set_1S_Env()
 	document.getElementById("3590").disabled=true;
 	document.getElementById("4590").disabled=true;
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
+	document.getElementById("wh").disabled=true;
+	document.getElementById("br").disabled=true;
 	document.getElementById("nl").disabled=false;
 	document.getElementById("pg").disabled=true;
 	document.getElementById("slc").disabled=false;
@@ -18,6 +21,7 @@ function set_1S_Env()
 	document.getElementById("op2").disabled=true;
 	document.getElementById("op3").disabled=true;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'C');
@@ -36,15 +40,19 @@ function set_2SL_Env()
 	document.getElementById("3590").disabled=true;
 	document.getElementById("4590").disabled=true;
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
+	document.getElementById("wh").disabled=true;
+	document.getElementById("br").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("slc").disabled=true;
 	document.getElementById("10c").disabled=true;
 	document.getElementById("30c").disabled=false;
-	document.getElementById("60c").disabled=false;
+	document.getElementById("60c").disabled=true;
 	document.getElementById("op1").disabled=false;
 	document.getElementById("op2").disabled=false;
 	document.getElementById("op3").disabled=false;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
@@ -63,6 +71,7 @@ function set_1R_Env()
 	document.getElementById("3590").disabled=true;
 	document.getElementById("4590").disabled=true;
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("pg").disabled=true;
 	document.getElementById("slc").disabled=true;
 	document.getElementById("10c").disabled=true;
@@ -72,13 +81,14 @@ function set_1R_Env()
 	document.getElementById("op2").disabled=true;
 	document.getElementById("op3").disabled=true;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("n").disabled=false;
 	document.getElementById("im").disabled=false;
 	document.getElementById("bu").disabled=false;
 	document.getElementById("fs").disabled=false;
 	document.getElementById("cm").disabled=false;
 	document.getElementById("ro").disabled=false;
-	var roundExits = new Array('Select Tail', 'WE1', 'WE3', 'WB1', 'WB3', 'C');
+	var roundExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB3', 'C');
 	setAllTailExits(roundExits);
 	setFixtureLengths();
 	document.getElementById("distributor_price").checked=true;
@@ -94,15 +104,17 @@ function set_2RL_Env()
 	document.getElementById("3590").disabled=true;
 	document.getElementById("4590").disabled=true;
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("slc").disabled=true;
 	document.getElementById("10c").disabled=true;
 	document.getElementById("30c").disabled=false;
-	document.getElementById("60c").disabled=false;
+	document.getElementById("60c").disabled=true;
 	document.getElementById("op1").disabled=false;
 	document.getElementById("op2").disabled=false;
 	document.getElementById("op3").disabled=false;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("n").disabled=false;
 	document.getElementById("im").disabled=false;
 	document.getElementById("bu").disabled=false;
@@ -122,15 +134,19 @@ function set_3SL_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
+	document.getElementById("wh").disabled=true;
+	document.getElementById("br").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("slc").disabled=true;
 	document.getElementById("10c").disabled=true;
-	document.getElementById("30c").disabled=false;
-	document.getElementById("60c").disabled=false;
+	document.getElementById("30c").disabled=true;
+	document.getElementById("60c").disabled=true;
 	document.getElementById("op1").disabled=false;
 	document.getElementById("op2").disabled=false;
 	document.getElementById("op3").disabled=false;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
@@ -149,15 +165,17 @@ function set_1QL_Env()
 	document.getElementById("3590").disabled=true;
 	document.getElementById("4590").disabled=true;
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("slc").disabled=true;
 	document.getElementById("10c").disabled=true;
 	document.getElementById("30c").disabled=false;
-	document.getElementById("60c").disabled=false;
+	document.getElementById("60c").disabled=true;
 	document.getElementById("op1").disabled=false;
 	document.getElementById("op2").disabled=false;
 	document.getElementById("op3").disabled=false;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var quarterRoundExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR3', 'WB1', 'TB3', 'C');
 	setAllTailExits(quarterRoundExits);
@@ -175,6 +193,9 @@ function set_4SL_Env()
 	document.getElementById("3590").disabled=true;
 	document.getElementById("4590").disabled=true;
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
+	document.getElementById("wh").disabled=true;
+	document.getElementById("br").disabled=true;
 	document.getElementById("pg").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("slc").disabled=true;
@@ -185,6 +206,7 @@ function set_4SL_Env()
 	document.getElementById("op2").disabled=false;
 	document.getElementById("op3").disabled=false;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
 	setAllTailExits(squareExits);
@@ -202,16 +224,17 @@ function set_5SL_Env()
 	document.getElementById("3590").disabled=true;
 	document.getElementById("4590").disabled=true;
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
+	document.getElementById("wh").disabled=true;
+	document.getElementById("br").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("pg").disabled=false;
 	document.getElementById("slc").disabled=true;
 	document.getElementById("10c").disabled=true;
 	document.getElementById("30c").disabled=true;
 	document.getElementById("60c").disabled=true;
-	document.getElementById("op1").disabled=true;
-	document.getElementById("op2").disabled=true;
-	document.getElementById("op3").disabled=true;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
 	setAllTailExits(squareExits);
@@ -226,6 +249,9 @@ function set_6SL_Env()
 	resetTailsBox();
 	resetLengthBox();
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
+	document.getElementById("wh").disabled=true;
+	document.getElementById("br").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("pg").disabled=false;
 	document.getElementById("slc").disabled=true;
@@ -236,6 +262,7 @@ function set_6SL_Env()
 	document.getElementById("op2").disabled=false;
 	document.getElementById("op3").disabled=false;
 	document.getElementById("df").disabled=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
 	var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
@@ -254,6 +281,7 @@ function set_1EL_Env()
 	document.getElementById("3590").disabled=true;
 	document.getElementById("4590").disabled=true;
 	document.getElementById("1084").disabled=true;
+	//document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("nl").disabled=true;
 	document.getElementById("pg").disabled=true;
 	document.getElementById("slc").disabled=true;
@@ -265,9 +293,10 @@ function set_1EL_Env()
 	document.getElementById("op3").disabled=true;
 	document.getElementById("df").disabled=false;
 	document.getElementById("df").checked=true;
+	document.getElementById("dl").disabled=true;
 	document.getElementById("cm").disabled=true;
 	document.getElementById("ro").disabled=false;
-	var EL_Exits = new Array('Select Tail', 'WE1', 'WE3', 'C');
+	var EL_Exits = new Array('Select Tail', 'WE1', 'WE3', 'WB1', 'WB3', 'C');
 	setAllTailExits(EL_Exits);
 	setFixtureLengths();
 	document.getElementById("distributor_price").checked=true;
@@ -276,6 +305,36 @@ function set_1EL_Env()
 //set, disable and/or enable buttons for LR enviornment
 function set_LR_Env()
 {
+	resetAllForm();
+	resetTailsBox();
+	resetLengthBox();
+	document.getElementById("1018").disabled=true;
+	document.getElementById("2545").disabled=true;
+	document.getElementById("3545").disabled=true;
+	document.getElementById("4545").disabled=true;
+	document.getElementById("2590").disabled=true;
+	document.getElementById("3590").disabled=true;
+	document.getElementById("4590").disabled=true;
+	document.getElementById("1084").checked=true;
+	//document.getElementById("current-dropbox").disabled=false;
+	document.getElementById("custom").disabled=true;
+	document.getElementById("nl").disabled=true;
+	document.getElementById("pg").disabled=true;
+	document.getElementById("slc").disabled=true;
+	document.getElementById("10c").disabled=true;
+	document.getElementById("30c").disabled=true;
+	document.getElementById("60c").disabled=true;
+	document.getElementById("op1").disabled=true;
+	document.getElementById("op2").disabled=true;
+	document.getElementById("op3").disabled=true;
+	document.getElementById("df").disabled=true;
+	document.getElementById("dl").checked=true;
+	document.getElementById("ro").disabled=false;
+	document.getElementById("tail-two-dropbox").disabled=true;
+	var LR_Exits = new Array('Select Tail', 'WE1');
+	setAllTailExits(LR_Exits);
+	setFixtureLengths();
+	document.getElementById("distributor_price").checked=true;
 }
 
 //set, disable and/or enable buttons for 10th watt (157) LED enviornment
@@ -330,14 +389,15 @@ function set_4590_Env()
 //set, disable and/or enable buttons for dual XX watt (XXX) LED enviornment
 function set_1084_Env()
 {
-	document.getElementById("XXXX").checked=false;
-	document.getElementById("XXXX").disabled=true;
+	document.getElementById("2400").checked=false;
+	document.getElementById("2400").disabled=true;
 }
 
 //******************************************************************
 function resetAllForm()
 {
 	resetLedBoardButtons();
+	resetCurrentOpt;
 	resetColorTempButtons();
 	resetFinishButtons();
 	resetLensButtons();
@@ -379,6 +439,11 @@ function resetLedBoardButtons()
 	document.getElementById("1084").checked=false;
 }
 
+function resetCurrentOpt(){
+	document.getElementById("mA_default").selected=true;
+	document.getElementById("current-dropbox").disabled=false;
+}
+
 function resetColorTempButtons()
 {
 	document.getElementById("2400").disabled=false;
@@ -399,9 +464,13 @@ function resetFinishButtons()
 {
 	document.getElementById("al").disabled=false;
 	document.getElementById("bl").disabled=false;
+	document.getElementById("wh").disabled=false;
+	document.getElementById("br").disabled=false;
 	document.getElementById("custom").disabled=false;
 	document.getElementById("al").checked=false;
 	document.getElementById("bl").checked=false;
+	document.getElementById("wh").checked=false;
+	document.getElementById("br").checked=false;
 	document.getElementById("custom").checked=false;
 }
 
@@ -417,6 +486,7 @@ function resetLensButtons()
 	document.getElementById("op2").disabled=false;
 	document.getElementById("op3").disabled=false;
 	document.getElementById("df").disabled=false;
+	document.getElementById("dl").disabled=false;
 	document.getElementById("nl").checked=false;
 	document.getElementById("pg").checked=false;
 	document.getElementById("slc").checked=false;
@@ -427,7 +497,7 @@ function resetLensButtons()
 	document.getElementById("op2").checked=false;
 	document.getElementById("op3").checked=false;
 	document.getElementById("df").checked=false;
-	
+	document.getElementById("dl").checked=false;
 }
 
 function resetFactoryOptionsButtons()
@@ -531,9 +601,10 @@ function setTailExitTwo(tailExits)
 	select.val(selectedOption);
 }
 
+//**************************************************************************************
 function setFixtureLengths()
 {
-	var fixtureLengths = new Array(4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 'C');
+	var fixtureLengths = setLengthList();
 	
 	//set length dropbox
 	var select = $('#length-dropbox');
@@ -548,6 +619,18 @@ function setFixtureLengths()
 		options[options.length] = new Option(text, val);
 	});
 }
+
+function setLengthList(){
+	var lengthList;
+	if(document.getElementById("LR").checked==true){
+		lengthList = new Array(8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 'C');
+	} else {
+		lengthList = new Array(4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 'C');
+	}
+	return lengthList;
+}
+//**************************************************************************************
+
  // ENABLE CUSTOM LENGTH INPUT, IF 'C' SELECTED FROM DROPDOWN//
 function enableCustomInput()
 {
@@ -744,6 +827,9 @@ function setLensCode()
 	} else if(document.getElementById("df").checked==true)
 	{
 		lensCode = "DF";
+	} else if(document.getElementById("dl").checked==true)
+	{
+		lensCode = "DL";
 	} else {lensCode = "XX";}
 	return lensCode;
 }
@@ -766,14 +852,17 @@ function setWireCode()
 	} else if((indexOne == 0) && (indexTwo != 0))
 	{
 		wireCode = document.getElementById("tail-two-dropbox").options[indexTwo].text;	
-	}
+	} else {wireCode = "XXX";}
 	return wireCode;
 }
 
 function setLengthCode()
 {
+	var lengthCode;
 	var index = document.getElementById("length-dropbox").selectedIndex;
-	var lengthCode = document.getElementById("length-dropbox").options[index].text;
+	if(index != 0){
+		lengthCode = document.getElementById("length-dropbox").options[index].text;
+	} else {lengthCode="X";}
 	return lengthCode;
 }
 
@@ -798,8 +887,7 @@ function setFactoryOptionsCode(extrusionCode)
 		{
 			factoryOptionsCode = "-CM";
 		} else {
-			alert("Please select factory option");
-			exit();
+			factoryOptionsCode = 'XX';
 		}
 	}
 	
@@ -817,6 +905,15 @@ function setPartNumber(extrusionCode, ledCode, colorTempCode, finishCode, lensCo
 }
 
 //******************************************************************
+function setPowerType(extrusionCode){
+	var powerType;
+	if(extrusionCode=="LR"){
+		//do something
+	} else {
+		powerType = "24v";
+	}
+	return powerType;
+}
 
 function setIpRating(extrusionCode)
 {
@@ -845,7 +942,7 @@ function setTrueLength(lengthCode)
 	
 	var index = document.getElementById("length-dropbox").selectedIndex;
 	var length_list = new Array(4.72, 8.66, 12.6, 16.54, 20.47, 24.41, 28.35, 32.28, 36.22, 40.16, 44.09, 48.03, 51.97, 55.91, 59.84, 63.78, 67.72, 71.65, 75.59, 79.53, 83.46, 87.4, 91.34, 95.28);
-	var trueLength;
+	var trueLength=0;
 	if (lengthCode == 'C')
 	{
 		var lengthInput = document.getElementById("custom-length-input").value;
@@ -853,15 +950,19 @@ function setTrueLength(lengthCode)
 		trueLength = parseFloat(lengthInput); 
 		if (trueLength >= MAX_LENGTH)
 		{
-			alert('CUSTOM LENGTH CANNOT EQUAL OR EXCEED MAX POSSIBLE (95.28 in.)!!');
+			var alertMsg='CUSTOM LENGTH CANNOT EQUAL OR EXCEED MAX POSSIBLE (95.28 in.)!!';
+			$.msgBox({
+				title:"Warning!",
+				content: alertMsg
+			});
 			exit();
 		} else {
-            return trueLength;
-        }
+      return trueLength;
+    }
 	} else 
 	{
 		trueLength = length_list[index-1];
-		return trueLength.toFixed(2);
+		return trueLength;
 	}
 }
 
@@ -921,6 +1022,16 @@ function setLengthDescription(trueLength, trueLengthMM)
 	var mm = trueLengthMM;
 	var lengthDescription = inches+ "\" (" + mm + "mm) extrusion length;";
 	return lengthDescription;
+}
+
+function setPowerTypeDescription(powerType){
+	var powerTypeDescription;
+	if(powerType!="24v"){
+		powerTypeDescription = powerType+" constant current, ";
+	} else {
+		powerTypeDescription = powerType+" constant voltage, ";;
+	}
+	return powerTypeDescription;
 }
 
 function setLedDescription(ledCode)
@@ -1190,12 +1301,14 @@ function setFullDescription()
 	var factoryOptionsCode = setFactoryOptionsCode(extrusionCode);
 	var trueLength = setTrueLength(lengthCode);
 	var trueLengthMM = setLengthConversion(trueLength);
+	var powerType = setPowerType(extrusionCode);
 	var cri = setCRI(ledCode);
 	
 	var ipRating = setIpRating(extrusionCode);
 	var generalDescription = "VLT Essential Linear LED;";
 	var extrusionDescription = setExtrusionDescription(extrusionCode, ipRating);
 	var lengthDescription = setLengthDescription(trueLength, trueLengthMM);
+	var powerTypeDescription = setPowerTypeDescription(powerType);
 	var ledDescription = setLedDescription(ledCode);
 	var colorDescription = setColorDescription(colorTempCode, cri);
 	var lensDescription = setLensDescription(lensCode);
@@ -1204,15 +1317,17 @@ function setFullDescription()
 	var finishDescription = setFinishDescription(finishCode);
 	var customLengthDescription = setCustomLengthDescription(lengthCode, trueLength);
 	
+	errorCheck(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, factoryOptionsCode, wireCode, lengthCode, trueLength);
+	
 	partNumber = setPartNumber(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, wireCode, lengthCode, factoryOptionsCode);
-	fullDescription = partNumber+"   -   "+generalDescription+" "+extrusionDescription+" "+lengthDescription+" "+customLengthDescription+" "+ledDescription+" "+colorDescription+" "+lensDescription+" "+wireDescription+" "+factoryOptionsDescription+" "+finishDescription;
+	fullDescription = partNumber+"   -   "+generalDescription+" "+extrusionDescription+" "+lengthDescription+" "+powerTypeDescription+" "+customLengthDescription+" "+ledDescription+" "+colorDescription+" "+lensDescription+" "+wireDescription+" "+factoryOptionsDescription+" "+finishDescription;
 	return fullDescription;
 }
 
 //******************************************************************
 
 //Load all pricing
-function setBasePrice(extrusionCode, trueLength) {
+function setBasePrice(extrusionCode, lengthCode, trueLength) {
 	var pricing = {
 		"distributorNet": [
 			{"_1018_2545_": [
@@ -1325,8 +1440,7 @@ function setBasePrice(extrusionCode, trueLength) {
 	//set appropriate length index
 	var basePrice;
 	var index;
-	
-	if (extrusionCode == "C"){
+	if (lengthCode == "C"){
 		var END_CAP_WIDTH = 0.37;
 		var LED_COUPON_LENGTH = 3.937;
 		var MIN_AIR_GAP = 0.4; //gap between board and end-cap is a minimum of 0.20" (x2) = 0.4
@@ -1456,13 +1570,13 @@ function setBasePrice(extrusionCode, trueLength) {
 	return basePrice;
 }
 
-function setCustomLengthAdder(tempTotal, extrusionCode) {
+function setCustomLengthAdder(tempTotal, lengthCode) {
 	var CUSTOM_LENGTH_FEE = 10; //$10 custom cut fee
 	var ROBLON_ACC_DISCOUNT = 0.70; //roblon accessory discount
 	
 	if(tempTotal==0){return tempTotal;} //if starting price is $0, do not add to value
 	
-	if(extrusionCode == "C") {
+	if(lengthCode == "C") {
 		if(document.getElementById("roblon_price").checked==true){
 			tempTotal = tempTotal+(CUSTOM_LENGTH_FEE*ROBLON_ACC_DISCOUNT);
 		} else {
@@ -1497,7 +1611,7 @@ function setLensAdder(tempTotal, lensCode, trueLength) {
 		}
 	}
 	// 60°/30°/10° OPTICAL LENS PRICING
-	if((lensCode=="60c") || (lensCode=="30c") || (lensCode=="10c")){
+	if((lensCode=="60C") || (lensCode=="30C") || (lensCode=="10C")){
 		var OPTIC_PER_FOOT = 8.5; //per foot price of optical lenses
 		var ROBLON_OPTIC_PER_FOOT = 4.25; // Roblon per foot price of optical lenses
 		if(document.getElementById("roblon_price").checked==true) {
@@ -1544,8 +1658,8 @@ function printFullDescription(fullDescription, wattsDescription)
 
 function printLengthConversion(inches, mm)
 {
-	document.getElementById('inches').innerHTML=inches;
-	document.getElementById('mm').innerHTML=mm;
+	document.getElementById('inches').innerHTML=inches.toFixed(2);
+	document.getElementById('mm').innerHTML=mm.toFixed(0);
 }
 
 function printTotalWattage(totalWatts)
@@ -1583,11 +1697,36 @@ function fnSelect(objId)
 }
 function fnDeSelect() 
 {
-   if (document.selection)
-             document.selection.empty();
-   else if (window.getSelection)
-              window.getSelection().removeAllRanges();
+  if (document.selection)
+    document.selection.empty();
+  else if (window.getSelection)
+		window.getSelection().removeAllRanges();
 } 
+// *******************************   *******************************
+
+function errorCheck(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, factoryOptionsCode, wireCode, lengthCode, trueLength){
+	var alertMsg="Please choose ";
+	var errorStrg;
+	if(extrusionCode=="XX"){errorStrg="extrusion type!";}
+	if(ledCode=="XXXX"){errorStrg="LED board type!";}
+	if(colorTempCode=="XX"){errorStrg="LED color type!";}
+	if(finishCode=="X"){errorStrg="finish type!";}
+	if(lensCode=="XX"){errorStrg="lens type!";}
+	if((factoryOptionsCode=='XX') || (factoryOptionsCode=='XX-RO')){errorStrg="factory options type!";}
+	if(wireCode=="XXX"){errorStrg="wire exit type!";}		
+	if(lengthCode=="X"){errorStrg="fixture length!";}
+	if((isNaN(trueLength)) && (lengthCode=="C")){errorStrg="valid custom length!";}
+	
+	if(errorStrg){
+		$.msgBox({
+			title:"Warning!",
+			/* content:"Merhaba Dünya! / Hello World!" */
+			content: alertMsg+errorStrg
+		});
+		exit();
+	}
+}
+
 // *******************************   *******************************
 
 function main(){
@@ -1612,8 +1751,8 @@ function main(){
 	var commentBox = setCommentBox();
 	printCommentBox(commentBox);
 	
-	var basePrice = setBasePrice(extrusionCode, trueLength);
-	var tempTotal = setCustomLengthAdder(basePrice, extrusionCode);
+	var basePrice = setBasePrice(extrusionCode, lengthCode, trueLength);
+	var tempTotal = setCustomLengthAdder(basePrice, lengthCode);
 	tempTotal = setLensAdder(tempTotal, lensCode, trueLength);
 	tempTotal = discountDeduct(tempTotal);
 	setPriceDisplay();

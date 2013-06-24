@@ -8,10 +8,13 @@
 
 	<!-- (en) Add your meta data here -->
 	<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
-    <script type="text/javascript" src="js/linear_essentials.js"></script>
+   <script type="text/javascript" src="js/linear_essentials.js"></script>
     
 	<!-- MY CSS STUFF -->
 	<link rel="stylesheet" type="text/css" href="styles/ell_linear.css" id="theme" />
+	<!-- MSG BOX STUFF -->
+	<link rel="stylesheet" type="text/css" href="styles/msgBoxLight.css" id="theme" />
+	<script type="text/javascript" src="jquery/jquery.msgBox.js"></script>
 	<!-- YAML CSS STUFF -->
 	<link href="yaml/core/base.css" rel="stylesheet" type="text/css"/>
 	<link href="yaml/forms/gray-theme.css" rel="stylesheet" type="text/css"/>
@@ -124,7 +127,7 @@
 														<label for="1EL">1EL</label>
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="LR" onclick="set_LR_Env()" disabled/>
+														<input type="radio" name="extrusion-group" value="" id="LR" onclick="set_LR_Env()" disabled />
 														<label for="LR">LR</label>
 													</span>
 												</div>	
@@ -175,6 +178,12 @@
 													<span class="led-buttons control-buttons">
 														<input type="radio" name="led-board-group" value="" id="1084" onclick="set_1084_Env()"/>
 														<label for="1084">1084</label>
+														<select id="current-dropbox" onchange="" disabled>
+															<option id="mA_default">mA</option>
+															<option>350</option>
+															<option>500</option>
+															<option>700</option>
+														</select>
 													</span>
 												</div>	
 											</div>	
@@ -281,7 +290,11 @@
 													</span>
 													<span class="lens-buttons control-buttons">
 														<input type="radio" name="lens-group" value="" id="df"/>
-														<label for="df">DF - Diffuser Film</label>
+														<label for="df">DF - Diffuser F</label>
+													</span>
+													<span class="lens-buttons control-buttons">
+														<input type="radio" name="lens-group" value="" id="dl"/>
+														<label for="dl">DL - Diffuser L</label>
 													</span>
 												</div>	
 											</div>
