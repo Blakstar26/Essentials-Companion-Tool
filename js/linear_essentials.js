@@ -706,12 +706,6 @@ $( document ).ready(function(){
 	
 	//******** XXX ********//
 	
-	ELL_Obj.prototype.XX = function(){
-		var XX = $('input[name=XXX-group]:checked', '#myXXXForm').val();
-		if(lengthVal){this.XX = XX;} else
-		{this.XX = "XX";}
-	}
-	
 	ELL_Obj.prototype.setDN_basePrice = function(){
 	}
 	
@@ -759,9 +753,9 @@ $( document ).ready(function(){
 		onForm.customInputON();
 	});
 	
-	/* ******************************   Main Fucntion Here  ******************************* */
+	//******** Main Fucntion Here ********//
 	
-	$( "#try" ).click(function( event ){
+	$( "#run-main" ).click(function( event ){
 		var isFixture = new ELL_Obj();
 		
 		isFixture.getCurrentTypeIndex();
@@ -1393,11 +1387,6 @@ function setPriceDisplay(){
 } 
 
 /* ******************************   ******************************* */
-{
-	var MM_IN_INCHES = 25.4;
-	var mm = (inches * MM_IN_INCHES);
-	return Math.round(mm);
-} */
 
 function setCommentBox()
 {
@@ -1421,43 +1410,6 @@ function setCommentBox()
 	comment = comment.fontcolor("#FF0000"); // sets color of the text to red
 	return comment;
 }
-
-{
-	var fullDescription;
-	var partNumber;
-	
-	var extrusionCode = setExtrusionCode();
-	var lengthCode = setLengthCode();
-	var ledCode = setLedCode();
-	var colorTempCode = setColorTempCode();
-	
-	var lensCode = setLensCode();
-	var wireCode = setWireCode();
-	var finishCode = setFinishCode();
-	var factoryOptionsCode = setFactoryOptionsCode(extrusionCode);
-	var trueLength = setTrueLength(lengthCode);
-	var trueLengthMM = setLengthConversion(trueLength);
-	var powerType = setPowerType(extrusionCode);
-	var cri = setCRI(ledCode);
-	
-	var ipRating = setIpRating(extrusionCode);
-	var generalDescription = "VLT Essential Linear LED;";
-	var extrusionDescription = setExtrusionDescription(extrusionCode, ipRating);
-	var lengthDescription = setLengthDescription(trueLength, trueLengthMM);
-	var powerTypeDescription = setPowerTypeDescription(powerType);
-	var ledDescription = setLedDescription(ledCode);
-	var colorDescription = setColorDescription(colorTempCode, cri);
-	var lensDescription = setLensDescription(lensCode);
-	var wireDescription = setWireDescription(wireCode);
-	var factoryOptionsDescription = setFactoryOptionsDescription(factoryOptionsCode);
-	var finishDescription = setFinishDescription(finishCode);
-	var customLengthDescription = setCustomLengthDescription(lengthCode, trueLength);
-	
-	errorCheck(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, factoryOptionsCode, wireCode, lengthCode, trueLength);
-	
-	partNumber = setPartNumber(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, wireCode, lengthCode, factoryOptionsCode);
-	fullDescription = partNumber+"   -   "+generalDescription+" "+extrusionDescription+" "+lengthDescription+" "+powerTypeDescription+" "+customLengthDescription+" "+ledDescription+" "+colorDescription+" "+lensDescription+" "+wireDescription+" "+factoryOptionsDescription+" "+finishDescription;
-	return fullDescription;
 
 /* ******************************   ******************************* */
 
@@ -1796,7 +1748,7 @@ function printCommentBox(commentBox)
 	document.getElementById('comment').innerHTML=commentBox;
 }
 
-/* ******************************  COPY FEATURE - START  ******************************* */
+/* ******************************   COPY FEATURE - START  ******************************* */
 
 function fnSelect(objId)
 {
