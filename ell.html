@@ -1,39 +1,34 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta content="text/html" charset="utf-8"/>
+	<meta charset="UTF-8" />
 	<title>VLT Essentials Pricing Companion Tool</title>
 	
 	<!-- Mobile viewport optimisation -->
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 
 	<!-- (en) Add your meta data here -->
 	<script type="text/javascript" src="jquery/jquery-1.9.1.min.js"></script>
-   <script type="text/javascript" src="js/linear_essentials.js"></script>
+  <script type="text/javascript" src="js/linear_essentials.js"></script>
     
 	<!-- MY CSS STUFF -->
-	<link rel="stylesheet" type="text/css" href="styles/ell_linear.css" id="theme" />
+	<!-- <link rel="stylesheet" type="text/css" href="styles/reset.css" /> -->
+	<link rel="stylesheet" type="text/css" href="styles/ell_linear.css" />
 	<!-- MSG BOX STUFF -->
-	<link rel="stylesheet" type="text/css" href="styles/msgBoxLight.css" id="theme" />
+	<link rel="stylesheet" type="text/css" href="styles/msgBoxLight.css" />
 	<script type="text/javascript" src="jquery/jquery.msgBox.js"></script>
 	<!-- YAML CSS STUFF -->
 	<link href="yaml/core/base.css" rel="stylesheet" type="text/css"/>
 	<link href="yaml/forms/gray-theme.css" rel="stylesheet" type="text/css"/>
 	<link href="yaml/navigation/hlist.css" rel="stylesheet" type="text/css"/>
-	<!-- <link href="../yaml/screen/grid-960-12.css" rel="stylesheet" type="text/css"/>
-	<link href="../yaml/screen/grid-960-16.css" rel="stylesheet" type="text/css"/> -->
-	<!--[if lte IE 7]>
-	<link href="../yaml/core/iehacks.css" rel="stylesheet" type="text/css" />
-	<![endif]-->
-
-	<!--[if lt IE 9]>
-	<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
 </head>
+
 <body>
 	<header>
 		<div class="ym-wrapper">
 			<div id="header" class="ym-wbox">
-				<img src="img\ESS_BANNER_ALT.jpg"/>
+				<img src="img\ESS_BANNER_ALT.jpg" alt="VLT Logo"/>
 			</div>
 		</div>
 	</header>
@@ -44,7 +39,6 @@
 				<ul>
 					<li class="first"><a href="index.html"><strong>Home</strong></a></li>
 					<li class="active"><a href="ell.html">NEW! ELL Calc</a></li>
-					<li><a href="ell_old.html">OLD! ELL Calc</a></li>
 					<li><a href="elp.html">ELP Calc</a></li>
 					<li><a>Misc Stuff</a></li>
 					<li class="last"><a href="http://www.visual-lighting.com">Website</a></li>
@@ -75,23 +69,23 @@
 								<div class="ym-gbox">
 									<div class="control-box orange">
 										<h4 class="ym-fbox-heading controlbox-heading">Extrusion</h4>
-										<div class="ym-grid">
+										<form id="myExtForm" class="ym-grid">
 											<div class="ym-g33 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="1S" onclick="set_1S_Env()" />
+														<input type="radio" name="extrusion-group" value="1S" id="1S" class="ext-button" onclick="set_1S_Env()" />
 														<label for="1S">1S</label>
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="2SL" onclick="set_2SL_Env()" />
+														<input type="radio" name="extrusion-group" value="2SL" id="2SL" class="ext-button" onclick="set_2SL_Env()" />
 														<label for="2SL">2SL</label>
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="3SL" onclick="set_3SL_Env()" />
+														<input type="radio" name="extrusion-group" value="3SL" id="3SL" class="ext-button" onclick="set_3SL_Env()" />
 														<label for="3SL">3SL</label>
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="4SL" onclick="set_4SL_Env()" />
+														<input type="radio" name="extrusion-group" value="4SL" id="4SL" class="ext-button" onclick="set_4SL_Env()" />
 														<label for="4SL">4SL</label>
 													</span>
 												</div>	
@@ -99,15 +93,15 @@
 											<div class="ym-g33 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="1R" onclick="set_1R_Env()" />
+														<input type="radio" name="extrusion-group" value="1R" id="1R" class="ext-button" onclick="set_1R_Env()" />
 														<label for="1R">1R</label>
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="2RL" onclick="set_2RL_Env()" />
+														<input type="radio" name="extrusion-group" value="2RL" id="2RL" class="ext-button" onclick="set_2RL_Env()" />
 														<label for="2RL">2RL</label>
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="1QL" onclick="set_1QL_Env()" />
+														<input type="radio" name="extrusion-group" value="1QL" id="1QL" class="ext-button" onclick="set_1QL_Env()" />
 														<label for="1QL">1QL</label>
 													</span>
 												</div>	
@@ -115,24 +109,25 @@
 											<div class="ym-g33 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="5SL" onclick="set_5SL_Env()" />
+														<input type="radio" name="extrusion-group" value="5SL" id="5SL" class="ext-button" onclick="set_5SL_Env()" />
 														<label for="5SL">5SL</label>
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="6SL" onclick="set_6SL_Env()" />
+														<input type="radio" name="extrusion-group" value="6SL" id="6SL" class="ext-button" onclick="set_6SL_Env()" disabled/>
 														<label for="6SL">6SL</label>
+
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="1EL" onclick="set_1EL_Env()" />
+														<input type="radio" name="extrusion-group" value="1EL" id="1EL" class="ext-button" onclick="set_1EL_Env()" />
 														<label for="1EL">1EL</label>
 													</span>
 													<span class="ext-buttons control-buttons">
-														<input type="radio" name="extrusion-group" value="" id="LR" onclick="set_LR_Env()" disabled />
+														<input type="radio" name="extrusion-group" value="LR" id="LR" class="ext-button" onclick="set_LR_Env()" />
 														<label for="LR">LR</label>
 													</span>
 												</div>	
 											</div>	
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>				
@@ -140,23 +135,23 @@
 								<div class="ym-gbox">
 									<div class="control-box blue">
 										<h4 class="ym-fbox-heading controlbox-heading">Board Type</h4>
-										<div class="ym-grid">
+										<form id="myLedForm" class="ym-grid">
 											<div class="ym-g50 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="1018" onclick="set_1018_Env()"/>
+														<input type="radio" name="led-board-group" value="1018" id="1018" onclick="set_1018_Env()"/>
 														<label for="1018">1018 (0.10w)</label>
 													</span>
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="2545" onclick="set_2545_Env()"/>
+														<input type="radio" name="led-board-group" value="2545" id="2545" onclick="set_2545_Env()"/>
 														<label for="2545">2545 (0.25w)</label>
 													</span>
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="3545" onclick="set_3545_Env()"/>
+														<input type="radio" name="led-board-group" value="3545" id="3545" onclick="set_3545_Env()"/>
 														<label for="3545">3545 (HI-CRI)</label>
 													</span>
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="4545" onclick="set_4545_Env()"/>
+														<input type="radio" name="led-board-group" value="4545" id="4545" onclick="set_4545_Env()"/>
 														<label for="4545">4545 (HI-LM)</label>
 													</span>
 												</div>	
@@ -164,21 +159,21 @@
 											<div class="ym-g50 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="2590" onclick="set_2590_Env()"/>
+														<input type="radio" name="led-board-group" value="2590" id="2590" onclick="set_2590_Env()"/>
 														<label for="2590">2590</label>
 													</span>
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="3590" onclick="set_3590_Env()"/>
+														<input type="radio" name="led-board-group" value="3590" id="3590" onclick="set_3590_Env()"/>
 														<label for="3590">3590 (HI-CRI)</label>
 													</span>
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="4590" onclick="set_4590_Env()"/>
+														<input type="radio" name="led-board-group" value="4590" id="4590" onclick="set_4590_Env()"/>
 														<label for="4590">4590 (HI-LM)</label>
 													</span>
 													<span class="led-buttons control-buttons">
-														<input type="radio" name="led-board-group" value="" id="1084" onclick="set_1084_Env()"/>
+														<input type="radio" name="led-board-group" value="1084" id="1084" onclick="set_1084_Env()"/>
 														<label for="1084">1084</label>
-														<select id="current-dropbox" onchange="" disabled>
+														<select id="current-dropbox" onchange="">
 															<option id="mA_default">mA</option>
 															<option>350</option>
 															<option>500</option>
@@ -187,7 +182,7 @@
 													</span>
 												</div>	
 											</div>	
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>
@@ -195,19 +190,19 @@
 								<div class="ym-gbox">
 									<div class="control-box orange">
 										<h4 class="ym-fbox-heading controlbox-heading">Color Temp</h4>
-										<div class="ym-grid">
+										<form id="myColForm" class="ym-grid">
 											<div class="ym-g50 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="color-buttons control-buttons">
-														<input type="radio" name="color-temp-group" value="" id="2400" />
+														<input type="radio" name="color-temp-group" value="24" id="2400" />
 														<label for="2400">2400&deg;K</label>
 													</span>
 													<span class="color-buttons control-buttons">
-														<input type="radio" name="color-temp-group" value="" id="2700" />
+														<input type="radio" name="color-temp-group" value="27" id="2700" />
 														<label for="2700">2700&deg;K</label>
 													</span>
 													<span class="color-buttons control-buttons">
-														<input type="radio" name="color-temp-group" value="" id="3000" />
+														<input type="radio" name="color-temp-group" value="30" id="3000" />
 														<label for="3000">3000&deg;K</label>
 													</span>
 												</div>		
@@ -215,20 +210,20 @@
 											<div class="ym-g50 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="color-buttons control-buttons">
-														<input type="radio" name="color-temp-group" value="" id="3500" />
+														<input type="radio" name="color-temp-group" value="35" id="3500" />
 														<label for="3500">3500&deg;K</label>
 													</span>
 													<span class="color-buttons control-buttons">
-														<input type="radio" name="color-temp-group" value="" id="4000" />
+														<input type="radio" name="color-temp-group" value="40" id="4000" />
 														<label for="4000">4000&deg;K</label>
 													</span>
 													<span class="color-buttons control-buttons">
-														<input type="radio" name="color-temp-group" value="" id="4500" />
+														<input type="radio" name="color-temp-group" value="45" id="4500" />
 														<label for="4500">4500&deg;K</label>
 													</span>
 												</div>		
 											</div>
-										</div>	
+										</form>	
 									</div>
 								</div>
 							</div>
@@ -240,32 +235,32 @@
 								<div class="ym-gbox">
 									<div class="control-box blue">
 										<h4 class="ym-fbox-heading controlbox-heading">Extrusion Finish</h4>
-										<div class="ym-grid">
+										<form id="myFinishForm" class="ym-grid">
 											<div class="ym-g100 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="finish-buttons control-buttons">
-														<input type="radio" name="ext-finish-group" value="" id="al" />
+														<input type="radio" name="ext-finish-group" value="AL" id="al" />
 														<label for="al">AL - Silver Finish</label>
 													</span>
 													<span class="finish-buttons control-buttons">
-														<input type="radio" name="ext-finish-group" value="" id="bl" />
+														<input type="radio" name="ext-finish-group" value="BL" id="bl" />
 														<label for="bl">BL - Black Finish</label>
 													</span>
 													<span class="finish-buttons control-buttons">
-														<input type="radio" name="ext-finish-group" value="" id="wh" />
+														<input type="radio" name="ext-finish-group" value="WH" id="wh" />
 														<label for="wh">WH - White Finish</label>
 													</span>
 													<span class="finish-buttons control-buttons">
-														<input type="radio" name="ext-finish-group" value="" id="br" />
+														<input type="radio" name="ext-finish-group" value="BR" id="br" />
 														<label for="br">BR - Bronze Finish</label>
 													</span>
 													<span class="finish-buttons control-buttons">
-														<input type="radio" name="ext-finish-group" value="" id="custom" />
+														<input type="radio" name="ext-finish-group" value="C" id="custom" />
 														<label for="custom">C - Custom</label>
 													</span>
 												</div>		
 											</div>
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>
@@ -273,27 +268,27 @@
 								<div class="ym-gbox">
 									<div class="control-box orange">
 										<h4 class="ym-fbox-heading controlbox-heading">Lens Type</h4>
-										<div class="ym-grid">
+										<form id="myLensForm" class="ym-grid">
 											<div class="ym-g50 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="nl"/>
+														<input type="radio" name="lens-group" value="NL" id="nl"/>
 														<label for="nl">NL - No Lens</label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="pg"/>
+														<input type="radio" name="lens-group" value="PG" id="pg"/>
 														<label for="pg">PG - Clear</label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="slc"/>
+														<input type="radio" name="lens-group" value="SLC" id="slc"/>
 														<label for="slc">SLC - Slide </label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="df"/>
+														<input type="radio" name="lens-group" value="DF" id="df"/>
 														<label for="df">DF - Diffuser F</label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="dl"/>
+														<input type="radio" name="lens-group" value="DL" id="dl"/>
 														<label for="dl">DL - Diffuser L</label>
 													</span>
 												</div>	
@@ -301,32 +296,32 @@
 											<div class="ym-g50 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="60c" />
+														<input type="radio" name="lens-group" value="60C" id="60c" />
 														<label for="60c">60C - 60&deg; Clear</label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="30c" />
+														<input type="radio" name="lens-group" value="30C" id="30c" />
 														<label for="30c">30C - 30&deg; Clear</label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="10c" />
+														<input type="radio" name="lens-group" value="10C" id="10c" />
 														<label for="10c">10C - 10&deg; Clear</label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="op3" />
+														<input type="radio" name="lens-group" value="OP3" id="op3" />
 														<label for="op3">OP3 - Opal 3</label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="op2" />
+														<input type="radio" name="lens-group" value="OP2" id="op2" />
 														<label for="op2">OP2 - Opal 2</label>
 													</span>
 													<span class="lens-buttons control-buttons">
-														<input type="radio" name="lens-group" value="" id="op1" />
+														<input type="radio" name="lens-group" value="OP1" id="op1" />
 														<label for="op1">OP1 - Opal 1</label>
 													</span>
 												</div>	
 											</div>	
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>
@@ -334,36 +329,48 @@
 								<div class="ym-gbox">
 									<div class="control-box blue">
 										<h4 class="ym-fbox-heading controlbox-heading">Factory Installed Options</h4>
-										<div class="ym-grid">
+										<form id="myFctyOptForm" class="ym-grid">
 											<div class="ym-g100 ym-gl">
 												<div class="ym-gbox button-gbox">
 													<span class="factory-installed-buttons control-buttons">
-														<input type="radio" name="factory-installed-group" value="" id="n" />
+														<input type="radio" name="factory-installed-group" value="N" id="n" />
 														<label for="n">N - None</label>
 													</span>
 													<span class="factory-installed-buttons control-buttons">
-														<input type="radio" name="factory-installed-group" value="" id="im" />
+														<input type="radio" name="factory-installed-group" value="IM" id="im" />
 														<label for="im">IM - Inside Mount End Caps</label>
 													</span>
 													<span class="factory-installed-buttons control-buttons">
-														<input type="radio" name="factory-installed-group" value="" id="bu" />
-														<label for="bu">BU - Bushing</label>
+														<input type="radio" name="factory-installed-group" value="EM" id="em" />
+														<label for="em">EM - End Mount Leg</label>
 													</span>
 													<span class="factory-installed-buttons control-buttons">
-														<input type="radio" name="factory-installed-group" value="" id="fs" />
+														<input type="radio" name="factory-installed-group" value="TM" id="tm" />
+														<label for="tm">TM - T-Mount Leg</label>
+													</span>
+													<span class="factory-installed-buttons control-buttons">
+														<input type="radio" name="factory-installed-group" value="CM" id="cm" />
+														<label for="cm">CM - Corner Mount Leg</label>
+													</span>
+													<span class="factory-installed-buttons control-buttons">
+														<input type="radio" name="factory-installed-group" value="BU" id="bu" />
+														<label for="bu">BU - Bushing</label>
+													</span>
+													<!-- <span class="factory-installed-buttons control-buttons">
+														<input type="radio" name="factory-installed-group" value="FS" id="fs" />
 														<label for="fs">FS - Free Standing Mount</label>
 													</span>
 													<span class="factory-installed-buttons control-buttons">
-														<input type="radio" name="factory-installed-group" value="" id="cm" />
+														<input type="radio" name="factory-installed-group" value="CM" id="cm" />
 														<label for="cm">CM - Center Mount</label>
-													</span>
+													</span> -->
 													<span class="factory-installed-buttons control-buttons">
-														<input type="checkbox" name="factory-installed-group" value="" id="ro" />
+														<input type="checkbox" name="factory-installed-rohs" value="RO" id="ro" />
 														<label for="ro">RO - RoHS Compliant</label>
 													</span>
 												</div>	
 											</div>
-										</div>
+										</form>
 									</div>
 								</div>
 							</div>
@@ -402,7 +409,7 @@
 											<div class="ym-g100 ym-gl">
 												<!-- <label for="length-dropbox">Standard Lengths</label> -->
 												<h6 id="std-length-heading" class="ym-fbox-heading controlbox-sub-heading">Standard Lengths:</h6>
-												<select id="length-dropbox" name="fixture-length" onchange="enableCustomInput()">
+												<select id="length-dropbox" name="fixture-length" onchange="">
 													<option>Select Length</option>
 												</select>
 											</div>
@@ -442,7 +449,7 @@
 					<div id="comment-column" class="ym-col2">
 						<div id="comment-column-cbox" class="ym-cbox">
 						<h4 class="ym-fbox-heading controlbox-heading">Comments:</h4>
-						<strong><p id="comment">--</p></strong>
+						<p id="comment"><strong>--</strong></p>
 						</div>
 					</div>
 					<div id="results-box" class="ym-col3">				
@@ -452,12 +459,10 @@
 									<div class="ym-gcust-95 ym-gl">
 										<div id="tag" class="ym-gbox ">
 											<!-- content: grid-column -->
-											<span id="top-box">	
+											<div id="top-box">	
 												<h6 class="ym-fbox-heading controlbox-heading">Part Number & Description:</h6>
-												<div class="ym-fbox-text">
-													<p id="description">--</p>
-												</div>
-											</span>
+													<p id="description" class="ym-fbox-text">--</p>
+											</div>
 										</div>
 									</div>
 									<div class="ym-gcust-5 ym-gl">
@@ -518,10 +523,15 @@
 										
 										</div>
 									</div>
+									<div class="ym-gcust-5 ym-gl">
+										<div class="ym-gbox button-gbox">	
+											<button id="try" class="select-text-button" onclick="">T</button>
+										</div>
+									</div>
 								</div>
 							</div>
 							</div>
-							<div id="" class="ym-g20 ym-gl">
+							<div class="ym-g20 ym-gl">
 								<div class="ym-grid">
 									<div class="ym-g100 ym-gl">
 										<div class="ym-gbox">
@@ -534,11 +544,11 @@
 										<div class="ym-g50 ym-gl">
 											<div class="ym-gbox button-gbox pm-column1">
 												<span class="pm-buttons control-buttons">
-													<input type="radio" name="pm-group" value="" id="distributor_price"/>
+													<input type="radio" name="pm-group" value="DN" id="distributor_price"/>
 													<label for="distributor_price">D/N</label>
 												</span>
 												<span class="pm-buttons control-buttons">
-													<input type="radio" name="pm-group" value="" id="roblon_price"/>
+													<input type="radio" name="pm-group" value="ROB" id="roblon_price"/>
 													<label for="roblon_price">Roblon</label>
 												</span>
 												
@@ -547,11 +557,11 @@
 										<div class="ym-g50 ym-gr">
 											<div class="ym-gbox button-gbox pm-column1">
 												<span class="pm-buttons control-buttons">
-													<input type="radio" name="pm-group" value="" id="d19_price"/>
+													<input type="radio" name="pm-group" value="D19" id="d19_price"/>
 													<label for="d19_price">D19</label>
 												</span>
 												<span class="pm-buttons control-buttons">
-													<input type="radio" name="pm-group" value="" id="d10_price"/>
+													<input type="radio" name="pm-group" value="D10" id="d10_price"/>
 													<label for="d10_price">D10</label>
 												</span>
 												
