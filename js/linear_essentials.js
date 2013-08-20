@@ -327,7 +327,6 @@ $( document ).ready(function(){
 		if(this.lengthCode==="C"){
 			//var trueLength = parseFloat($('#custom-length-input').val());
 			var trueLength = this.customLengthInput;
-			//var max_length = length_list[23];
 			var lastIndex = (this.lengthList.length - 1);
 			var max_length = this.lengthList[lastIndex];
 			if (trueLength >= max_length){
@@ -428,8 +427,6 @@ $( document ).ready(function(){
 	ELL_Obj.prototype.setCouponCount = function(){
 		this.couponCount = 0;
 		if(this.extCode === "C"){
-			//var avail_length = (this.trueLength_inches - this.END_CAP_WIDTH) - this.MIN_AIR_GAP; //available extrusion space for LED boards
-			//var temp_count = (avail_length / this.LED_COUPON_LENGTH); //find rough number of coupons in a custom length
 			this.couponCount = Math.floor((((this.trueLength_inches - this.END_CAP_WIDTH) - this.MIN_AIR_GAP) / this.LED_COUPON_LENGTH)); //round down to integer to get exact number
 		} else {
 			var LENGTH_CODE = parseInt(this.lengthCode, 10);
@@ -714,14 +711,6 @@ $( document ).ready(function(){
 		if(lengthVal){this.XX = XX;} else
 		{this.XX = "XX";}
 	}
-
-	ELL_Obj.prototype.showCode = function(){
-		//alert("Extrusion is: " + this.extCode);
-		//alert("LED Type is: " + this.ledCode);
-		//alert("Factory Option is: " + this.factoryOptCode);
-		//alert("Part Number is: " + this.partNumber);
-		alert("Description is: " + this.fullDescription);
-	}
 	
 	ELL_Obj.prototype.setDN_basePrice = function(){
 	}
@@ -770,7 +759,7 @@ $( document ).ready(function(){
 		onForm.customInputON();
 	});
 	
-	//******** Main Fucntion Here ********//
+	/* ******************************   Main Fucntion Here  ******************************* */
 	
 	$( "#try" ).click(function( event ){
 		var isFixture = new ELL_Obj();
@@ -837,7 +826,7 @@ $( document ).ready(function(){
 });
 
 	
-//*******************************************************************************
+/* ******************************   ******************************* */
 
 //set, disable and/or enable buttons for 1S enviornment
 function set_1S_Env(){
@@ -868,9 +857,6 @@ function set_1S_Env(){
 	document.getElementById("ro").disabled=false;
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
-	//var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'C');
-	//setAllTailExits(squareExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 2Sl enviornment
@@ -902,9 +888,6 @@ function set_2SL_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
-	//setAllTailExits(squareExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 1R enviornment
@@ -937,9 +920,6 @@ function set_1R_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var roundExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB3', 'C');
-	//setAllTailExits(roundExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 2R enviornment
@@ -972,9 +952,6 @@ function set_2RL_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var roundExits = new Array('Select Tail', 'WE1', 'WE3', 'WB1', 'WB3', 'C');
-	//setAllTailExits(roundExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 3SL enviornment
@@ -1003,9 +980,6 @@ function set_3SL_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
-	//setAllTailExits(squareExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 1QL enviornment
@@ -1032,9 +1006,6 @@ function set_1QL_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var quarterRoundExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR3', 'WB1', 'TB3', 'C');
-	//setAllTailExits(quarterRoundExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 4SL enviornment
@@ -1064,9 +1035,6 @@ function set_4SL_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
-	//setAllTailExits(squareExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 5SL enviornment
@@ -1093,9 +1061,6 @@ function set_5SL_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
-	//setAllTailExits(squareExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 6SL enviornment
@@ -1122,9 +1087,6 @@ function set_6SL_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var squareExits = new Array('Select Tail', 'WE1', 'WE3', 'WR1', 'WR2', 'WR3', 'WL1', 'WL2', 'WL3', 'WB1', 'WB2', 'WB3', 'C');
-	//setAllTailExits(squareExits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 1EL enviornment
@@ -1153,9 +1115,6 @@ function set_1EL_Env(){
 	document.getElementById("current-dropbox").disabled=true;
 	document.getElementById("tail-two-dropbox").disabled=false;
 	document.getElementById("distributor_price").checked=true;
-	//var EL_Exits = new Array('Select Tail', 'WE1', 'WE3', 'WB1', 'WB3', 'C');
-	//setAllTailExits(EL_Exits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for LR enviornment
@@ -1187,9 +1146,6 @@ function set_LR_Env(){
 	document.getElementById("ro").disabled=false;
 	document.getElementById("tail-two-dropbox").disabled=true;
 	document.getElementById("distributor_price").checked=true;
-	//var LR_Exits = new Array('Select Tail', 'WE1');
-	//setAllTailExits(LR_Exits);
-	//setFixtureLengths();
 }
 
 //set, disable and/or enable buttons for 10th watt (157) LED enviornment
@@ -1240,7 +1196,8 @@ function set_1084_Env(){
 	document.getElementById("2400").disabled=true;
 }
 
-//******************************************************************
+/* ******************************   ******************************* */
+
 function resetAllForm(){
 	resetLedBoardButtons();
 	resetCurrentOpt;
@@ -1393,77 +1350,7 @@ function resetXXButtons(){
 	document.getElementById("XX").checked=false;
 }
 
-//******************************************************************
-
-/* function setAllTailExits(tailExits){
-	setTailExitOne(tailExits);
-	setTailExitTwo(tailExits);
-} */
-
-/* function setTailExitOne(tailExits)
-{
-	var selectedOption = 0;
-	var select = $("#tail-one-dropbox");
-	if(select.prop) {
-		var options = select.prop('options');
-	} else {
-		var options = select.attr('options');
-	}
-	$('option', select).remove();
-	
-	$.each(tailExits, function(val, text) {
-		options[options.length] = new Option(text, val);
-	});
-	select.val(selectedOption);
-} */
-
-/* function setTailExitTwo(tailExits)
-{
-	var selectedOption = 0;
-	
-	var select = $('#tail-two-dropbox');
-	if(select.prop) {
-		var options = select.prop('options');
-	} else {
-		var options = select.attr('options');
-	}
-	$('option', select).remove();
-
-	$.each(tailExits, function(val, text) {
-		options[options.length] = new Option(text, val);
-	});
-	select.val(selectedOption);
-} */
-
-//**************************************************************************************
-/* function setFixtureLengths()
-{
-	var fixtureLengths = setLengthList();
-	
-	//set length dropbox
-	var select = $('#length-dropbox');
-	
-	if(select.prop) {
-		var options = select.prop('options');
-	} else {
-		var options = select.attr('options');
-	}
-	
-	$.each(fixtureLengths, function(val, text) {
-		options[options.length] = new Option(text, val);
-	});
-} */
-
-/* function setLengthList(){
-	var lengthList;
-	if(document.getElementById("LR").checked==true){
-		lengthList = new Array(8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 'C');
-	} else {
-		lengthList = new Array(4, 8, 12, 16, 20, 24, 28, 32, 36, 40, 44, 48, 52, 56, 60, 64, 68, 72, 76, 80, 84, 88, 92, 96, 'C');
-	}
-	return lengthList;
-} */
-//**************************************************************************************
+/* ******************************   ******************************* */
 
  // ENABLE CUSTOM LENGTH INPUT, IF 'C' SELECTED FROM DROPDOWN//
 function enableCustomInput(){
@@ -1505,299 +1392,7 @@ function setPriceDisplay(){
 	
 } 
 
-//******************************************************************
-
-/* function setExtrusionCode()
-{
-	var extrusionCode;
-	if(document.getElementById("1S").checked==true)
-	{
-		extrusionCode = "1S";
-	} else if(document.getElementById("2SL").checked==true)
-	{
-		extrusionCode = "2SL";
-	} else if(document.getElementById("1R").checked==true)
-	{
-		extrusionCode = "1R";
-	} else if(document.getElementById("2RL").checked==true)
-	{
-		extrusionCode = "2RL";
-	} else if(document.getElementById("3SL").checked==true)
-	{
-		extrusionCode = "3SL";
-	} else if(document.getElementById("4SL").checked==true)
-	{
-		extrusionCode = "4SL";
-	} else if(document.getElementById("5SL").checked==true)
-	{
-		extrusionCode = "5SL";
-	} else if(document.getElementById("6SL").checked==true)
-	{
-		extrusionCode = "6SL";
-	} else if(document.getElementById("1QL").checked==true)
-	{
-		extrusionCode = "1QL";
-	} else if(document.getElementById("1EL").checked==true)
-	{
-		extrusionCode = "1EL";
-	} else if(document.getElementById("LR").checked==true)
-	{
-		extrusionCode = "LR";
-	} else {extrusionCode = "XX";}
-	return extrusionCode;
-} */
-
-/* function setLedCode()
-{
-	var ledCode;
-	if(document.getElementById("1018").checked==true)
-	{
-		ledCode = "1018";
-	} else if(document.getElementById("2545").checked==true)
-	{
-		ledCode = "2545";
-	} else if(document.getElementById("3545").checked==true)
-	{
-		ledCode = "3545";
-	} else if(document.getElementById("4545").checked==true)
-	{
-		ledCode = "4545";
-	} else if(document.getElementById("2590").checked==true)
-	{
-		ledCode = "2590";
-	} else if(document.getElementById("3590").checked==true)
-	{
-		ledCode = "3590";
-	} else if(document.getElementById("4590").checked==true)
-	{
-		ledCode = "4590";
-	} else if(document.getElementById("1084").checked==true)
-	{
-		ledCode = "1084";
-	} else {ledCode = "XXXX";}
-	return ledCode;
-} */
-
-/* function setColorTempCode()
-{
-	var colorTempCode;
-	if(document.getElementById("2400").checked==true)
-	{
-		colorTempCode = "24";
-	} else if(document.getElementById("2700").checked==true)
-	{
-		colorTempCode = "27";
-	} else if(document.getElementById("3000").checked==true)
-	{
-		colorTempCode = "30";
-	} else if(document.getElementById("3500").checked==true)
-	{
-		colorTempCode = "35";
-	} else if(document.getElementById("4000").checked==true)
-	{
-		colorTempCode = "40";
-	} else if(document.getElementById("4500").checked==true)
-	{
-		colorTempCode = "45";
-	} else {colorTempCode = "XX";}
-	return colorTempCode;
-} */
-
-/* function setFinishCode()
-{
-	var finishCode;
-	if(document.getElementById("al").checked==true)
-	{
-		finishCode = "AL";
-	} else if(document.getElementById("bl").checked==true)
-	{
-		finishCode = "BL";
-	} else if(document.getElementById("wh").checked==true)
-	{
-		finishCode = "WH";
-	} else if(document.getElementById("br").checked==true)
-	{
-		finishCode = "BR";
-	} else if(document.getElementById("custom").checked==true)
-	{
-		finishCode = "C";
-	} else {finishCode = "X";}
-	return finishCode;
-} */
-
-/* function setLensCode()
-{
-	var lensCode;
-	if(document.getElementById("pg").checked==true)
-	{
-		lensCode = "PG";
-	} else if(document.getElementById("slc").checked==true)
-	{
-		lensCode = "SLC";
-	} else if(document.getElementById("10c").checked==true)
-	{
-		lensCode = "10C";
-	} else if(document.getElementById("30c").checked==true)
-	{
-		lensCode = "30C";
-	} else if(document.getElementById("60c").checked==true)
-	{
-		lensCode = "60C";
-	} else if(document.getElementById("op1").checked==true)
-	{
-		lensCode = "OP1";
-	} else if(document.getElementById("op2").checked==true)
-	{
-		lensCode = "OP2";
-	} else if(document.getElementById("op3").checked==true)
-	{
-		lensCode = "OP3";
-	} else if(document.getElementById("nl").checked==true)
-	{
-		lensCode = "NL";
-	} else if(document.getElementById("df").checked==true)
-	{
-		lensCode = "DF";
-	} else if(document.getElementById("dl").checked==true)
-	{
-		lensCode = "DL";
-	} else {lensCode = "XX";}
-	return lensCode;
-} */
-
-/* function setWireCode()
-{
-	var wireCode;
-	var exitOne;
-	var exitTwo;
-	var indexOne = document.getElementById("tail-one-dropbox").selectedIndex;
-	var indexTwo = document.getElementById("tail-two-dropbox").selectedIndex;
-	if((indexOne != 0) && (indexTwo == 0))
-	{
-		wireCode = document.getElementById("tail-one-dropbox").options[indexOne].text;	
-	} else if ((indexOne != 0) && (indexTwo != 0))	
-	{
-		exitOne = document.getElementById("tail-one-dropbox").options[indexOne].text;
-		exitTwo = document.getElementById("tail-two-dropbox").options[indexTwo].text;
-		wireCode = exitOne + "/" + exitTwo;
-	} else if((indexOne == 0) && (indexTwo != 0))
-	{
-		wireCode = document.getElementById("tail-two-dropbox").options[indexTwo].text;	
-	} else {wireCode = "XXX";}
-	return wireCode;
-} */
-
-/* function setLengthCode()
-{
-	var lengthCode;
-	var index = document.getElementById("length-dropbox").selectedIndex;
-	if(index != 0){
-		lengthCode = document.getElementById("length-dropbox").options[index].text;
-	} else {lengthCode="X";}
-	return lengthCode;
-} */
-
-/* function setFactoryOptionsCode(extrusionCode)
-{
-	var factoryOptionsCode = '';
-	
-	if (extrusionCode == "1R" || extrusionCode == "2RL" ){
-		if(document.getElementById("n").checked==true)
-		{
-			factoryOptionsCode = "-N";
-		} else if(document.getElementById("im").checked==true)
-		{
-			factoryOptionsCode = "-IM";
-		} else if(document.getElementById("bu").checked==true)
-		{
-			factoryOptionsCode = "-BU";
-		} else if(document.getElementById("fs").checked==true)
-		{
-			factoryOptionsCode = "-FS";
-		} else if(document.getElementById("cm").checked==true)
-		{
-			factoryOptionsCode = "-CM";
-		} else {
-			factoryOptionsCode = 'XX';
-		}
-	}
-	
-	if(document.getElementById("ro").checked==true)
-	{
-		factoryOptionsCode = factoryOptionsCode+"-RO";
-	}
-	return factoryOptionsCode;
-}
-
-function setPartNumber(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, wireCode, lengthCode, factoryOptionsCode)
-{
-	var partNumber = "ELL" + "-" + extrusionCode + "-" + ledCode + "-" + colorTempCode + "-" + finishCode + "-" + lensCode + "-" + wireCode + "-" + lengthCode+factoryOptionsCode;	
-	return partNumber;
-} */
-
-//******************************************************************
-/* function setPowerType(extrusionCode){
-	var powerType;
-	if(extrusionCode=="LR"){
-		//do something
-	} else {
-		powerType = "24v";
-	}
-	return powerType;
-} */
-
-/* function setIpRating(extrusionCode)
-{
-	var ipRating;
-	if ((extrusionCode == "5SL") || (extrusionCode == "6SL")){
-		ipRating = "IP67";
-	} else if ((extrusionCode == "2SL") || (extrusionCode == "2RL") || (extrusionCode == "3SL") || (extrusionCode == "4SL") || (extrusionCode == "1QL") || (extrusionCode == "1EL")){
-		ipRating = "IP64";
-	} else {
-		ipRating = "IP20";
-	} 
-	return ipRating;
-} */
-
-/* function setCRI(ledCode){
-	var cri;
-	if((ledCode=="3545") || (ledCode=="3590")){cri="90+"} else
-	if((ledCode=="1018") || (ledCode=="2545") || (ledCode=="2590")){cri="87"} else
-	if((ledCode=="4545") || (ledCode=="4590")){cri="85"} 
-	else {cri="XX"}
-	return cri;
-} */
-
-/* function setTrueLength(lengthCode)
-{
-	
-	var index = document.getElementById("length-dropbox").selectedIndex;
-	var length_list = new Array(4.72, 8.66, 12.6, 16.54, 20.47, 24.41, 28.35, 32.28, 36.22, 40.16, 44.09, 48.03, 51.97, 55.91, 59.84, 63.78, 67.72, 71.65, 75.59, 79.53, 83.46, 87.4, 91.34, 95.28);
-	var trueLength=0;
-	if (lengthCode == 'C')
-	{
-		var lengthInput = document.getElementById("custom-length-input").value;
-		var MAX_LENGTH = length_list[23];
-		trueLength = parseFloat(lengthInput); 
-		if (trueLength >= MAX_LENGTH)
-		{
-			var alertMsg='CUSTOM LENGTH CANNOT EQUAL OR EXCEED MAX POSSIBLE (95.28 in.)!!';
-			$.msgBox({
-				title:"Warning!",
-				content: alertMsg
-			});
-			exit();
-		} else {
-      return trueLength;
-    }
-	} else 
-	{
-		trueLength = length_list[index-1];
-		return trueLength;
-	}
-} */
-
-/* function setLengthConversion(inches)
+/* ******************************   ******************************* */
 {
 	var MM_IN_INCHES = 25.4;
 	var mm = (inches * MM_IN_INCHES);
@@ -1827,296 +1422,6 @@ function setCommentBox()
 	return comment;
 }
 
-//******************************************************************
-
-/* function setExtrusionDescription(extrusionCode, ipRating)
-{
-	var extrusionDescription;
-	if(extrusionCode=="1S"){extrusionDescription = "Small-Square ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="2SL"){extrusionDescription = "Medium-Square/Lensed ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="1R"){extrusionDescription = "Small-Round ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="2RL"){extrusionDescription = "Large-Round/Lensed ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="3SL"){extrusionDescription = "Large-Square/Lensed ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="4SL"){extrusionDescription = "Medium-Square/Lensed/Deep ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="5SL"){extrusionDescription = "Medium-Square/Exterior ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="6SL"){extrusionDescription = "Large-Square/Exterior ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="1QL"){extrusionDescription = "Quarter-Round ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="1EL"){extrusionDescription = "Ellipse/Lensed ("+ipRating+") extrusion;";} else
-	if(extrusionCode=="LR"){extrusionDescription = "Medium-Square/Lensed ("+ipRating+") extrusion;";} 
-	else{extrusionDescription = "XXXXXXXXXXXXXX ("+ipRating+") extrusion;";}
-	return extrusionDescription;
-} */
-
-/* function setLengthDescription(trueLength, trueLengthMM)
-{
-	var inches = trueLength;
-	var mm = trueLengthMM;
-	var lengthDescription = inches+ "\" (" + mm + "mm) extrusion length;";
-	return lengthDescription;
-} */
-
-/* function setPowerTypeDescription(powerType){
-	var powerTypeDescription;
-	if(powerType!="24v"){
-		powerTypeDescription = powerType+" constant current, ";
-	} else {
-		powerTypeDescription = powerType+" constant voltage, ";;
-	}
-	return powerTypeDescription;
-} */
-
-/* function setLedDescription(ledCode)
-{
-	var ledDescription;
-	if (ledCode == '1018')
-	{
-		ledDescription = "0.10 watt (157 - 63 lm/w) Nichia LEDs;";
-	} else if (ledCode == '2545')
-	{
-		ledDescription = "0.25 watt (157 - 69 lm/w) Nichia LEDs;";
-	} else if (ledCode == '3545')
-	{
-		ledDescription = "0.25 watt HI-CRI (757 - XX lm/w) Nichia LEDs;";
-	} else if (ledCode == '4545')
-	{
-		ledDescription = "0.25 watt HI-LUMEN (757 - 93 lm/w) Nichia LEDs;";
-	} else if (ledCode == '2590')
-	{
-		ledDescription = "2 rows of 0.25 watt (157 - XX lm/w) Nichia LEDs;";
-	} else if (ledCode == '3590')
-	{
-		ledDescription = "2 rows of 0.25 watt HI-CRI (757 - XX lm/w) Nichia LEDs;";
-	} else if (ledCode == '4590')
-	{
-		ledDescription = "2 rows of 0.25 watt HI-LUMEN (757 - XX lm/w) Nichia LEDs;";
-	} else if (ledCode == '1084')
-	{
-		ledDescription = "0.10 watt (157 - XX lm/w) Nichia LEDs;";
-	}
-	return ledDescription;
-} */
-
-/* function setColorDescription(colorTempCode, cri)
-{
-	var colorDescription;
-	if (colorTempCode == '24')
-	{
-		colorDescription = '2400°K color temp, '+cri+' CRI;';
-	} else if (colorTempCode == '27')
-	{
-		colorDescription = '2700°K color temp, '+cri+' CRI;';
-	} else if (colorTempCode == '30')
-	{
-		colorDescription = '3000°K color temp, '+cri+' CRI;';
-	} else if (colorTempCode == '35')
-	{
-		colorDescription = '3500°K color temp, '+cri+' CRI;';
-	} else if (colorTempCode == '40')
-	{
-		colorDescription = '4000°K color temp, '+cri+' CRI;';
-	} else if (colorTempCode == '45')
-	{
-		colorDescription = '4500°K color temp, '+cri+' CRI;';
-	}
-	return colorDescription;
-} */
-
-/* function setLensDescription(lensCode)
-{
-	var lensDescription;
-	if (lensCode == 'PG')
-	{
-		lensDescription = 'clear, acrylic lens;';
-	} else if (lensCode == 'SLC')
-	{
-		lensDescription = 'clear, sliding lens;';
-	} else if (lensCode == '10C')
-	{
-		lensDescription = '10° optical lens;';
-	} else if (lensCode == '30C')
-	{
-		lensDescription = '30° optical lens;';
-	} else if (lensCode == '60C')
-	{
-		lensDescription = '60° optical lens;';
-	} else if (lensCode == 'OP1')
-	{
-		lensDescription = 'opal, light-diffused lens;';
-	} else if (lensCode == 'OP2')
-	{
-		lensDescription = 'opal, medium-diffused lens;';
-	} else if (lensCode == 'OP3')
-	{
-		lensDescription = 'opal, heavily-diffused lens;';
-	} else if (lensCode == 'DF')
-	{
-		lensDescription = 'diffuser film;';
-	} else if (lensCode == 'DL') 
-	{
-		lensDescription = 'diffuser lens;';
-	}	else if(lensCode == 'NL') {
-		lensDescription = 'no lens;';
-	} else {lensDescription = 'XXXXX;';}
-	return lensDescription;
-} */
-
-/* function setWireDescription(wireCode)
-{
-	var wireDescription;
-	var indexOne = document.getElementById("tail-one-dropbox").selectedIndex;
-	var indexTwo = document.getElementById("tail-two-dropbox").selectedIndex;
-	var wireCode;
-	if ((indexOne > 0) && (indexTwo > 0))
-	{
-		wireDescription = wireCode+' wire exits, 2 - 96", 18 AWG wire leads from both ends of fixture;';
-	} else if ((indexOne > 0) || (indexTwo > 0))
-	{
-		wireDescription = wireCode+' wire exit, 1 - 96", 18 AWG wire lead from one end of fixture with male Tyco Mate \'n Lock connector;';
-	}
-	return wireDescription;
-} */
-
-/* function setFinishDescription(finishCode)
-{
-	var finishDescription;
-	if (finishCode == 'AL')
-	{
-		finishDescription = 'silver anodized finish;';
-	} else if (finishCode == 'BL')
-	{
-		finishDescription = 'black anodized finish;';
-	} else if(finishCode == 'WH')
-	{
-		finishDescription = 'white powder-coat finish;';
-	} else if(finishCode == 'BR')
-	{
-		finishDescription = 'bronze powder-coat finish;';
-	} else
-	{
-		finishDescription = 'custom XXX finish;';
-	}
-	return finishDescription;
-} */
-
-/* function setFactoryOptionsDescription(factoryOptionsCode)
-{
-	var factoryOptionsDescription = '';
-	if (document.getElementById("im").checked==true)
-	{
-		factoryOptionsDescription = 'factory installed, plastic tab end-cap for inside mount, screws directly to mounting surface; '
-	} else if (document.getElementById("bu").checked==true)
-	{
-		factoryOptionsDescription = 'factory installed, threaded bushing, with nut, for mounting extrusion perpendicular to surface; '
-	} else if (document.getElementById("fs").checked==true)
-	{
-		factoryOptionsDescription = 'factory installed, XX" high free standing mount , with 8mm leg and end joint; '
-	} else if (document.getElementById("cm").checked==true)
-	{
-		factoryOptionsDescription = 'factory installed, XX" high center mount, with centered 8mm leg; '
-	} else 
-	{
-		factoryOptionsDescription = 'fixture mounts using surface mounting clip, 1 per 18" (min. 2 per fixture); '
-	} 
-	
-	if (document.getElementById("ro").checked==true)
-	{
-		factoryOptionsDescription = factoryOptionsDescription+'RoHS compliant product; '
-	}
-	return factoryOptionsDescription;
-} */
-
-/* function setCustomLengthDescription(lengthCode, trueLength)
-{
-	var customLengthDescription;
-	var LED_COUPON_LENGTH = 3.937;
-	var END_CAP_WIDTH = 0.37;
-	var MIN_AIR_GAP = 0.4; //gap between board and end-cap is a minimum of 0.20" (x2) = 0.4
-	var coupon_count;
-	var board_length;
-	var avail_length; //available extrusion space for LED boards
-	
-	if(lengthCode == 'C')
-	{        
-		avail_length = (trueLength - END_CAP_WIDTH) - MIN_AIR_GAP;
-		var temp_count = (avail_length / LED_COUPON_LENGTH); //find rough number of coupons in a custom length
-		
-		coupon_count = Math.floor(temp_count); //round down to integer to get exact number
-		board_length = coupon_count * LED_COUPON_LENGTH;
-		board_length = board_length.toFixed(2);
-		customLengthDescription = 'with LED board '+board_length+'" long, centered; ';
-	} else {
-	
-		customLengthDescription = '';
-	}
-	
-	return customLengthDescription;
-} */
-
-/* function setWattsDescription(totalWatts)
-{
-	var wattsDescription;
-	wattsDescription = totalWatts+' watts total';
-	return wattsDescription;
-} */
-
-/* function setTotalWatts(ledCode, trueLength, lengthCode)
-{
-	var totalWatts;
-	var tenthWattages = new Array(0.9, 1.79, 2.69, 3.58, 4.48, 5.38, 6.27, 7.17, 8.07, 8.96, 9.06, 10.7, 11.6, 12.5, 13.4, 14.3, 15.2, 16.1, 17.0, 17.9, 18.1, 19.7, 20.6, 21.5);
-	var quarterWattages = new Array(1.83, 3.66, 5.5, 7.32, 9.15, 11.0, 12.8, 14.6, 16.5, 18.3, 20.1, 22.0, 23.8, 25.6, 27.5, 29.3, 31.2, 33.0, 34.8, 36.7, 38.5, 40.3, 42.2, 44.0);
-    
-	if (lengthCode == "C")
-	{
-		var END_CAP_WIDTH = 0.79;
-        var LED_COUPON_LENGTH = 3.93;
-        
-        var temp = ((trueLength - END_CAP_WIDTH) / LED_COUPON_LENGTH); //find number of coupons in a custom length
-        var index = Math.floor(temp); //round down to integer to get wattage index
-        
-        if (ledCode == "1018")
-        {   
-            totalWatts = tenthWattages[index-1];
-        } else if ((ledCode == "2545") || (ledCode == "3545") || (ledCode == "4545"))
-        {
-            totalWatts = quarterWattages[index-1];
-        } else if (ledCode == "1084")
-        {
-            //totalWatts = quarterWattages[index-1];
-            //totalWatts = (totalWatts * 2);
-						totalWatts = 0;
-        } else if ((ledCode == "2590") || (ledCode == "3590") || (ledCode == "4590") )
-        {
-            totalWatts = quarterWattages[index-1];
-            totalWatts = (totalWatts * 2);
-        } else {totalWatts = 0;}
-        return totalWatts;
-	} else 
-    {
-        var index = document.getElementById("length-dropbox").selectedIndex;
-        
-        if (ledCode == "1018")
-        {   
-            totalWatts = tenthWattages[index-1];
-        } else if ((ledCode == "2545") || (ledCode == "3545") || (ledCode == "4545"))
-        {
-            totalWatts = quarterWattages[index-1];
-        } else if (ledCode == "1084")
-        {
-            //totalWatts = quarterWattages[index-1];
-            //totalWatts = (totalWatts * 2);
-						totalWatts = 0;
-        } else if ((ledCode == "2590") || (ledCode == "3590") || (ledCode == "4590") )
-        {
-            totalWatts = quarterWattages[index-1];
-            totalWatts = (totalWatts * 2);
-        } else {totalWatts = 0;}
-        
-        return totalWatts;
-    }    
-    
-} */
-
-/* function setFullDescription()
 {
 	var fullDescription;
 	var partNumber;
@@ -2153,9 +1458,8 @@ function setCommentBox()
 	partNumber = setPartNumber(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, wireCode, lengthCode, factoryOptionsCode);
 	fullDescription = partNumber+"   -   "+generalDescription+" "+extrusionDescription+" "+lengthDescription+" "+powerTypeDescription+" "+customLengthDescription+" "+ledDescription+" "+colorDescription+" "+lensDescription+" "+wireDescription+" "+factoryOptionsDescription+" "+finishDescription;
 	return fullDescription;
-} */
 
-//******************************************************************
+/* ******************************   ******************************* */
 
 //Load all pricing
 function setBasePrice(extrusionCode, lengthCode, trueLength) {
@@ -2480,23 +1784,7 @@ function discountDeduct(tempTotal){
 	return tempTotal;
 }
 
-//******************************************************************
-
-/* function printFullDescription(fullDescription, wattsDescription)
-{
-	document.getElementById('description').innerHTML=fullDescription.fontsize(2);
-} */
-
-/* function printLengthConversion(inches, mm)
-{
-	document.getElementById('inches').innerHTML=inches.toFixed(2);
-	document.getElementById('mm').innerHTML=mm.toFixed(0);
-} */
-
-/* function printTotalWattage(totalWatts)
-{
-	document.getElementById('watts').innerHTML=totalWatts;
-} */
+/* ******************************   ******************************* */
 
 function printPrice(price)
 {
@@ -2508,7 +1796,7 @@ function printCommentBox(commentBox)
 	document.getElementById('comment').innerHTML=commentBox;
 }
 
-// ******************************* COPY FEATURE - START *******************************
+/* ******************************  COPY FEATURE - START  ******************************* */
 
 function fnSelect(objId)
 {
@@ -2533,31 +1821,7 @@ function fnDeSelect()
   else if (window.getSelection)
 		window.getSelection().removeAllRanges();
 } 
-// *******************************   *******************************
 
-/*
-function errorCheck(extrusionCode, ledCode, colorTempCode, finishCode, lensCode, factoryOptionsCode, wireCode, lengthCode, trueLength){
-	var alertMsg="Please choose ";
-	var errorStrg;
-	if(extrusionCode=="XX"){errorStrg="extrusion type!";}
-	if(ledCode=="XXXX"){errorStrg="LED board type!";}
-	if(colorTempCode=="XX"){errorStrg="LED color type!";}
-	if(finishCode=="X"){errorStrg="finish type!";}
-	if(lensCode=="XX"){errorStrg="lens type!";}
-	if((factoryOptionsCode=='XX') || (factoryOptionsCode=='XX-RO')){errorStrg="factory options type!";}
-	if(wireCode=="XXX"){errorStrg="wire exit type!";}		
-	if(lengthCode=="X"){errorStrg="fixture length!";}
-	if((isNaN(trueLength)) && (lengthCode=="C")){errorStrg="valid custom length!";}
-	
-	if(errorStrg){
-		$.msgBox({
-			title:"Warning!",
-			content: alertMsg+errorStrg
-		});
-		exit();
-	}
-}
-*/
 /* ******************************   ******************************* */
 
 function main(extCode, lensCode, lengthCode, trueLength_inches){
